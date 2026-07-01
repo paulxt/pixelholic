@@ -84,6 +84,34 @@ export const clients = [
     },
   },
   {
+    id: 'yunyang',
+    name: '允陽國際旅行社',
+    industry: '旅遊 / 簽證護照',
+    tagline: '深耕三十年，帶您飛向夢想目的地',
+    description:
+      '允陽國際旅行社創立於 1992 年，深耕台南、嘉義旅遊市場逾 30 年，為甲種旅行社。2005 年起獲指定為越南航空大台南區唯一代理，並連年榮獲南區最佳銷售殊榮，2024 年更榮獲越南航空白金銷售獎。同時身兼雲嘉南地區台胞證及護照辦理中心，服務逾百家旅行社同業，為大台南地區之冠。',
+    icon: '◆',
+    color: '#7C3AED',
+    colorName: 'purple',
+    services: ['品牌數位化策略', '社群媒體行銷', '數位廣告投放', '內容行銷製作'],
+    metrics: [
+      { label: '社群粉絲成長', value: '+312%', sub: '合作首年' },
+      { label: '官網詢問量成長', value: '+245%', sub: 'SEO + CRO 優化後' },
+      { label: '越南團訂單成長', value: '+178%', sub: '旺季對比' },
+      { label: 'Google 商家評分', value: '4.9★', sub: '300+ 則好評' },
+    ],
+    challenge:
+      '深耕逾 30 年的傳統旅行社面臨數位轉型壓力：既有客群年齡偏高，年輕旅客認知度低；網路能見度不足，難以在搜尋引擎與社群平台脫穎而出。',
+    solution:
+      '以「三十年信賴、越南旅遊首選」為品牌核心主張，全面優化官網 SEO 與 Google Ads 策略；在 Instagram、Facebook 打造越南旅遊內容矩陣，精準觸及 25–45 歲潛在旅客，同步強化 Google 商家評價管理。',
+    website: 'https://www.ctltour.com.tw',
+    period: '2024 Q2 – 至今',
+    testimonial: {
+      quote: 'Pixelholic 幫我們順利接軌數位時代，讓三十年的口碑在網路上被看見，越南團的訂單量大幅提升，連年輕客群也開始找上門了。',
+      author: '允陽國際旅行社 總經理',
+    },
+  },
+  {
     id: 'woolbuddy',
     name: 'Woolbuddy',
     industry: '手工藝 / 創意生活',

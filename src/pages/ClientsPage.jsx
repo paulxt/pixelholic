@@ -23,6 +23,12 @@ const themes = {
     tag:      '食品電商',
     charType: 'heart',
   },
+  yunyang: {
+    hdrClass: 'client-hdr-purple',
+    bgClass:  'client-bg-purple',
+    tag:      '旅遊／簽證',
+    charType: 'alien',
+  },
   woolbuddy: {
     hdrClass: 'client-hdr-orange',
     bgClass:  'client-bg-orange',
