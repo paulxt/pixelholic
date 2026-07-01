@@ -1,3 +1,9 @@
+import kingcartLogo from '../assets/logos/kingcart.png'
+import polarisLogo from '../assets/logos/polaris.png'
+import cmeiLogo from '../assets/logos/cmei.png'
+import yunyangLogo from '../assets/logos/yunyang.png'
+import woolbuddyLogo from '../assets/logos/woolbuddy.png'
+
 export const clients = [
   {
     id: 'kingcart',
@@ -7,6 +13,7 @@ export const clients = [
     description:
       'KingCart 卡特王是台灣最具代表性的特斯拉配件品牌，深耕 Tesla Model 3、Y、S、X 專屬配件市場，提供中控儲物盒、碳纖車標、車艙精品等高質感產品。全台設有台北內湖、台中南屯、苗栗竹南、台南四大展示門市。',
     icon: '◈',
+    logo: kingcartLogo,
     color: '#4338CA',
     colorName: 'primary',
     services: ['品牌策略規劃', '社群媒體行銷', '內容行銷製作', '廣告投放優化'],
@@ -35,6 +42,7 @@ export const clients = [
     description:
       '北極星 Polaris eSIM 是台灣原生旅遊 eSIM 品牌，首創「線路透明」概念，讓旅客在購買前即可清楚看到每張方案的出口線路資訊。覆蓋全球 200+ 國家地區，超過 10 個熱門旅遊地提供原生線路直連，榮登工商時報、經濟日報、TechNews 等媒體報導。',
     icon: '◉',
+    logo: polarisLogo,
     color: '#0891B2',
     colorName: 'cyan',
     services: ['品牌策略規劃', '數位廣告投放', '公關媒體操作', '數據分析洞察'],
@@ -63,6 +71,7 @@ export const clients = [
     description:
       '青美嚴選以台灣嚴選食材為核心，主打厚切多汁豬肉條系列（蜜汁、蒜味、川辣、泰式檸檬等 9 種口味），同時代理日韓紐澳進口零食、果汁與生活用品。產品上架全聯、PChome、momo、Shopee、東森購物等主流通路，深受台灣消費者喜愛。',
     icon: '◇',
+    logo: cmeiLogo,
     color: '#059669',
     colorName: 'green',
     services: ['電商成長駭客', '社群媒體行銷', '內容行銷製作', '平台廣告投放'],
@@ -91,6 +100,7 @@ export const clients = [
     description:
       '允陽國際旅行社創立於 1992 年，深耕台南、嘉義旅遊市場逾 30 年，為甲種旅行社。2005 年起獲指定為越南航空大台南區唯一代理，並連年榮獲南區最佳銷售殊榮，2024 年更榮獲越南航空白金銷售獎。同時身兼雲嘉南地區台胞證及護照辦理中心，服務逾百家旅行社同業，為大台南地區之冠。',
     icon: '◆',
+    logo: yunyangLogo,
     color: '#7C3AED',
     colorName: 'purple',
     services: ['品牌數位化策略', '社群媒體行銷', '數位廣告投放', '內容行銷製作'],
@@ -119,6 +129,7 @@ export const clients = [
     description:
       'Woolbuddy 是由前盧卡斯影業 3D 藝術師 Jackie Huang 創立的羊毛氈品牌，提供針氈套組、羊毛卷、氈墊等高品質手作材料。以零廢料、環保理念設計產品，深受全球手作愛好者喜愛，在 Amazon 手工藝品類中屢獲暢銷認證，並在全球多個市場銷售。',
     icon: '▣',
+    logo: woolbuddyLogo,
     color: '#EA580C',
     colorName: 'coral',
     services: ['國際品牌策略', '社群媒體行銷', 'Amazon 廣告優化', '影音內容製作'],

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { clients } from '../data/clients'
 import { PixelChar, SectionCorners } from '../components/PixelCharacters'
+import PixelCover from '../components/PixelCover'
 
 /* ── Theme map ───────────────────────────────────── */
 const themes = {
@@ -68,9 +69,12 @@ function ClientGridCard({ c, onOpen }) {
           <span className="pixel-font text-white/60 text-[9px] tracking-widest block mb-6">
             // {th.tag.toUpperCase()}
           </span>
-          <span className="pixel-font text-white block mb-4 animate-float" style={{ fontSize: '56px', lineHeight: 1, animationDelay: '0.2s' }}>
-            {c.icon}
-          </span>
+          <img
+            src={c.logo}
+            alt={`${c.name} logo`}
+            className="block mb-4 mx-auto animate-float bg-white p-2"
+            style={{ width: 72, height: 72, animationDelay: '0.2s', imageRendering: 'pixelated' }}
+          />
           <h2 className="pixel-font text-white" style={{ fontSize: 'clamp(13px, 1.8vw, 18px)', lineHeight: 1.8 }}>
             {c.name}
           </h2>
@@ -107,11 +111,11 @@ function ClientGridCard({ c, onOpen }) {
   )
 }
 
-/* ── Expanded detail panel ───────────────────────── */
-function ClientDetail({ c, onClose }) {
+/* ── Expanded detail panel (full-screen overlay content) ──── */
+function ClientDetail({ c }) {
   const th = themes[c.id]
   return (
-    <div className="mt-8 mb-12 animate-fadeUp">
+    <div className="animate-fadeUp">
       {/* Colored header strip */}
       <div className={`${th.hdrClass} relative overflow-hidden`} style={{ boxShadow: 'var(--shadow-lg)' }}>
         <div
@@ -130,10 +134,13 @@ function ClientDetail({ c, onClose }) {
           <PixelChar type={th.charType} color="#ffffff" size={10} />
         </div>
 
-        <div className="relative z-10 px-10 md:px-16 py-14 flex flex-col md:flex-row md:items-center gap-10">
-          <span className="pixel-font text-white shrink-0" style={{ fontSize: '80px', lineHeight: 1 }}>
-            {c.icon}
-          </span>
+        <div className="relative z-10 px-10 md:px-16 pt-24 pb-14 flex flex-col md:flex-row md:items-center gap-10">
+          <img
+            src={c.logo}
+            alt={`${c.name} logo`}
+            className="shrink-0 bg-white p-3 mx-auto md:mx-0"
+            style={{ width: 96, height: 96, imageRendering: 'pixelated' }}
+          />
           <div className="flex-1 text-center md:text-left">
             <div className="pixel-font text-white/60 text-[10px] tracking-widest mb-4">
               // {c.industry.toUpperCase()} · {c.period}
@@ -143,12 +150,6 @@ function ClientDetail({ c, onClose }) {
             </h2>
             <p className="text-white/70 italic text-base leading-loose">"{c.tagline}"</p>
           </div>
-          <button
-            onClick={onClose}
-            className="shrink-0 pixel-font text-white/60 hover:text-white transition-colors text-[10px] border border-white/30 px-5 py-3 self-start"
-          >
-            ✕ 關閉
-          </button>
         </div>
 
         {/* Service tags in header */}
@@ -222,79 +223,109 @@ function ClientDetail({ c, onClose }) {
 /* ── Page ────────────────────────────────────────── */
 export default function ClientsPage() {
   const [openId, setOpenId] = useState(null)
+  const [phase, setPhase] = useState('idle') // 'idle' | 'cover' | 'reveal'
+  const [pendingId, setPendingId] = useState(null)
 
   useEffect(() => {
     const hash = window.location.hash.slice(1)
     if (hash && clients.some((c) => c.id === hash)) {
-      setOpenId(hash)
-      setTimeout(() => document.getElementById(`client-${hash}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 150)
+      setOpenId(hash) // deep link: open directly, no transition
     } else {
       window.scrollTo(0, 0)
     }
   }, [])
 
-  const toggleOpen = (id) => {
-    const next = openId === id ? null : id
-    setOpenId(next)
-    if (next) {
-      setTimeout(() => document.getElementById(`client-${next}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50)
-    }
+  useEffect(() => {
+    document.body.style.overflow = openId ? 'hidden' : ''
+    return () => { document.body.style.overflow = '' }
+  }, [openId])
+
+  const openDetail = (id) => {
+    if (phase !== 'idle') return
+    setPendingId(id)
+    setPhase('cover')
   }
 
-  return (
-    <div className="pt-24 pb-32 min-h-screen" style={{ background: 'var(--bg)' }}>
-      <div className="page-wrap">
+  const closeDetail = () => {
+    if (phase !== 'idle') return
+    setPendingId(null)
+    setPhase('cover')
+  }
 
-        {/* Page header — centered */}
-        <div className="py-20 mb-16 relative grid-bg overflow-hidden text-center">
-          <SectionCorners color="#4338CA" inset={16} opacity={0.2} />
-          <div className="relative z-10">
-            <div className="pixel-font text-[10px] text-indigo-400 mb-6 animate-pulse-glow tracking-widest">
-              // CLIENT CASE STUDIES
+  const overlayColor = clients.find((c) => c.id === (pendingId ?? openId))?.color || '#4338CA'
+
+  const activeClient = openId ? clients.find((c) => c.id === openId) : null
+
+  return (
+    <div className="min-h-screen" style={{ background: 'var(--bg)' }}>
+      <PixelCover
+        phase={phase}
+        color={overlayColor}
+        onCoverComplete={() => { setOpenId(pendingId); setPhase('reveal') }}
+        onRevealComplete={() => setPhase('idle')}
+      />
+
+      {activeClient ? (
+        /* ── Full-screen detail overlay ───────────────── */
+        <div className="fixed inset-0 z-50 overflow-y-auto" style={{ background: 'var(--bg)' }}>
+          <button
+            onClick={closeDetail}
+            className="fixed top-6 left-6 z-50 pixel-font text-[10px] bg-white/90 backdrop-blur-sm border border-indigo-100 text-slate-500 hover:text-indigo-600 hover:border-indigo-400 transition-colors px-4 py-3 tracking-widest shadow-md"
+          >
+            ← 上一頁
+          </button>
+          <ClientDetail c={activeClient} />
+        </div>
+      ) : (
+        <div className="pt-24 pb-32">
+          <div className="page-wrap">
+
+            {/* Page header — centered */}
+            <div className="py-20 mb-16 relative grid-bg overflow-hidden text-center">
+              <SectionCorners color="#4338CA" inset={16} opacity={0.2} />
+              <div className="relative z-10">
+                <div className="pixel-font text-[10px] text-indigo-400 mb-6 animate-pulse-glow tracking-widest">
+                  // CLIENT CASE STUDIES
+                </div>
+                <h1 className="pixel-font text-slate-800 mb-8 mx-auto" style={{ fontSize: 'clamp(20px, 4vw, 36px)', lineHeight: 2 }}>
+                  我們的客戶<br />
+                  <span style={{ color: '#4338CA' }}>成功案例</span>
+                </h1>
+                <p className="text-slate-400 text-base leading-loose max-w-lg mx-auto">
+                  每個品牌都有獨特的挑戰與機會。點擊卡片展開完整案例，了解我們如何為客戶創造真實成果。
+                </p>
+              </div>
             </div>
-            <h1 className="pixel-font text-slate-800 mb-8 mx-auto" style={{ fontSize: 'clamp(20px, 4vw, 36px)', lineHeight: 2 }}>
-              我們的客戶<br />
-              <span style={{ color: '#4338CA' }}>成功案例</span>
-            </h1>
-            <p className="text-slate-400 text-base leading-loose max-w-lg mx-auto">
-              每個品牌都有獨特的挑戰與機會。點擊卡片展開完整案例，了解我們如何為客戶創造真實成果。
-            </p>
+
+            {/* 2×2 client grid */}
+            <div className="grid sm:grid-cols-2 gap-7">
+              {clients.map((c) => (
+                <div key={c.id} id={`client-${c.id}`} className="scroll-mt-28">
+                  <ClientGridCard c={c} onOpen={openDetail} />
+                </div>
+              ))}
+            </div>
+
+            {/* Bottom CTA */}
+            <div className="mt-20 float-card p-14 text-center">
+              <div className="pixel-font text-[10px] text-indigo-400 mb-5 tracking-widest">// JOIN OUR CLIENTS</div>
+              <h3 className="pixel-font text-slate-800 mb-5" style={{ fontSize: '18px', lineHeight: 2 }}>
+                想成為下一個成功案例？
+              </h3>
+              <p className="text-slate-400 text-sm leading-loose mb-10 max-w-md mx-auto">
+                立即聯繫我們，開始一段從像素到成效的品牌旅程。
+              </p>
+              <Link
+                to="/"
+                onClick={() => setTimeout(() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }), 100)}
+                className="pixel-btn"
+              >
+                免費諮詢
+              </Link>
+            </div>
           </div>
         </div>
-
-        {/* 2×2 client grid */}
-        <div className="grid sm:grid-cols-2 gap-7">
-          {clients.map((c) => (
-            <div key={c.id} id={`client-${c.id}`} className="scroll-mt-28">
-              <ClientGridCard c={c} onOpen={toggleOpen} />
-            </div>
-          ))}
-        </div>
-
-        {/* Expanded detail below grid (full width) */}
-        {openId && (() => {
-          const c = clients.find((x) => x.id === openId)
-          return c ? <ClientDetail key={openId} c={c} onClose={() => setOpenId(null)} /> : null
-        })()}
-
-        {/* Bottom CTA */}
-        <div className="mt-20 float-card p-14 text-center">
-          <div className="pixel-font text-[10px] text-indigo-400 mb-5 tracking-widest">// JOIN OUR CLIENTS</div>
-          <h3 className="pixel-font text-slate-800 mb-5" style={{ fontSize: '18px', lineHeight: 2 }}>
-            想成為下一個成功案例？
-          </h3>
-          <p className="text-slate-400 text-sm leading-loose mb-10 max-w-md mx-auto">
-            立即聯繫我們，開始一段從像素到成效的品牌旅程。
-          </p>
-          <Link
-            to="/"
-            onClick={() => setTimeout(() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }), 100)}
-            className="pixel-btn"
-          >
-            免費諮詢
-          </Link>
-        </div>
-      </div>
+      )}
     </div>
   )
 }

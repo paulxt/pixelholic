@@ -55,31 +55,31 @@ export default function Banner() {
       <PixelHeroDecor accentColor={slide.accent} />
 
       {/* Content — all centered */}
-      <div className="page-wrap py-40 md:py-56 w-full relative z-10 text-center flex flex-col items-center">
+      <div className="page-wrap py-24 md:py-20 w-full relative z-10 text-center flex flex-col items-center">
         <div
           className={`transition-all duration-300 w-full ${animating ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'}`}
         >
           {/* Tag */}
-          <div className="flex items-center justify-center gap-3 mb-10">
+          <div className="flex items-center justify-center gap-3 mb-6">
             <span className="pixel-font text-[10px] animate-pulse-glow tracking-widest" style={{ color: slide.accent }}>{slide.tag}</span>
             <span className="animate-blink pixel-font text-[10px]" style={{ color: slide.accent }}>_</span>
           </div>
 
           {/* Title */}
           <h1
-            className="glitch pixel-font mb-10 mx-auto"
-            data-text={slide.title.replace('\n', ' ')}
+            className="glitch pixel-font mb-6 mx-auto"
+            data-text={slide.title}
             style={{ fontSize: 'clamp(26px, 5vw, 52px)', lineHeight: 1.8, color: '#0F172A', whiteSpace: 'pre-line' }}
           >
             {slide.title}
           </h1>
 
-          <p className="text-slate-400 text-lg leading-loose mb-14 max-w-xl mx-auto" style={{ letterSpacing: '0.01em' }}>
+          <p className="text-slate-400 text-lg leading-loose mb-8 max-w-xl mx-auto" style={{ letterSpacing: '0.01em' }}>
             {slide.sub}
           </p>
 
           {/* Buttons */}
-          <div className="flex flex-wrap gap-5 justify-center mb-20">
+          <div className="flex flex-wrap gap-5 justify-center mb-12">
             <a href="#contact" onClick={(e) => { e.preventDefault(); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }) }} className="pixel-btn">
               開始合作
             </a>
@@ -104,7 +104,7 @@ export default function Banner() {
         </div>
 
         {/* Slide dots */}
-        <div className="flex gap-3 justify-center mt-16">
+        <div className="flex gap-3 justify-center mt-10">
           {slides.map((_, i) => (
             <button key={i} onClick={() => goTo(i)} className="transition-all duration-200" style={{ width: i === current ? 28 : 10, height: 10, backgroundColor: i === current ? slide.accent : '#C7D2FE' }} aria-label={`slide ${i + 1}`} />
           ))}

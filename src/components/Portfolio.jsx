@@ -81,12 +81,12 @@ function ClientCard({ c, featured }) {
                 backgroundSize: '24px 24px',
               }}
             />
-            <span
-              className="pixel-font relative z-10 animate-float"
-              style={{ fontSize: '96px', color: c.color, lineHeight: 1, textShadow: `0 0 30px ${c.color}40` }}
-            >
-              {c.icon}
-            </span>
+            <img
+              src={c.logo}
+              alt={`${c.name} logo`}
+              className="relative z-10 animate-float"
+              style={{ width: 128, height: 128, imageRendering: 'pixelated' }}
+            />
           </div>
 
           {/* Content */}
@@ -135,7 +135,7 @@ function ClientCard({ c, featured }) {
         <div>
           {/* Mini visual */}
           <div
-            className="h-40 flex items-center justify-center relative overflow-hidden"
+            className="h-24 flex items-center justify-center relative overflow-hidden"
             style={{ backgroundColor: `${c.color}08` }}
           >
             <div
@@ -145,25 +145,25 @@ function ClientCard({ c, featured }) {
                 backgroundSize: '20px 20px',
               }}
             />
-            <span
-              className="pixel-font relative z-10 group-hover:animate-float"
-              style={{ fontSize: '56px', color: c.color, lineHeight: 1 }}
-            >
-              {c.icon}
-            </span>
+            <img
+              src={c.logo}
+              alt={`${c.name} logo`}
+              className="relative z-10 group-hover:animate-float"
+              style={{ width: 64, height: 64, imageRendering: 'pixelated' }}
+            />
           </div>
 
           {/* Content */}
-          <div className="p-7 text-center">
-            <div className="pixel-font text-[9px] mb-2" style={{ color: c.color }}>{c.industry}</div>
-            <h3 className="font-semibold text-slate-800 text-base mb-2 group-hover:text-indigo-600 transition-colors">
+          <div className="p-4 text-center">
+            <div className="pixel-font text-[9px] mb-1" style={{ color: c.color }}>{c.industry}</div>
+            <h3 className="font-semibold text-slate-800 text-base mb-1 group-hover:text-indigo-600 transition-colors">
               {c.name}
             </h3>
-            <p className="text-slate-500 text-sm mb-5 line-clamp-2">{c.tagline}</p>
+            <p className="text-slate-500 text-sm mb-3 line-clamp-2">{c.tagline}</p>
 
             {/* Top metric */}
             <div
-              className="inline-flex items-center gap-3 px-4 py-3 mb-5"
+              className="inline-flex items-center gap-3 px-3 py-2 mb-3"
               style={{ backgroundColor: `${c.color}08`, borderLeft: `3px solid ${c.color}` }}
             >
               <span className="pixel-font font-bold" style={{ color: c.color, fontSize: '13px' }}>
@@ -200,12 +200,12 @@ export default function Portfolio() {
 
       <div className="page-wrap relative z-10">
         {/* Header — centered */}
-        <div className="text-center" style={{ marginBottom: '2rem' }}>
-          <div className="pixel-font text-[10px] text-cyan-600 mb-5 animate-pulse-glow">
+        <div className="text-center" style={{ marginBottom: '1.25rem' }}>
+          <div className="pixel-font text-[10px] text-cyan-600 mb-3 animate-pulse-glow">
             // SELECTED WORKS
           </div>
           <h2
-            className="pixel-font text-slate-800 leading-relaxed mb-8"
+            className="pixel-font text-slate-800 leading-relaxed mb-4"
             style={{ fontSize: 'clamp(18px, 3vw, 30px)' }}
           >
             精選成功<br />
@@ -215,17 +215,35 @@ export default function Portfolio() {
           <div className="flex flex-wrap items-center gap-4 justify-center">
             <ClientDropdown selected={selected} onChange={setSelected} />
             <Link to="/clients" className="pixel-btn pixel-btn-cyan" style={{ fontSize: '13px' }}>
-              查看全部客戶
+              精選客戶案例
             </Link>
           </div>
         </div>
 
         {/* Cards */}
-        <div className="grid sm:grid-cols-2 gap-7">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {displayed.length === 1 ? (
             <ClientCard c={displayed[0]} featured />
           ) : (
-            displayed.map((c) => <ClientCard key={c.id} c={c} />)
+            <>
+              {displayed.map((c) => <ClientCard key={c.id} c={c} />)}
+              <a
+                href="#contact"
+                onClick={(e) => { e.preventDefault(); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }) }}
+                className="group flex flex-col items-center justify-center text-center p-7 border-2 border-dashed transition-colors cursor-pointer"
+                style={{ borderColor: '#C7D2FE' }}
+              >
+                <span className="pixel-font text-2xl mb-3 text-indigo-300 group-hover:text-indigo-500 group-hover:animate-float transition-colors">
+                  +
+                </span>
+                <div className="text-slate-500 text-sm font-medium mb-1 group-hover:text-indigo-600 transition-colors">
+                  還有更多成功案例
+                </div>
+                <div className="text-xs text-slate-400 group-hover:text-indigo-400 transition-colors">
+                  想看更多案例？歡迎聯繫我們 →
+                </div>
+              </a>
+            </>
           )}
         </div>
 

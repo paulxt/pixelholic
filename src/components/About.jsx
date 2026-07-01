@@ -22,11 +22,11 @@ export default function About() {
       <div className="page-wrap relative z-10">
 
         {/* Header — centered */}
-        <div className="mb-20 text-center">
-          <div className="pixel-font text-[10px] text-green-500 mb-8 animate-pulse-glow tracking-widest">
+        <div className="mb-12 text-center">
+          <div className="pixel-font text-[10px] text-green-500 mb-4 animate-pulse-glow tracking-widest">
             // ABOUT US
           </div>
-          <h2 className="pixel-font text-slate-800 mb-8 mx-auto" style={{ fontSize: 'clamp(18px, 3vw, 30px)', lineHeight: 2 }}>
+          <h2 className="pixel-font text-slate-800 mb-4 mx-auto" style={{ fontSize: 'clamp(18px, 3vw, 30px)', lineHeight: 2 }}>
             關於我們<br />
             <span style={{ color: '#059669' }}>玖漾國際</span>
           </h2>
@@ -35,20 +35,21 @@ export default function About() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-20 items-start">
+        {/* Intro story — full width, centered */}
+        <div className="space-y-6 mb-12 text-center max-w-3xl mx-auto">
+          <p className="text-slate-500 text-base leading-loose">
+            我們以「像素驅動、品牌進化」為核心理念，從 KingCart 電動車配件、北極星 Polaris eSIM、到進軍全球的 Woolbuddy，服務橫跨科技、食品、手工藝等多元產業。
+          </p>
+          <p className="text-slate-500 text-base leading-loose">
+            我們不只是廣告執行者，更是您品牌長期成長的策略夥伴。每個合作案，我們都以創辦人的心態投入，把客戶的品牌當作自己的品牌來經營。
+          </p>
+        </div>
 
-          {/* Left: story + values */}
-          <div className="text-center">
-            <div className="space-y-6 mb-16">
-              <p className="text-slate-500 text-base leading-loose">
-                我們以「像素驅動、品牌進化」為核心理念，從 KingCart 電動車配件、北極星 Polaris eSIM、到進軍全球的 Woolbuddy，服務橫跨科技、食品、手工藝等多元產業。
-              </p>
-              <p className="text-slate-500 text-base leading-loose">
-                我們不只是廣告執行者，更是您品牌長期成長的策略夥伴。每個合作案，我們都以創辦人的心態投入，把客戶的品牌當作自己的品牌來經營。
-              </p>
-            </div>
+        {/* Core values / How we work — symmetric two columns */}
+        <div className="grid lg:grid-cols-2 gap-16 items-start">
 
-            <div className="pixel-font text-[10px] text-indigo-400 mb-10 tracking-widest">// CORE VALUES</div>
+          <div>
+            <div className="pixel-font text-[10px] text-indigo-400 mb-6 tracking-widest text-center">// CORE VALUES</div>
             <div className="grid grid-cols-2 gap-8">
               {values.map((v) => (
                 <div key={v.title} className="group flex flex-col items-center text-center">
@@ -62,24 +63,8 @@ export default function About() {
             </div>
           </div>
 
-          {/* Right: numbers + process */}
-          <div className="text-center">
-            <div className="pixel-font text-[10px] text-indigo-400 mb-10 tracking-widest">// BY THE NUMBERS</div>
-            <div className="grid grid-cols-2 gap-px bg-indigo-50 mb-16" style={{ boxShadow: 'var(--shadow-sm)' }}>
-              {[
-                { n: '200+', label: '服務品牌', color: '#4338CA' },
-                { n: '8年', label: '深耕行銷', color: '#0891B2' },
-                { n: '98%', label: '客戶滿意', color: '#059669' },
-                { n: '4', label: '核心領域', color: '#EA580C' },
-              ].map((s) => (
-                <div key={s.label} className="bg-white py-10 px-6 flex flex-col items-center justify-center">
-                  <div className="pixel-font mb-3" style={{ color: s.color, fontSize: '22px' }}>{s.n}</div>
-                  <div className="text-slate-400 text-sm tracking-wide">{s.label}</div>
-                </div>
-              ))}
-            </div>
-
-            <div className="pixel-font text-[10px] text-indigo-400 mb-10 tracking-widest">// HOW WE WORK</div>
+          <div>
+            <div className="pixel-font text-[10px] text-indigo-400 mb-6 tracking-widest text-center">// HOW WE WORK</div>
             <div className="space-y-0 text-left">
               {process.map((p, i) => (
                 <div key={p.step} className="flex items-center gap-8 py-6" style={{ borderBottom: i < process.length - 1 ? '1px solid #EEF2FF' : 'none' }}>

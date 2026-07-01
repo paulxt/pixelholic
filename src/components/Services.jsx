@@ -2,7 +2,7 @@ import { SectionCorners, PixelScatter } from './PixelCharacters'
 
 const services = [
   { icon: '◈', title: '品牌策略規劃', desc: '從品牌定位、視覺識別到品牌聲音，全方位打造一致且有力的品牌形象，讓您在競爭激烈的市場中脫穎而出。', tags: ['品牌定位', 'VI 設計', '品牌聲音'], color: '#4338CA', num: '01' },
-  { icon: '◉', title: '社群媒體行銷', desc: '整合 Instagram、Facebook、TikTok 等平台，以創意內容與精準受眾策略，快速擴大品牌影響力與粉絲互動。', tags: ['內容策略', 'KOL 合作', '社群管理'], color: '#0891B2', num: '02' },
+  { icon: '◉', title: '社群媒體行銷', desc: '整合 Instagram、Facebook、Threads 等平台，以創意內容與精準受眾策略，快速擴大品牌影響力與粉絲互動。', tags: ['內容策略', 'KOL 合作', '社群管理'], color: '#0891B2', num: '02' },
   { icon: '◇', title: '數位廣告投放', desc: '運用 Google Ads、Meta Ads 精準投放，搭配 A/B 測試與數據優化，最大化廣告投資報酬率。', tags: ['Google Ads', 'Meta Ads', 'ROAS 優化'], color: '#7C3AED', num: '03' },
   { icon: '▣', title: '內容行銷製作', desc: '影片製作、文案撰寫、視覺設計一站式服務，以高品質原創內容建立品牌權威，驅動自然流量成長。', tags: ['影片製作', '文案策略', 'SEO 內容'], color: '#059669', num: '04' },
   { icon: '◎', title: '電商成長駭客', desc: '針對電商品牌優化購物旅程、提升轉換率，從 SEO、再行銷到 Email 自動化，打通完整銷售漏斗。', tags: ['CRO 優化', '再行銷', 'Email 行銷'], color: '#EA580C', num: '05' },
@@ -52,11 +52,11 @@ export default function Services() {
       <div className="page-wrap relative z-10">
 
         {/* Header — centered */}
-        <div className="mb-20 text-center">
-          <div className="pixel-font text-[10px] text-indigo-400 mb-8 animate-pulse-glow tracking-widest">
+        <div className="mb-12 text-center">
+          <div className="pixel-font text-[10px] text-indigo-400 mb-4 animate-pulse-glow tracking-widest">
             // OUR SERVICES
           </div>
-          <h2 className="pixel-font text-slate-800 mb-8 mx-auto" style={{ fontSize: 'clamp(18px, 3vw, 30px)', lineHeight: 2 }}>
+          <h2 className="pixel-font text-slate-800 mb-4 mx-auto" style={{ fontSize: 'clamp(18px, 3vw, 30px)', lineHeight: 2 }}>
             全方位數位<br />
             <span style={{ color: '#4338CA' }}>行銷服務</span>
           </h2>
@@ -71,7 +71,7 @@ export default function Services() {
         </div>
 
         {/* Ticker */}
-        <div className="mt-20 py-6 overflow-hidden" style={{ borderTop: '1px solid #E0E7FF', borderBottom: '1px solid #E0E7FF' }}>
+        <div className="mt-12 py-6 overflow-hidden" style={{ borderTop: '1px solid #E0E7FF', borderBottom: '1px solid #E0E7FF' }}>
           <div className="animate-marquee whitespace-nowrap flex gap-16">
             {[0, 1].map((ri) => (
               <span key={ri} className="inline-flex gap-16">

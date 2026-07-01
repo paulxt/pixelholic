@@ -2,6 +2,24 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
+/* ── Type scale — bumped ~2px across the board (spacing utilities untouched) ── */
+@theme {
+  --text-xs: 0.875rem;
+  --text-xs--line-height: 1.25rem;
+  --text-sm: 1rem;
+  --text-sm--line-height: 1.5rem;
+  --text-base: 1.125rem;
+  --text-base--line-height: 1.75rem;
+  --text-lg: 1.25rem;
+  --text-lg--line-height: 1.875rem;
+  --text-xl: 1.375rem;
+  --text-xl--line-height: 1.875rem;
+  --text-2xl: 1.625rem;
+  --text-2xl--line-height: 2rem;
+  --text-3xl: 2rem;
+  --text-3xl--line-height: 2.25rem;
+}
+
 /* ── Tokens ──────────────────────────────────────── */
 :root {
   --bg:      #F5F6FF;
@@ -21,7 +39,9 @@
 }
 
 /* ── Reset ───────────────────────────────────────── */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+}
 
 body {
   background: var(--bg);
@@ -118,10 +138,10 @@ body {
   border: none;
   border-bottom: 2px solid #E0E7FF;
   color: var(--text);
-  padding: 16px 0;
+  padding: 10px 0;
   font-family: 'Space Grotesk', sans-serif;
   font-size: 15px;
-  line-height: 1.6;
+  line-height: 1.4;
   transition: border-color 0.2s;
   outline: none;
   width: 100%;
@@ -200,11 +220,11 @@ body {
 
 /* ── Vertical rhythm ─────────────────────────────── */
 /* Section padding (top/bottom of each section) — reduced to shrink gap between sections */
-.section-pad   { padding-top: 5rem;  padding-bottom: 5rem; }
-.section-pad-l { padding-top: 5rem;  padding-bottom: 5rem; }
+.section-pad   { padding-top: 2rem;  padding-bottom: 2rem; }
+.section-pad-l { padding-top: 2rem;  padding-bottom: 2rem; }
 @media (min-width: 768px) {
-  .section-pad   { padding-top: 7rem;  padding-bottom: 7rem; }
-  .section-pad-l { padding-top: 7rem;  padding-bottom: 7rem; }
+  .section-pad   { padding-top: 3rem;  padding-bottom: 3rem; }
+  .section-pad-l { padding-top: 3rem;  padding-bottom: 3rem; }
 }
 
 /* ── Corner cut ──────────────────────────────────── */

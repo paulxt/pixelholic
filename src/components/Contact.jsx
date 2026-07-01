@@ -48,9 +48,9 @@ export default function Contact() {
       <div className="page-wrap relative z-10">
 
         {/* Header — centered */}
-        <div className="text-center mb-20">
-          <div className="pixel-font text-[10px] text-indigo-400 mb-8 animate-pulse-glow tracking-widest">// GET IN TOUCH</div>
-          <h2 className="pixel-font text-slate-800 mb-8" style={{ fontSize: 'clamp(18px, 3vw, 30px)', lineHeight: 2 }}>
+        <div className="text-center mb-8">
+          <div className="pixel-font text-[10px] text-indigo-400 mb-3 animate-pulse-glow tracking-widest">// GET IN TOUCH</div>
+          <h2 className="pixel-font text-slate-800 mb-3" style={{ fontSize: 'clamp(18px, 3vw, 30px)', lineHeight: 2 }}>
             準備好讓品牌<br />
             <span style={{ color: '#4338CA' }}>進化升級？</span>
           </h2>
@@ -63,7 +63,7 @@ export default function Contact() {
 
           {/* Left: contact info */}
           <div className="flex flex-col justify-center items-center lg:items-start text-center lg:text-left">
-            <div className="space-y-10 w-full max-w-sm">
+            <div className="space-y-5 w-full max-w-sm">
               {[
                 { label: 'EMAIL', value: 'hc@pixelholic.co\nkatie@pixelholic.co', icon: '◈' },
                 { label: 'PHONE', value: '+886 928 207 569', icon: '◉' },
@@ -71,16 +71,16 @@ export default function Contact() {
                 { label: 'HOURS', value: 'Mon–Fri  09:00–18:00', icon: '▣' },
               ].map((item) => (
                 <div key={item.label} className="flex items-start gap-6">
-                  <span className="pixel-font text-indigo-400 text-lg shrink-0">{item.icon}</span>
+                  <span className="pixel-font text-indigo-400 text-xl shrink-0">{item.icon}</span>
                   <div>
                     <div className="pixel-font text-[9px] text-slate-300 mb-2 tracking-widest">{item.label}</div>
-                    <div className="text-slate-500 text-sm leading-relaxed whitespace-pre-line">{item.value}</div>
+                    <div className="text-slate-600 text-base leading-relaxed whitespace-pre-line">{item.value}</div>
                   </div>
                 </div>
               ))}
             </div>
 
-            <div className="mt-12 flex gap-3">
+            <div className="mt-6 flex gap-3">
               {['IG', 'FB', 'LI', 'YT'].map((s) => (
                 <button key={s} className="pixel-font text-[9px] w-10 h-10 border border-indigo-100 text-slate-400 hover:border-indigo-400 hover:text-indigo-500 transition-colors tracking-widest flex items-center justify-center">
                   {s}
@@ -106,25 +106,25 @@ export default function Contact() {
                 <button onClick={reset} className="pixel-btn">重新填寫</button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-10">
+              <form onSubmit={handleSubmit} className="space-y-5">
                 <div className="grid sm:grid-cols-2 gap-8">
                   <div>
-                    <label className="pixel-font text-[9px] text-slate-300 block mb-4 tracking-widest">姓名 *</label>
+                    <label className="pixel-font text-[9px] text-slate-300 block mb-2 tracking-widest">姓名 *</label>
                     <input required className="pixel-input" placeholder="您的姓名" value={form.name} onChange={set('name')} />
                   </div>
                   <div>
-                    <label className="pixel-font text-[9px] text-slate-300 block mb-4 tracking-widest">電子信箱 *</label>
+                    <label className="pixel-font text-[9px] text-slate-300 block mb-2 tracking-widest">電子信箱 *</label>
                     <input required type="email" className="pixel-input" placeholder="email@company.com" value={form.email} onChange={set('email')} />
                   </div>
                 </div>
 
                 <div>
-                  <label className="pixel-font text-[9px] text-slate-300 block mb-4 tracking-widest">公司名稱</label>
+                  <label className="pixel-font text-[9px] text-slate-300 block mb-2 tracking-widest">公司名稱</label>
                   <input className="pixel-input" placeholder="您的公司名稱" value={form.company} onChange={set('company')} />
                 </div>
 
                 <div>
-                  <label className="pixel-font text-[9px] text-slate-300 block mb-5 tracking-widest">感興趣的服務</label>
+                  <label className="pixel-font text-[9px] text-slate-300 block mb-2 tracking-widest">感興趣的服務</label>
                   <div className="flex flex-wrap gap-3">
                     {SERVICE_OPTIONS.map((s) => (
                       <button key={s} type="button" onClick={() => toggleService(s)}
@@ -142,7 +142,7 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label className="pixel-font text-[9px] text-slate-300 block mb-5 tracking-widest">月預算範圍</label>
+                  <label className="pixel-font text-[9px] text-slate-300 block mb-2 tracking-widest">月預算範圍</label>
                   <div className="grid grid-cols-4 gap-3">
                     {BUDGET_OPTIONS.map((b) => (
                       <button key={b} type="button" onClick={() => setForm((f) => ({ ...f, budget: b }))}
@@ -160,8 +160,8 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label className="pixel-font text-[9px] text-slate-300 block mb-4 tracking-widest">專案說明 *</label>
-                  <textarea required rows={5} className="pixel-input resize-none" placeholder="請簡述您的品牌現況與行銷目標..." value={form.message} onChange={set('message')} />
+                  <label className="pixel-font text-[9px] text-slate-300 block mb-2 tracking-widest">專案說明 *</label>
+                  <textarea required rows={3} className="pixel-input resize-none" placeholder="請簡述您的品牌現況與行銷目標..." value={form.message} onChange={set('message')} />
                 </div>
 
                 <button type="submit" disabled={status === 'sending'} className="pixel-btn w-full text-center" style={{ display: 'block' }}>
