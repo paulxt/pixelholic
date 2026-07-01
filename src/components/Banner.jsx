@@ -91,9 +91,9 @@ export default function Banner() {
           {/* Stats */}
           <div className="flex gap-12 md:gap-20 justify-center pt-12" style={{ borderTop: '1px solid #E0E7FF' }}>
             {[
-              { n: '200+', label: '合作品牌' },
+              { n: '20+', label: '合作品牌' },
               { n: '98%', label: '客戶滿意度' },
-              { n: '8年', label: '業界深耕' },
+              { n: `${new Date().getFullYear() - 2020}年`, label: '業界深耕' },
             ].map((s) => (
               <div key={s.label} className="text-center">
                 <div className="pixel-font mb-2" style={{ color: slide.accent, fontSize: '20px' }}>{s.n}</div>

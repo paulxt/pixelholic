@@ -56,7 +56,7 @@ export default function Footer() {
       {/* Top accent */}
       <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-indigo-500 to-transparent opacity-60" />
 
-      <div className="page-wrap py-20 relative z-10">
+      <div className="page-wrap relative z-10" style={{ paddingTop: '1rem', paddingBottom: '1rem' }}>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Brand */}
           <div>

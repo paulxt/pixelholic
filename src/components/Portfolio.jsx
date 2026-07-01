@@ -10,9 +10,10 @@ function ClientDropdown({ selected, onChange }) {
     <div className="relative">
       <button
         onClick={() => setOpen(!open)}
-        className="flex items-center gap-3 px-5 py-3 bg-white border-2 border-indigo-200 hover:border-indigo-500 transition-colors pixel-font text-[10px] text-slate-600"
+        className="flex items-center gap-3 bg-white border-2 border-indigo-200 hover:border-indigo-500 transition-colors pixel-font text-[12px] text-slate-600"
         style={{
           clipPath: 'polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px))',
+          padding: '12px 20px',
         }}
       >
         {selected ? (
@@ -21,7 +22,7 @@ function ClientDropdown({ selected, onChange }) {
             <span>{selected.name}</span>
           </>
         ) : (
-          <span className="text-slate-400">選擇客戶 ▾</span>
+          <span className="text-slate-400">選擇客戶</span>
         )}
         <span className={`ml-2 text-indigo-400 transition-transform duration-200 ${open ? 'rotate-180' : ''}`}>
           ▾
@@ -199,7 +200,7 @@ export default function Portfolio() {
 
       <div className="page-wrap relative z-10">
         {/* Header — centered */}
-        <div className="mb-20 text-center">
+        <div className="text-center" style={{ marginBottom: '2rem' }}>
           <div className="pixel-font text-[10px] text-cyan-600 mb-5 animate-pulse-glow">
             // SELECTED WORKS
           </div>
@@ -229,7 +230,7 @@ export default function Portfolio() {
         </div>
 
         {/* Bottom CTA */}
-        <div className="mt-20 pixel-card p-12 flex flex-col md:flex-row items-center justify-center gap-8 text-center">
+        <div className="pixel-card p-12 flex flex-col md:flex-row items-center justify-center gap-8 text-center" style={{ marginTop: '2rem' }}>
           <div>
             <div className="pixel-font text-[9px] text-green-600 mb-2">// READY TO START?</div>
             <p className="text-slate-800 text-lg font-semibold">
