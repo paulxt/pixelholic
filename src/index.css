@@ -53,8 +53,8 @@ body {
 /* ── Pixel button ────────────────────────────────── */
 .pixel-btn {
   font-family: 'Press Start 2P', monospace;
-  font-size: 10px;
-  padding: 16px 28px;
+  font-size: 14px;
+  padding: 12px 24px;
   border: 2px solid var(--primary);
   background: transparent;
   color: var(--primary);

@@ -66,7 +66,7 @@ export default function Contact() {
             <div className="space-y-10 w-full max-w-sm">
               {[
                 { label: 'EMAIL', value: 'hc@pixelholic.co\nkatie@pixelholic.co', icon: '◈' },
-                { label: 'PHONE', value: '+886 2 1234 5678', icon: '◉' },
+                { label: 'PHONE', value: '+886 928 207 569', icon: '◉' },
                 { label: 'OFFICE', value: '新北市汐止區弘道街 8 巷 1 弄 10 號', icon: '◇' },
                 { label: 'HOURS', value: 'Mon–Fri  09:00–18:00', icon: '▣' },
               ].map((item) => (

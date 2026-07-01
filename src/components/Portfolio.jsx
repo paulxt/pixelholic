@@ -122,7 +122,7 @@ function ClientCard({ c, featured }) {
                   borderColor: c.color,
                   color: c.color,
                   boxShadow: `3px 3px 0px ${c.color}60`,
-                  fontSize: '9px',
+                  fontSize: '13px',
                 }}
               >
                 查看完整案例
@@ -213,7 +213,7 @@ export default function Portfolio() {
 
           <div className="flex flex-wrap items-center gap-4 justify-center">
             <ClientDropdown selected={selected} onChange={setSelected} />
-            <Link to="/clients" className="pixel-btn pixel-btn-cyan" style={{ fontSize: '9px' }}>
+            <Link to="/clients" className="pixel-btn pixel-btn-cyan" style={{ fontSize: '13px' }}>
               查看全部客戶
             </Link>
           </div>

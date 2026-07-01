@@ -85,7 +85,7 @@ export default function Navbar() {
           href="/#contact"
           onClick={(e) => handleAnchor(e, 'contact')}
           className="hidden md:inline-block pixel-btn"
-          style={{ fontSize: '9px', padding: '10px 16px' }}
+          style={{ fontSize: '12px', padding: '7px 14px' }}
         >
           免費諮詢
         </a>
@@ -139,7 +139,7 @@ export default function Navbar() {
             href="/#contact"
             onClick={(e) => { handleAnchor(e, 'contact'); setOpen(false) }}
             className="pixel-btn inline-block mt-4 text-center"
-            style={{ fontSize: '9px' }}
+            style={{ fontSize: '12px' }}
           >
             免費諮詢
           </a>
