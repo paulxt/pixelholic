@@ -69,13 +69,19 @@ export default function Footer() {
             </p>
             <p className="text-slate-500 text-xs mb-8">We turn pixels into profits.</p>
             <div className="flex gap-2">
-              {['IG', 'FB', 'LI', 'YT', 'TW'].map((s) => (
-                <button
-                  key={s}
-                  className="pixel-font text-[9px] w-9 h-9 border border-slate-700 text-slate-500 hover:border-indigo-400 hover:text-indigo-400 transition-colors"
+              {[
+                { label: 'IG', href: 'https://www.instagram.com/pixelholic.tpe/' },
+                { label: 'X', href: '#' },
+              ].map(({ label, href }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="pixel-font text-[9px] w-9 h-9 border border-slate-700 text-slate-500 hover:border-indigo-400 hover:text-indigo-400 transition-colors flex items-center justify-center"
                 >
-                  {s}
-                </button>
+                  {label}
+                </a>
               ))}
             </div>
           </div>
