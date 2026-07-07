@@ -1,9 +1,11 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
-import { clients } from '../data/clients'
+import { Link, useLocation } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
+import useTranslatedClients from '../hooks/useTranslatedClients'
+import { withLang, langFromPathname } from '../utils/langPath'
 import { PixelScatter, SectionCorners } from './PixelCharacters'
 
-function ClientDropdown({ selected, onChange }) {
+function ClientDropdown({ clients, selected, onChange, t }) {
   const [open, setOpen] = useState(false)
 
   return (
@@ -22,7 +24,7 @@ function ClientDropdown({ selected, onChange }) {
             <span>{selected.name}</span>
           </>
         ) : (
-          <span className="text-slate-400">選擇客戶</span>
+          <span className="text-slate-400">{t('portfolio.selectPlaceholder')}</span>
         )}
         <span className={`ml-2 text-indigo-400 transition-transform duration-200 ${open ? 'rotate-180' : ''}`}>
           ▾
@@ -40,7 +42,7 @@ function ClientDropdown({ selected, onChange }) {
             className="w-full text-left px-5 py-3 pixel-font text-[9px] text-slate-400 hover:bg-indigo-50 border-b border-indigo-100"
             onClick={() => { onChange(null); setOpen(false) }}
           >
-            全部案例
+            {t('portfolio.allCases')}
           </button>
           {clients.map((c) => (
             <button
@@ -61,7 +63,7 @@ function ClientDropdown({ selected, onChange }) {
   )
 }
 
-function ClientCard({ c, featured }) {
+function ClientCard({ c, featured, lang, t }) {
   return (
     <div
       className={`pixel-card group ${featured ? 'col-span-full' : ''}`}
@@ -117,7 +119,7 @@ function ClientCard({ c, featured }) {
 
             <div className="flex justify-center">
               <Link
-                to={`/clients#${c.id}`}
+                to={withLang(`/clients#${c.id}`, lang)}
                 className="pixel-btn"
                 style={{
                   borderColor: c.color,
@@ -126,7 +128,7 @@ function ClientCard({ c, featured }) {
                   fontSize: '13px',
                 }}
               >
-                查看完整案例
+                {t('common.viewFullCase')}
               </Link>
             </div>
           </div>
@@ -174,11 +176,11 @@ function ClientCard({ c, featured }) {
 
             <div className="flex justify-center">
               <Link
-                to={`/clients#${c.id}`}
+                to={withLang(`/clients#${c.id}`, lang)}
                 className="text-sm font-semibold inline-flex items-center gap-1.5 transition-all group-hover:gap-3"
                 style={{ color: c.color }}
               >
-                查看案例 <span>→</span>
+                {t('portfolio.viewCase')} <span>→</span>
               </Link>
             </div>
           </div>
@@ -189,6 +191,10 @@ function ClientCard({ c, featured }) {
 }
 
 export default function Portfolio() {
+  const { t } = useTranslation()
+  const location = useLocation()
+  const lang = langFromPathname(location.pathname)
+  const clients = useTranslatedClients()
   const [selected, setSelected] = useState(null)
 
   const displayed = selected ? [selected] : clients
@@ -202,20 +208,20 @@ export default function Portfolio() {
         {/* Header — centered */}
         <div className="text-center" style={{ marginBottom: '1.25rem' }}>
           <div className="pixel-font text-[10px] text-cyan-600 mb-3 animate-pulse-glow">
-            // SELECTED WORKS
+            {t('portfolio.tag')}
           </div>
           <h2
             className="pixel-font text-slate-800 leading-relaxed mb-4"
             style={{ fontSize: 'clamp(18px, 3vw, 30px)' }}
           >
-            精選成功<br />
-            <span style={{ color: '#0891B2' }}>案例展示</span>
+            {t('portfolio.titleLine1')}<br />
+            <span style={{ color: '#0891B2' }}>{t('portfolio.titleLine2')}</span>
           </h2>
 
           <div className="flex flex-wrap items-center gap-4 justify-center">
-            <ClientDropdown selected={selected} onChange={setSelected} />
-            <Link to="/clients" className="pixel-btn pixel-btn-cyan" style={{ fontSize: '13px' }}>
-              精選客戶案例
+            <ClientDropdown clients={clients} selected={selected} onChange={setSelected} t={t} />
+            <Link to={withLang('/clients', lang)} className="pixel-btn pixel-btn-cyan" style={{ fontSize: '13px' }}>
+              {t('portfolio.viewAllCta')}
             </Link>
           </div>
         </div>
@@ -223,10 +229,10 @@ export default function Portfolio() {
         {/* Cards */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {displayed.length === 1 ? (
-            <ClientCard c={displayed[0]} featured />
+            <ClientCard c={displayed[0]} featured lang={lang} t={t} />
           ) : (
             <>
-              {displayed.map((c) => <ClientCard key={c.id} c={c} />)}
+              {displayed.map((c) => <ClientCard key={c.id} c={c} lang={lang} t={t} />)}
               <a
                 href="#contact"
                 onClick={(e) => { e.preventDefault(); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }) }}
@@ -237,10 +243,10 @@ export default function Portfolio() {
                   +
                 </span>
                 <div className="text-slate-500 text-sm font-medium mb-1 group-hover:text-indigo-600 transition-colors">
-                  還有更多成功案例
+                  {t('portfolio.moreCasesTitle')}
                 </div>
                 <div className="text-xs text-slate-400 group-hover:text-indigo-400 transition-colors">
-                  想看更多案例？歡迎聯繫我們 →
+                  {t('portfolio.moreCasesSub')}
                 </div>
               </a>
             </>
@@ -250,9 +256,9 @@ export default function Portfolio() {
         {/* Bottom CTA */}
         <div className="pixel-card p-12 flex flex-col md:flex-row items-center justify-center gap-8 text-center" style={{ marginTop: '2rem' }}>
           <div>
-            <div className="pixel-font text-[9px] text-green-600 mb-2">// READY TO START?</div>
+            <div className="pixel-font text-[9px] text-green-600 mb-2">{t('portfolio.bottomTag')}</div>
             <p className="text-slate-800 text-lg font-semibold">
-              讓我們一起創造下一個成功案例
+              {t('portfolio.bottomTitle')}
             </p>
           </div>
           <a
@@ -260,7 +266,7 @@ export default function Portfolio() {
             onClick={(e) => { e.preventDefault(); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }) }}
             className="pixel-btn whitespace-nowrap"
           >
-            立即聯絡
+            {t('portfolio.bottomCta')}
           </a>
         </div>
       </div>

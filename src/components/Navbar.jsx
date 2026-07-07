@@ -1,18 +1,23 @@
 import { useState, useEffect } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
+import { withLang, langFromPathname, stripLangPrefix } from '../utils/langPath'
 
 const links = [
-  { label: '服務', href: '/#services', id: 'services' },
-  { label: '作品', href: '/#portfolio', id: 'portfolio' },
-  { label: '客戶案例', href: '/clients', id: null },
-  { label: '關於我們', href: '/#about', id: 'about' },
-  { label: '聯絡', href: '/#contact', id: 'contact' },
+  { labelKey: 'nav.services', id: 'services' },
+  { labelKey: 'nav.work', id: 'portfolio' },
+  { labelKey: 'nav.clients', id: null, to: '/clients' },
+  { labelKey: 'nav.about', id: 'about' },
+  { labelKey: 'nav.contact', id: 'contact' },
 ]
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const location = useLocation()
+  const navigate = useNavigate()
+  const { t } = useTranslation()
+  const lang = langFromPathname(location.pathname)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40)
@@ -24,11 +29,19 @@ export default function Navbar() {
     if (!id) return
     e.preventDefault()
     setOpen(false)
-    if (location.pathname !== '/') {
-      window.location.href = `/#${id}`
+    const homePath = withLang('/', lang)
+    if (location.pathname !== homePath) {
+      window.location.href = `${homePath}#${id}`
       return
     }
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+  }
+
+  const switchLanguage = () => {
+    const targetLang = lang === 'en' ? 'zh' : 'en'
+    const basePath = stripLangPrefix(location.pathname)
+    navigate(`${withLang(basePath, targetLang)}${location.hash}`)
+    setOpen(false)
   }
 
   return (
@@ -42,7 +55,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-8 flex items-center justify-between h-18 py-4">
         {/* Logo */}
         <Link
-          to="/"
+          to={withLang('/', lang)}
           className="flex items-center gap-2.5"
         >
           <span className="inline-block w-3.5 h-3.5 bg-indigo-600 animate-pulse-glow" />
@@ -55,24 +68,24 @@ export default function Navbar() {
         <ul className="hidden md:flex items-center gap-8">
           {links.map((l) =>
             l.id ? (
-              <li key={l.label}>
+              <li key={l.labelKey}>
                 <a
-                  href={l.href}
+                  href={`${withLang('/', lang)}#${l.id}`}
                   onClick={(e) => handleAnchor(e, l.id)}
                   className="text-sm font-medium text-slate-500 hover:text-indigo-600 transition-colors relative group"
                 >
-                  {l.label}
+                  {t(l.labelKey)}
                   <span className="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-indigo-500 group-hover:w-full transition-all duration-200" />
                 </a>
               </li>
             ) : (
-              <li key={l.label}>
+              <li key={l.labelKey}>
                 <Link
-                  to={l.href}
+                  to={withLang(l.to, lang)}
                   onClick={() => setOpen(false)}
                   className="text-sm font-medium text-slate-500 hover:text-indigo-600 transition-colors relative group"
                 >
-                  {l.label}
+                  {t(l.labelKey)}
                   <span className="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-indigo-500 group-hover:w-full transition-all duration-200" />
                 </Link>
               </li>
@@ -80,15 +93,23 @@ export default function Navbar() {
           )}
         </ul>
 
-        {/* CTA */}
-        <a
-          href="/#contact"
-          onClick={(e) => handleAnchor(e, 'contact')}
-          className="hidden md:inline-block pixel-btn"
-          style={{ fontSize: '12px', padding: '7px 14px' }}
-        >
-          免費諮詢
-        </a>
+        {/* Language switch + CTA */}
+        <div className="hidden md:flex items-center gap-6">
+          <button
+            onClick={switchLanguage}
+            className="pixel-font text-[9px] text-slate-400 hover:text-indigo-600 transition-colors tracking-widest border border-indigo-100 hover:border-indigo-400 px-3 py-2"
+          >
+            {lang === 'en' ? '中文' : 'EN'}
+          </button>
+          <a
+            href={`${withLang('/', lang)}#contact`}
+            onClick={(e) => handleAnchor(e, 'contact')}
+            className="pixel-btn"
+            style={{ fontSize: '12px', padding: '7px 14px' }}
+          >
+            {t('nav.cta')}
+          </a>
+        </div>
 
         {/* Hamburger */}
         <button
@@ -117,31 +138,37 @@ export default function Navbar() {
           {links.map((l) =>
             l.id ? (
               <a
-                key={l.label}
-                href={l.href}
-                onClick={(e) => { handleAnchor(e, l.id); setOpen(false) }}
+                key={l.labelKey}
+                href={`${withLang('/', lang)}#${l.id}`}
+                onClick={(e) => handleAnchor(e, l.id)}
                 className="block text-base font-medium text-slate-600 hover:text-indigo-600 py-3 border-b border-slate-100 transition-colors"
               >
-                {l.label}
+                {t(l.labelKey)}
               </a>
             ) : (
               <Link
-                key={l.label}
-                to={l.href}
+                key={l.labelKey}
+                to={withLang(l.to, lang)}
                 onClick={() => setOpen(false)}
                 className="block text-base font-medium text-slate-600 hover:text-indigo-600 py-3 border-b border-slate-100 transition-colors"
               >
-                {l.label}
+                {t(l.labelKey)}
               </Link>
             ),
           )}
+          <button
+            onClick={switchLanguage}
+            className="pixel-font text-[9px] text-slate-500 hover:text-indigo-600 py-3 border-b border-slate-100 transition-colors tracking-widest text-left"
+          >
+            {lang === 'en' ? '中文' : 'EN'}
+          </button>
           <a
-            href="/#contact"
-            onClick={(e) => { handleAnchor(e, 'contact'); setOpen(false) }}
+            href={`${withLang('/', lang)}#contact`}
+            onClick={(e) => handleAnchor(e, 'contact')}
             className="pixel-btn inline-block mt-4 text-center"
             style={{ fontSize: '12px' }}
           >
-            免費諮詢
+            {t('nav.cta')}
           </a>
         </div>
       )}

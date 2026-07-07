@@ -1,45 +1,22 @@
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
-import { clients } from '../data/clients'
+import { Link, useLocation } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
+import useTranslatedClients from '../hooks/useTranslatedClients'
+import { withLang, langFromPathname } from '../utils/langPath'
 import { PixelChar, SectionCorners } from '../components/PixelCharacters'
 import PixelCover from '../components/PixelCover'
 
-/* ── Theme map ───────────────────────────────────── */
+/* ── Theme map (styling only — text comes from translations) ──────────── */
 const themes = {
-  kingcart: {
-    hdrClass: 'client-hdr-indigo',
-    bgClass:  'client-bg-indigo',
-    tag:      '電動車配件',
-    charType: 'bolt',
-  },
-  polaris: {
-    hdrClass: 'client-hdr-cyan',
-    bgClass:  'client-bg-cyan',
-    tag:      '旅遊科技',
-    charType: 'rocket',
-  },
-  cmei: {
-    hdrClass: 'client-hdr-green',
-    bgClass:  'client-bg-green',
-    tag:      '食品電商',
-    charType: 'heart',
-  },
-  yunyang: {
-    hdrClass: 'client-hdr-purple',
-    bgClass:  'client-bg-purple',
-    tag:      '旅遊／簽證',
-    charType: 'alien',
-  },
-  woolbuddy: {
-    hdrClass: 'client-hdr-orange',
-    bgClass:  'client-bg-orange',
-    tag:      '手工藝',
-    charType: 'star',
-  },
+  kingcart:  { hdrClass: 'client-hdr-indigo', bgClass: 'client-bg-indigo', charType: 'bolt' },
+  polaris:   { hdrClass: 'client-hdr-cyan',   bgClass: 'client-bg-cyan',   charType: 'rocket' },
+  cmei:      { hdrClass: 'client-hdr-green',  bgClass: 'client-bg-green',  charType: 'heart' },
+  yunyang:   { hdrClass: 'client-hdr-purple', bgClass: 'client-bg-purple', charType: 'alien' },
+  woolbuddy: { hdrClass: 'client-hdr-orange', bgClass: 'client-bg-orange', charType: 'star' },
 }
 
 /* ── Grid card (collapsed view) ─────────────────── */
-function ClientGridCard({ c, onOpen }) {
+function ClientGridCard({ c, onOpen, t }) {
   const th = themes[c.id]
   return (
     <button
@@ -67,7 +44,7 @@ function ClientGridCard({ c, onOpen }) {
 
         <div className="relative z-10 flex flex-col items-center text-center">
           <span className="pixel-font text-white/60 text-[9px] tracking-widest block mb-6">
-            // {th.tag.toUpperCase()}
+            // {c.themeTag.toUpperCase()}
           </span>
           <img
             src={c.logo}
@@ -104,7 +81,7 @@ function ClientGridCard({ c, onOpen }) {
         </div>
 
         <div className="flex items-center gap-2 text-sm font-semibold transition-all duration-200 group-hover:gap-4 justify-center" style={{ color: c.color }}>
-          查看完整案例 <span>→</span>
+          {t('common.viewFullCase')} <span>→</span>
         </div>
       </div>
     </button>
@@ -112,7 +89,7 @@ function ClientGridCard({ c, onOpen }) {
 }
 
 /* ── Expanded detail panel (full-screen overlay content) ──── */
-function ClientDetail({ c }) {
+function ClientDetail({ c, t }) {
   const th = themes[c.id]
   return (
     <div className="animate-fadeUp">
@@ -170,17 +147,17 @@ function ClientDetail({ c }) {
           <div className="lg:col-span-2 space-y-8">
             {/* Brand overview */}
             <div className="bg-white p-8 shadow-sm">
-              <div className="pixel-font text-[10px] mb-5 tracking-widest text-center" style={{ color: c.color }}>// BRAND OVERVIEW</div>
+              <div className="pixel-font text-[10px] mb-5 tracking-widest text-center" style={{ color: c.color }}>{t('clientsPage.overviewTag')}</div>
               <p className="text-slate-500 text-sm leading-loose">{c.description}</p>
             </div>
 
             <div className="grid sm:grid-cols-2 gap-6">
               <div className="bg-white p-8 shadow-sm">
-                <div className="pixel-font text-[10px] mb-5 text-slate-300 tracking-widest text-center">// CHALLENGE</div>
+                <div className="pixel-font text-[10px] mb-5 text-slate-300 tracking-widest text-center">{t('clientsPage.challengeTag')}</div>
                 <p className="text-slate-500 text-sm leading-loose">{c.challenge}</p>
               </div>
               <div className="bg-white p-8 shadow-sm">
-                <div className="pixel-font text-[10px] mb-5 tracking-widest text-center" style={{ color: c.color }}>// SOLUTION</div>
+                <div className="pixel-font text-[10px] mb-5 tracking-widest text-center" style={{ color: c.color }}>{t('clientsPage.solutionTag')}</div>
                 <p className="text-slate-500 text-sm leading-loose">{c.solution}</p>
               </div>
             </div>
@@ -197,7 +174,7 @@ function ClientDetail({ c }) {
 
           {/* Right 1/3: metrics */}
           <div>
-            <div className="pixel-font text-[10px] mb-6 text-slate-300 tracking-widest text-center">// KEY RESULTS</div>
+            <div className="pixel-font text-[10px] mb-6 text-slate-300 tracking-widest text-center">{t('clientsPage.resultsTag')}</div>
             <div className="grid grid-cols-2 gap-3 mb-6">
               {c.metrics.map((m) => (
                 <div key={m.label} className="bg-white p-5 shadow-sm flex flex-col items-center text-center">
@@ -208,7 +185,7 @@ function ClientDetail({ c }) {
               ))}
             </div>
             <div className="bg-white p-6 shadow-sm text-center">
-              <div className="pixel-font text-[9px] text-slate-300 mb-3 tracking-widest">// WEBSITE</div>
+              <div className="pixel-font text-[9px] text-slate-300 mb-3 tracking-widest">{t('clientsPage.websiteTag')}</div>
               <a href={c.website} target="_blank" rel="noopener noreferrer" className="text-sm font-medium" style={{ color: c.color }}>
                 {c.website.replace('https://', '')} →
               </a>
@@ -222,6 +199,10 @@ function ClientDetail({ c }) {
 
 /* ── Page ────────────────────────────────────────── */
 export default function ClientsPage() {
+  const { t } = useTranslation()
+  const location = useLocation()
+  const lang = langFromPathname(location.pathname)
+  const clients = useTranslatedClients()
   const [openId, setOpenId] = useState(null)
   const [phase, setPhase] = useState('idle') // 'idle' | 'cover' | 'reveal'
   const [pendingId, setPendingId] = useState(null)
@@ -233,6 +214,7 @@ export default function ClientsPage() {
     } else {
       window.scrollTo(0, 0)
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   useEffect(() => {
@@ -272,9 +254,9 @@ export default function ClientsPage() {
             onClick={closeDetail}
             className="fixed top-6 left-6 z-50 pixel-font text-[10px] bg-white/90 backdrop-blur-sm border border-indigo-100 text-slate-500 hover:text-indigo-600 hover:border-indigo-400 transition-colors px-4 py-3 tracking-widest shadow-md"
           >
-            ← 上一頁
+            {t('clientsPage.back')}
           </button>
-          <ClientDetail c={activeClient} />
+          <ClientDetail c={activeClient} t={t} />
         </div>
       ) : (
         <div className="pt-24 pb-32">
@@ -285,14 +267,14 @@ export default function ClientsPage() {
               <SectionCorners color="#4338CA" inset={16} opacity={0.2} />
               <div className="relative z-10">
                 <div className="pixel-font text-[10px] text-indigo-400 mb-6 animate-pulse-glow tracking-widest">
-                  // CLIENT CASE STUDIES
+                  {t('clientsPage.tag')}
                 </div>
                 <h1 className="pixel-font text-slate-800 mb-8 mx-auto" style={{ fontSize: 'clamp(20px, 4vw, 36px)', lineHeight: 2 }}>
-                  我們的客戶<br />
-                  <span style={{ color: '#4338CA' }}>成功案例</span>
+                  {t('clientsPage.titleLine1')}<br />
+                  <span style={{ color: '#4338CA' }}>{t('clientsPage.titleLine2')}</span>
                 </h1>
                 <p className="text-slate-400 text-base leading-loose max-w-lg mx-auto">
-                  每個品牌都有獨特的挑戰與機會。點擊卡片展開完整案例，了解我們如何為客戶創造真實成果。
+                  {t('clientsPage.sub')}
                 </p>
               </div>
             </div>
@@ -301,26 +283,26 @@ export default function ClientsPage() {
             <div className="grid sm:grid-cols-2 gap-7">
               {clients.map((c) => (
                 <div key={c.id} id={`client-${c.id}`} className="scroll-mt-28">
-                  <ClientGridCard c={c} onOpen={openDetail} />
+                  <ClientGridCard c={c} onOpen={openDetail} t={t} />
                 </div>
               ))}
             </div>
 
             {/* Bottom CTA */}
             <div className="mt-20 float-card p-14 text-center">
-              <div className="pixel-font text-[10px] text-indigo-400 mb-5 tracking-widest">// JOIN OUR CLIENTS</div>
+              <div className="pixel-font text-[10px] text-indigo-400 mb-5 tracking-widest">{t('clientsPage.bottomTag')}</div>
               <h3 className="pixel-font text-slate-800 mb-5" style={{ fontSize: '18px', lineHeight: 2 }}>
-                想成為下一個成功案例？
+                {t('clientsPage.bottomTitle')}
               </h3>
               <p className="text-slate-400 text-sm leading-loose mb-10 max-w-md mx-auto">
-                立即聯繫我們，開始一段從像素到成效的品牌旅程。
+                {t('clientsPage.bottomSub')}
               </p>
               <Link
-                to="/"
+                to={withLang('/', lang)}
                 onClick={() => setTimeout(() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }), 100)}
                 className="pixel-btn"
               >
-                免費諮詢
+                {t('clientsPage.bottomCta')}
               </Link>
             </div>
           </div>

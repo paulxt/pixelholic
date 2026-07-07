@@ -1,11 +1,5 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
-
-const navCols = {
-  服務項目: ['品牌策略規劃', '社群媒體行銷', '數位廣告投放', '內容行銷製作', '電商成長駭客', '數據分析洞察'],
-  關於我們: ['公司介紹', '核心團隊', '企業文化', '加入我們'],
-  資源中心: ['行銷部落格', '成功案例', '免費工具', '市場報告'],
-}
+import { useTranslation } from 'react-i18next'
 
 function subscribeMailchimp(email) {
   return new Promise((resolve, reject) => {
@@ -34,6 +28,8 @@ function subscribeMailchimp(email) {
 }
 
 export default function Footer() {
+  const { t } = useTranslation()
+  const navGroups = t('footer.navGroups', { returnObjects: true })
   const [email, setEmail] = useState('')
   const [subStatus, setSubStatus] = useState(null) // null | 'sending' | 'done' | 'error'
   const [errMsg, setErrMsg] = useState('')
@@ -47,7 +43,7 @@ export default function Footer() {
       setEmail('')
     } catch (e) {
       setSubStatus('error')
-      setErrMsg(e.message || '訂閱失敗，請稍後再試')
+      setErrMsg(e.message || t('footer.newsletterErrorDefault'))
     }
   }
 
@@ -65,9 +61,9 @@ export default function Footer() {
               <span className="pixel-font text-indigo-400" style={{ fontSize: '11px' }}>PIXELHOLIC</span>
             </div>
             <p className="text-slate-400 text-sm leading-relaxed mb-3">
-              像素驅動，品牌進化。
+              {t('footer.tagline')}
             </p>
-            <p className="text-slate-500 text-xs mb-8">We turn pixels into profits.</p>
+            <p className="text-slate-500 text-xs mb-8">{t('footer.subtagline')}</p>
             <div className="flex gap-2">
               {[
                 { label: 'IG', href: 'https://www.instagram.com/pixelholic.tpe/' },
@@ -87,11 +83,11 @@ export default function Footer() {
           </div>
 
           {/* Nav cols */}
-          {Object.entries(navCols).map(([group, items]) => (
-            <div key={group}>
-              <h4 className="pixel-font text-[10px] text-indigo-400 mb-5">{group}</h4>
+          {navGroups.map((group) => (
+            <div key={group.title}>
+              <h4 className="pixel-font text-[10px] text-indigo-400 mb-5">{group.title}</h4>
               <ul className="space-y-3">
-                {items.map((item) => (
+                {group.items.map((item) => (
                   <li key={item}>
                     <a
                       href="#"
@@ -115,10 +111,10 @@ export default function Footer() {
         >
           <div className="flex flex-col md:flex-row items-center gap-6">
             <div className="flex-1">
-              <div className="pixel-font text-[10px] text-purple-400 mb-2">// NEWSLETTER</div>
-              <p className="text-white font-semibold text-base">訂閱週報，掌握最新數位行銷趨勢</p>
+              <div className="pixel-font text-[10px] text-purple-400 mb-2">{t('footer.newsletterTag')}</div>
+              <p className="text-white font-semibold text-base">{t('footer.newsletterText')}</p>
               {subStatus === 'done' && (
-                <p className="text-green-400 text-sm mt-2 pixel-font text-[9px]">✓ 訂閱成功！感謝加入</p>
+                <p className="text-green-400 text-sm mt-2 pixel-font text-[9px]">{t('footer.newsletterSuccess')}</p>
               )}
               {subStatus === 'error' && (
                 <p className="text-red-400 text-sm mt-2 text-xs">{errMsg}</p>
@@ -129,7 +125,7 @@ export default function Footer() {
               <div className="flex w-full md:w-auto gap-0">
                 <input
                   type="email"
-                  placeholder="your@email.com"
+                  placeholder={t('footer.subscribePlaceholder')}
                   value={email}
                   onChange={(e) => { setEmail(e.target.value); setSubStatus(null) }}
                   onKeyDown={(e) => e.key === 'Enter' && handleSubscribe()}
@@ -148,7 +144,7 @@ export default function Footer() {
                   className="pixel-btn whitespace-nowrap"
                   style={{ clipPath: 'none', borderLeft: 'none' }}
                 >
-                  {subStatus === 'sending' ? '...' : '訂閱'}
+                  {subStatus === 'sending' ? '...' : t('footer.subscribeButton')}
                 </button>
               </div>
             )}
@@ -158,10 +154,10 @@ export default function Footer() {
         {/* Bottom */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-8 border-t border-slate-800">
           <div className="pixel-font text-[9px] text-slate-600">
-            © 2025 PIXELHOLIC. ALL RIGHTS RESERVED.
+            {t('footer.copyright', { year: new Date().getFullYear() })}
           </div>
           <div className="flex gap-6">
-            {['隱私政策', '服務條款', 'Cookie 設定'].map((l) => (
+            {t('footer.legalLinks', { returnObjects: true }).map((l) => (
               <a
                 key={l}
                 href="#"
@@ -174,7 +170,7 @@ export default function Footer() {
           </div>
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse-glow" />
-            <span className="pixel-font text-[9px] text-slate-600">ALL SYSTEMS ONLINE</span>
+            <span className="pixel-font text-[9px] text-slate-600">{t('footer.statusOnline')}</span>
           </div>
         </div>
       </div>

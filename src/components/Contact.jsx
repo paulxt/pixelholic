@@ -1,15 +1,17 @@
 import { useState } from 'react'
 import emailjs from '@emailjs/browser'
+import { useTranslation } from 'react-i18next'
 import { SectionCorners } from './PixelCharacters'
-
-const SERVICE_OPTIONS = ['品牌策略', '社群行銷', '廣告投放', '內容製作', '電商成長', '數據分析']
-const BUDGET_OPTIONS = ['< 5萬', '5–20萬', '20–50萬', '50萬以上']
 
 const EMAILJS_SERVICE_ID  = import.meta.env.VITE_EMAILJS_SERVICE_ID  || 'YOUR_SERVICE_ID'
 const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'YOUR_TEMPLATE_ID'
 const EMAILJS_PUBLIC_KEY  = import.meta.env.VITE_EMAILJS_PUBLIC_KEY  || 'YOUR_PUBLIC_KEY'
 
 export default function Contact() {
+  const { t } = useTranslation()
+  const info = t('contact.info', { returnObjects: true })
+  const form_ = t('contact.form', { returnObjects: true })
+
   const [form, setForm] = useState({ name: '', email: '', company: '', budget: '', services: [], message: '' })
   const [status, setStatus] = useState(null)
 
@@ -49,13 +51,13 @@ export default function Contact() {
 
         {/* Header — centered */}
         <div className="text-center mb-8">
-          <div className="pixel-font text-[10px] text-indigo-400 mb-3 animate-pulse-glow tracking-widest">// GET IN TOUCH</div>
+          <div className="pixel-font text-[10px] text-indigo-400 mb-3 animate-pulse-glow tracking-widest">{t('contact.tag')}</div>
           <h2 className="pixel-font text-slate-800 mb-3" style={{ fontSize: 'clamp(18px, 3vw, 30px)', lineHeight: 2 }}>
-            準備好讓品牌<br />
-            <span style={{ color: '#4338CA' }}>進化升級？</span>
+            {t('contact.titleLine1')}<br />
+            <span style={{ color: '#4338CA' }}>{t('contact.titleLine2')}</span>
           </h2>
           <p className="text-slate-400 text-base leading-loose max-w-xl mx-auto">
-            告訴我們您的品牌故事與目標，我們將在 24 小時內回覆，並安排一次免費的品牌健診諮詢。
+            {t('contact.sub')}
           </p>
         </div>
 
@@ -64,12 +66,7 @@ export default function Contact() {
           {/* Left: contact info */}
           <div className="flex flex-col justify-center items-center lg:items-start text-center lg:text-left">
             <div className="space-y-5 w-full max-w-sm">
-              {[
-                { label: 'EMAIL', value: 'hc@pixelholic.co\nkatie@pixelholic.co', icon: '◈' },
-                { label: 'PHONE', value: '+886 928 207 569', icon: '◉' },
-                { label: 'OFFICE', value: '新北市汐止區弘道街 8 巷 1 弄 10 號', icon: '◇' },
-                { label: 'HOURS', value: 'Mon–Fri  09:00–18:00', icon: '▣' },
-              ].map((item) => (
+              {info.map((item) => (
                 <div key={item.label} className="flex items-start gap-6">
                   <span className="pixel-font text-indigo-400 text-xl shrink-0">{item.icon}</span>
                   <div>
@@ -94,39 +91,39 @@ export default function Contact() {
             {status === 'done' ? (
               <div className="float-card p-16 text-center flex flex-col items-center justify-center min-h-96">
                 <span className="pixel-font text-5xl text-green-500 mb-10 animate-float" style={{ fontSize: '56px' }}>◈</span>
-                <div className="pixel-font text-slate-800 mb-4" style={{ fontSize: '12px' }}>訊息已送出！</div>
-                <p className="text-slate-400 text-sm leading-loose mb-10 max-w-xs">感謝您的來信，我們將在 24 小時內與您聯繫。</p>
-                <button onClick={reset} className="pixel-btn">再送一封</button>
+                <div className="pixel-font text-slate-800 mb-4" style={{ fontSize: '12px' }}>{t('contact.success.title')}</div>
+                <p className="text-slate-400 text-sm leading-loose mb-10 max-w-xs">{t('contact.success.sub')}</p>
+                <button onClick={reset} className="pixel-btn">{t('contact.success.button')}</button>
               </div>
             ) : status === 'error' ? (
               <div className="float-card p-16 text-center flex flex-col items-center justify-center min-h-96">
                 <span className="pixel-font text-5xl text-red-400 mb-10" style={{ fontSize: '56px' }}>!</span>
-                <div className="pixel-font text-slate-800 mb-4" style={{ fontSize: '12px' }}>傳送失敗</div>
-                <p className="text-slate-400 text-sm leading-loose mb-10">請稍後再試，或直接寄信至 hc@pixelholic.co</p>
-                <button onClick={reset} className="pixel-btn">重新填寫</button>
+                <div className="pixel-font text-slate-800 mb-4" style={{ fontSize: '12px' }}>{t('contact.error.title')}</div>
+                <p className="text-slate-400 text-sm leading-loose mb-10">{t('contact.error.sub')}</p>
+                <button onClick={reset} className="pixel-btn">{t('contact.error.button')}</button>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div className="grid sm:grid-cols-2 gap-8">
                   <div>
-                    <label className="pixel-font text-[9px] text-slate-300 block mb-2 tracking-widest">姓名 *</label>
-                    <input required className="pixel-input" placeholder="您的姓名" value={form.name} onChange={set('name')} />
+                    <label className="pixel-font text-[9px] text-slate-300 block mb-2 tracking-widest">{form_.nameLabel}</label>
+                    <input required className="pixel-input" placeholder={form_.namePlaceholder} value={form.name} onChange={set('name')} />
                   </div>
                   <div>
-                    <label className="pixel-font text-[9px] text-slate-300 block mb-2 tracking-widest">電子信箱 *</label>
-                    <input required type="email" className="pixel-input" placeholder="email@company.com" value={form.email} onChange={set('email')} />
+                    <label className="pixel-font text-[9px] text-slate-300 block mb-2 tracking-widest">{form_.emailLabel}</label>
+                    <input required type="email" className="pixel-input" placeholder={form_.emailPlaceholder} value={form.email} onChange={set('email')} />
                   </div>
                 </div>
 
                 <div>
-                  <label className="pixel-font text-[9px] text-slate-300 block mb-2 tracking-widest">公司名稱</label>
-                  <input className="pixel-input" placeholder="您的公司名稱" value={form.company} onChange={set('company')} />
+                  <label className="pixel-font text-[9px] text-slate-300 block mb-2 tracking-widest">{form_.companyLabel}</label>
+                  <input className="pixel-input" placeholder={form_.companyPlaceholder} value={form.company} onChange={set('company')} />
                 </div>
 
                 <div>
-                  <label className="pixel-font text-[9px] text-slate-300 block mb-2 tracking-widest">感興趣的服務</label>
+                  <label className="pixel-font text-[9px] text-slate-300 block mb-2 tracking-widest">{form_.servicesLabel}</label>
                   <div className="flex flex-wrap gap-3">
-                    {SERVICE_OPTIONS.map((s) => (
+                    {form_.serviceOptions.map((s) => (
                       <button key={s} type="button" onClick={() => toggleService(s)}
                         className="text-sm px-5 py-2.5 font-medium transition-all duration-150"
                         style={{
@@ -142,9 +139,9 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label className="pixel-font text-[9px] text-slate-300 block mb-2 tracking-widest">月預算範圍</label>
+                  <label className="pixel-font text-[9px] text-slate-300 block mb-2 tracking-widest">{form_.budgetLabel}</label>
                   <div className="grid grid-cols-4 gap-3">
-                    {BUDGET_OPTIONS.map((b) => (
+                    {form_.budgetOptions.map((b) => (
                       <button key={b} type="button" onClick={() => setForm((f) => ({ ...f, budget: b }))}
                         className="text-sm py-3 font-medium transition-all text-center"
                         style={{
@@ -160,16 +157,16 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label className="pixel-font text-[9px] text-slate-300 block mb-2 tracking-widest">專案說明 *</label>
-                  <textarea required rows={3} className="pixel-input resize-none" placeholder="請簡述您的品牌現況與行銷目標..." value={form.message} onChange={set('message')} />
+                  <label className="pixel-font text-[9px] text-slate-300 block mb-2 tracking-widest">{form_.messageLabel}</label>
+                  <textarea required rows={3} className="pixel-input resize-none" placeholder={form_.messagePlaceholder} value={form.message} onChange={set('message')} />
                 </div>
 
                 <button type="submit" disabled={status === 'sending'} className="pixel-btn w-full text-center" style={{ display: 'block' }}>
-                  {status === 'sending' ? <span className="animate-pulse-glow">SENDING...</span> : '送出諮詢申請'}
+                  {status === 'sending' ? <span className="animate-pulse-glow">{form_.sending}</span> : form_.submit}
                 </button>
 
                 <p className="text-xs text-slate-300 text-center tracking-wide">
-                  送出後將寄送至 hc@pixelholic.co
+                  {form_.note}
                 </p>
               </form>
             )}

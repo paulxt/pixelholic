@@ -1,0 +1,239 @@
+{
+  "meta": {
+    "title": "PIXELHOLIC — 像素驅動，品牌進化",
+    "description": "PIXELHOLIC 是一家結合前衛像素美學與數據驅動策略的數位行銷公司。"
+  },
+  "nav": {
+    "services": "服務",
+    "work": "作品",
+    "clients": "客戶案例",
+    "about": "關於我們",
+    "contact": "聯絡",
+    "cta": "免費諮詢"
+  },
+  "common": {
+    "viewFullCase": "查看完整案例"
+  },
+  "banner": {
+    "slides": [
+      { "tag": "// DIGITAL MARKETING", "title": "像素驅動\n品牌進化", "sub": "結合前衛像素美學與資料驅動策略，打造令人難忘的數位品牌體驗", "accent": "#4338CA", "shadow": "#7C3AED", "symbol": "◈" },
+      { "tag": "// CREATIVE CAMPAIGNS", "title": "創意無界\n突破格局", "sub": "從社群媒體到整合行銷，我們為您的品牌注入源源不絕的創意動能", "accent": "#0891B2", "shadow": "#4338CA", "symbol": "◉" },
+      { "tag": "// BRAND STRATEGY", "title": "策略為本\n成效為王", "sub": "深度洞察市場趨勢，量身打造高轉換率的全通路行銷解決方案", "accent": "#059669", "shadow": "#0891B2", "symbol": "◇" }
+    ],
+    "ctaPrimary": "開始合作",
+    "ctaSecondary": "了解服務",
+    "statBrands": "合作品牌",
+    "statSatisfaction": "客戶滿意度",
+    "statExperience": "業界深耕",
+    "statExperienceValue": "{{years}}年",
+    "scroll": "SCROLL"
+  },
+  "services": {
+    "tag": "// OUR SERVICES",
+    "titleLine1": "全方位數位",
+    "titleLine2": "行銷服務",
+    "sub": "從策略規劃到執行落地，以像素般精確的執行力，為您的品牌創造最大效益。",
+    "items": [
+      { "icon": "◈", "title": "品牌策略規劃", "desc": "從品牌定位、視覺識別到品牌聲音，全方位打造一致且有力的品牌形象，讓您在競爭激烈的市場中脫穎而出。", "tags": ["品牌定位", "VI 設計", "品牌聲音"], "color": "#4338CA", "num": "01" },
+      { "icon": "◉", "title": "社群媒體行銷", "desc": "整合 Instagram、Facebook、Threads 等平台，以創意內容與精準受眾策略，快速擴大品牌影響力與粉絲互動。", "tags": ["內容策略", "KOL 合作", "社群管理"], "color": "#0891B2", "num": "02" },
+      { "icon": "◇", "title": "數位廣告投放", "desc": "運用 Google Ads、Meta Ads 精準投放，搭配 A/B 測試與數據優化，最大化廣告投資報酬率。", "tags": ["Google Ads", "Meta Ads", "ROAS 優化"], "color": "#7C3AED", "num": "03" },
+      { "icon": "▣", "title": "內容行銷製作", "desc": "影片製作、文案撰寫、視覺設計一站式服務，以高品質原創內容建立品牌權威，驅動自然流量成長。", "tags": ["影片製作", "文案策略", "SEO 內容"], "color": "#059669", "num": "04" },
+      { "icon": "◎", "title": "電商成長駭客", "desc": "針對電商品牌優化購物旅程、提升轉換率，從 SEO、再行銷到 Email 自動化，打通完整銷售漏斗。", "tags": ["CRO 優化", "再行銷", "Email 行銷"], "color": "#EA580C", "num": "05" },
+      { "icon": "⊕", "title": "數據分析洞察", "desc": "建立全面的數據追蹤架構，提供清晰易懂的行銷儀表板與週期性報告，讓每一個決策有數據支撐。", "tags": ["GA4 設定", "自訂報表", "商業洞察"], "color": "#D97706", "num": "06" }
+    ],
+    "ticker": ["品牌策略", "社群行銷", "廣告投放", "內容製作", "電商成長", "數據分析", "BRAND", "SOCIAL", "ADS", "CONTENT", "GROWTH", "DATA"]
+  },
+  "about": {
+    "tag": "// ABOUT US",
+    "titleLine1": "關於我們",
+    "titleLine2": "玖漾國際",
+    "sub": "玖漾國際行銷有限公司（PIXELHOLIC）是一家專注於數位整合行銷的品牌顧問公司，協助品牌在數位時代以精準策略與大膽創意脫穎而出。",
+    "intro1": "我們以「像素驅動、品牌進化」為核心理念，從 KingCart 電動車配件、北極星 Polaris eSIM、到進軍全球的 Woolbuddy，服務橫跨科技、食品、手工藝等多元產業。",
+    "intro2": "我們不只是廣告執行者，更是您品牌長期成長的策略夥伴。每個合作案，我們都以創辦人的心態投入，把客戶的品牌當作自己的品牌來經營。",
+    "valuesTag": "// CORE VALUES",
+    "values": [
+      { "icon": "◈", "title": "像素精準", "desc": "每一個細節都如像素般精確，我們不允許任何執行上的偏差。", "color": "#4338CA" },
+      { "icon": "◉", "title": "創意前衛", "desc": "打破傳統框架，以反常規的創意思維為品牌創造差異化優勢。", "color": "#0891B2" },
+      { "icon": "◇", "title": "數據導向", "desc": "所有決策以數據為基礎，讓每一分行銷預算都發揮最大效益。", "color": "#059669" },
+      { "icon": "▣", "title": "持續進化", "desc": "緊跟數位趨勢，不斷更新知識與工具，確保策略永遠走在前端。", "color": "#EA580C" }
+    ],
+    "processTag": "// HOW WE WORK",
+    "process": [
+      { "step": "01", "title": "品牌健診", "desc": "深度了解品牌現況、目標受眾與競爭環境" },
+      { "step": "02", "title": "策略規劃", "desc": "制定量身打造的數位行銷策略與執行藍圖" },
+      { "step": "03", "title": "創意執行", "desc": "以精準創意內容落實各渠道行銷活動" },
+      { "step": "04", "title": "數據優化", "desc": "持續追蹤成效、迭代優化，確保 ROI 最大化" }
+    ]
+  },
+  "contact": {
+    "tag": "// GET IN TOUCH",
+    "titleLine1": "準備好讓品牌",
+    "titleLine2": "進化升級？",
+    "sub": "告訴我們您的品牌故事與目標，我們將在 24 小時內回覆，並安排一次免費的品牌健診諮詢。",
+    "info": [
+      { "label": "EMAIL", "value": "hc@pixelholic.co\nkatie@pixelholic.co", "icon": "◈" },
+      { "label": "PHONE", "value": "+886 928 207 569", "icon": "◉" },
+      { "label": "OFFICE", "value": "新北市汐止區弘道街 8 巷 1 弄 10 號", "icon": "◇" },
+      { "label": "HOURS", "value": "Mon–Fri  09:00–18:00", "icon": "▣" }
+    ],
+    "form": {
+      "nameLabel": "姓名 *",
+      "namePlaceholder": "您的姓名",
+      "emailLabel": "電子信箱 *",
+      "emailPlaceholder": "email@company.com",
+      "companyLabel": "公司名稱",
+      "companyPlaceholder": "您的公司名稱",
+      "servicesLabel": "感興趣的服務",
+      "budgetLabel": "月預算範圍",
+      "messageLabel": "專案說明 *",
+      "messagePlaceholder": "請簡述您的品牌現況與行銷目標...",
+      "serviceOptions": ["品牌策略", "社群行銷", "廣告投放", "內容製作", "電商成長", "數據分析"],
+      "budgetOptions": ["< 5萬", "5–20萬", "20–50萬", "50萬以上"],
+      "submit": "送出諮詢申請",
+      "sending": "SENDING...",
+      "note": "送出後將寄送至 hc@pixelholic.co"
+    },
+    "success": { "title": "訊息已送出！", "sub": "感謝您的來信，我們將在 24 小時內與您聯繫。", "button": "再送一封" },
+    "error": { "title": "傳送失敗", "sub": "請稍後再試，或直接寄信至 hc@pixelholic.co", "button": "重新填寫" }
+  },
+  "footer": {
+    "tagline": "像素驅動，品牌進化。",
+    "subtagline": "We turn pixels into profits.",
+    "navGroups": [
+      { "title": "服務項目", "items": ["品牌策略規劃", "社群媒體行銷", "數位廣告投放", "內容行銷製作", "電商成長駭客", "數據分析洞察"] },
+      { "title": "關於我們", "items": ["公司介紹", "核心團隊", "企業文化", "加入我們"] },
+      { "title": "資源中心", "items": ["行銷部落格", "成功案例", "免費工具", "市場報告"] }
+    ],
+    "newsletterTag": "// NEWSLETTER",
+    "newsletterText": "訂閱週報，掌握最新數位行銷趨勢",
+    "newsletterSuccess": "✓ 訂閱成功！感謝加入",
+    "newsletterErrorDefault": "訂閱失敗，請稍後再試",
+    "subscribePlaceholder": "your@email.com",
+    "subscribeButton": "訂閱",
+    "copyright": "© {{year}} 玖漾國際行銷有限公司 PIXELHOLIC. ALL RIGHTS RESERVED.",
+    "legalLinks": ["隱私政策", "服務條款", "Cookie 設定"],
+    "statusOnline": "ALL SYSTEMS ONLINE"
+  },
+  "portfolio": {
+    "tag": "// SELECTED WORKS",
+    "titleLine1": "精選成功",
+    "titleLine2": "案例展示",
+    "selectPlaceholder": "選擇客戶",
+    "allCases": "全部案例",
+    "viewAllCta": "精選客戶案例",
+    "viewCase": "查看案例",
+    "moreCasesTitle": "還有更多成功案例",
+    "moreCasesSub": "想看更多案例？歡迎聯繫我們 →",
+    "bottomTag": "// READY TO START?",
+    "bottomTitle": "讓我們一起創造下一個成功案例",
+    "bottomCta": "立即聯絡"
+  },
+  "clientsPage": {
+    "tag": "// CLIENT CASE STUDIES",
+    "titleLine1": "我們的客戶",
+    "titleLine2": "成功案例",
+    "sub": "每個品牌都有獨特的挑戰與機會。點擊卡片展開完整案例，了解我們如何為客戶創造真實成果。",
+    "back": "← 上一頁",
+    "overviewTag": "// BRAND OVERVIEW",
+    "challengeTag": "// CHALLENGE",
+    "solutionTag": "// SOLUTION",
+    "resultsTag": "// KEY RESULTS",
+    "websiteTag": "// WEBSITE",
+    "bottomTag": "// JOIN OUR CLIENTS",
+    "bottomTitle": "想成為下一個成功案例？",
+    "bottomSub": "立即聯繫我們，開始一段從像素到成效的品牌旅程。",
+    "bottomCta": "免費諮詢"
+  },
+  "clients": {
+    "kingcart": {
+      "name": "KingCart 卡特王",
+      "industry": "電動車配件",
+      "themeTag": "電動車配件",
+      "tagline": "特斯拉車主的質感生活夥伴",
+      "description": "KingCart 卡特王是台灣最具代表性的特斯拉配件品牌，深耕 Tesla Model 3、Y、S、X 專屬配件市場，提供中控儲物盒、碳纖車標、車艙精品等高質感產品。全台設有台北內湖、台中南屯、苗栗竹南、台南四大展示門市。",
+      "period": "2023 Q3 – 至今",
+      "services": ["品牌策略規劃", "社群媒體行銷", "內容行銷製作", "廣告投放優化"],
+      "metrics": [
+        { "label": "社群粉絲成長", "sub": "6 個月內" },
+        { "label": "線上營收提升", "sub": "YoY" },
+        { "label": "Instagram 互動率", "sub": "高於業界 3x" },
+        { "label": "廣告 ROAS", "sub": "Meta Ads" }
+      ],
+      "challenge": "台灣電動車市場快速成長，但車主對配件品牌認知度偏低，且競爭對手多為中國低價品。KingCart 需要建立品牌識別度與溢價感。",
+      "solution": "以「特斯拉質感生活」為核心敘事，打造高質感開箱影片與車主生活風格內容；結合精準 Meta Ads 鎖定特斯拉車主群，並透過 KOL 合作觸及新車主群體。",
+      "testimonial": { "quote": "Pixelholic 幫我們從「賣配件」轉型為「賣生活方式」，品牌溢價感大幅提升，客單價成長了 40%。", "author": "KingCart 創辦人" }
+    },
+    "polaris": {
+      "name": "北極星 Polaris eSIM",
+      "industry": "旅遊科技 / 電信",
+      "themeTag": "旅遊科技",
+      "tagline": "線路透明，無縫漫遊全球",
+      "description": "北極星 Polaris eSIM 是台灣原生旅遊 eSIM 品牌，首創「線路透明」概念，讓旅客在購買前即可清楚看到每張方案的出口線路資訊。覆蓋全球 200+ 國家地區，超過 10 個熱門旅遊地提供原生線路直連，榮登工商時報、經濟日報、TechNews 等媒體報導。",
+      "period": "2024 Q1 – 至今",
+      "services": ["品牌策略規劃", "數位廣告投放", "公關媒體操作", "數據分析洞察"],
+      "metrics": [
+        { "label": "品牌搜尋量成長", "sub": "半年內" },
+        { "label": "媒體曝光次數", "sub": "主流財經科技媒體" },
+        { "label": "訂單轉換率", "sub": "官網 CRO 優化後" },
+        { "label": "客戶回購率", "sub": "旅遊季後追蹤" }
+      ],
+      "challenge": "eSIM 市場競爭激烈，消費者難以辨別品質差異，且「線路繞路」問題讓旅客體驗不佳。北極星需要以差異化定位突破重圍。",
+      "solution": "以「線路透明」作為品牌核心主張，透過深度科技媒體公關建立權威感；配合 SEO 內容策略與 Google Ads 精準投放，在關鍵旅遊旺季前搶佔市場心佔率。",
+      "testimonial": { "quote": "Pixelholic 幫我們把技術優勢轉化為消費者聽得懂的品牌語言，讓「線路透明」成為行業話題，帶動大量自然流量。", "author": "北極星 eSIM 行銷總監" }
+    },
+    "cmei": {
+      "name": "青美嚴選",
+      "industry": "食品零售 / 電商",
+      "themeTag": "食品電商",
+      "tagline": "台灣嚴選，鮮美直送",
+      "description": "青美嚴選以台灣嚴選食材為核心，主打厚切多汁豬肉條系列（蜜汁、蒜味、川辣、泰式檸檬等 9 種口味），同時代理日韓紐澳進口零食、果汁與生活用品。產品上架全聯、PChome、momo、Shopee、東森購物等主流通路，深受台灣消費者喜愛。",
+      "period": "2023 Q1 – 2024 Q4",
+      "services": ["電商成長駭客", "社群媒體行銷", "內容行銷製作", "平台廣告投放"],
+      "metrics": [
+        { "label": "電商月營收成長", "sub": "合作首年" },
+        { "label": "momo 平台排名", "sub": "肉乾類目" },
+        { "label": "社群粉絲成長", "sub": "IG + FB" },
+        { "label": "新品上市首週", "sub": "限定口味快閃", "value": "售罄" }
+      ],
+      "challenge": "台灣食品電商競爭白熱化，品牌認知度低、平台曝光有限，且消費者對新品牌忠誠度難以建立。",
+      "solution": "以「台灣嚴選、真材實料」為內容核心，打造食材溯源影片與試吃開箱內容；透過多平台聯合促銷與限定口味快閃活動製造話題，帶動跨平台銷售。",
+      "testimonial": { "quote": "從默默無名到 momo 肉乾類目 TOP 5，Pixelholic 的電商策略讓我們在一年內完成別人三年才做到的事。", "author": "青美嚴選 執行長" }
+    },
+    "yunyang": {
+      "name": "允陽國際旅行社",
+      "industry": "旅遊 / 簽證護照",
+      "themeTag": "旅遊／簽證",
+      "tagline": "深耕三十年，帶您飛向夢想目的地",
+      "description": "允陽國際旅行社創立於 1992 年，深耕台南、嘉義旅遊市場逾 30 年，為甲種旅行社。2005 年起獲指定為越南航空大台南區唯一代理，並連年榮獲南區最佳銷售殊榮，2024 年更榮獲越南航空白金銷售獎。同時身兼雲嘉南地區台胞證及護照辦理中心，服務逾百家旅行社同業，為大台南地區之冠。",
+      "period": "2024 Q2 – 至今",
+      "services": ["品牌數位化策略", "社群媒體行銷", "數位廣告投放", "內容行銷製作"],
+      "metrics": [
+        { "label": "社群粉絲成長", "sub": "合作首年" },
+        { "label": "官網詢問量成長", "sub": "SEO + CRO 優化後" },
+        { "label": "越南團訂單成長", "sub": "旺季對比" },
+        { "label": "Google 商家評分", "sub": "300+ 則好評" }
+      ],
+      "challenge": "深耕逾 30 年的傳統旅行社面臨數位轉型壓力：既有客群年齡偏高，年輕旅客認知度低；網路能見度不足，難以在搜尋引擎與社群平台脫穎而出。",
+      "solution": "以「三十年信賴、越南旅遊首選」為品牌核心主張，全面優化官網 SEO 與 Google Ads 策略；在 Instagram、Facebook 打造越南旅遊內容矩陣，精準觸及 25–45 歲潛在旅客，同步強化 Google 商家評價管理。",
+      "testimonial": { "quote": "Pixelholic 幫我們順利接軌數位時代，讓三十年的口碑在網路上被看見，越南團的訂單量大幅提升，連年輕客群也開始找上門了。", "author": "允陽國際旅行社 總經理" }
+    },
+    "woolbuddy": {
+      "name": "Woolbuddy",
+      "industry": "手工藝 / 創意生活",
+      "themeTag": "手工藝",
+      "tagline": "Bring Creativity to Life with Wool",
+      "description": "Woolbuddy 是由前盧卡斯影業 3D 藝術師 Jackie Huang 創立的羊毛氈品牌，提供針氈套組、羊毛卷、氈墊等高品質手作材料。以零廢料、環保理念設計產品，深受全球手作愛好者喜愛，在 Amazon 手工藝品類中屢獲暢銷認證，並在全球多個市場銷售。",
+      "period": "2022 Q3 – 2024 Q2",
+      "services": ["國際品牌策略", "社群媒體行銷", "Amazon 廣告優化", "影音內容製作"],
+      "metrics": [
+        { "label": "Amazon 品類排名", "sub": "針氈套組 Best Seller" },
+        { "label": "全球銷售成長", "sub": "台灣市場回流" },
+        { "label": "YouTube 訂閱成長", "sub": "教學影片系列" },
+        { "label": "客戶評分", "sub": "Amazon 平均評分" }
+      ],
+      "challenge": "Woolbuddy 在海外已有一定知名度，但在台灣本地市場能見度低，且手工藝品類消費者較為分散，難以規模化觸及。",
+      "solution": "以創辦人故事（前盧卡斯影業藝術師）作為品牌核心敘事；製作系列中文羊毛氈教學影片，結合 IG Reels 與 YouTube Shorts 觸及手作社群；同步優化 Amazon 商品頁面提升轉換率。",
+      "testimonial": { "quote": "Pixelholic 讓我們的品牌故事在台灣找到了共鳴，手作社群的黏著度超乎預期，帶動了穩定的長尾銷售。", "author": "Woolbuddy 創辦人 Jackie" }
+    }
+  }
+}

@@ -1,13 +1,10 @@
 import { useState, useEffect, useCallback } from 'react'
+import { useTranslation } from 'react-i18next'
 import { PixelHeroDecor, SectionCorners } from './PixelCharacters'
 
-const slides = [
-  { tag: '// DIGITAL MARKETING', title: '像素驅動\n品牌進化', sub: '結合前衛像素美學與資料驅動策略，打造令人難忘的數位品牌體驗', accent: '#4338CA', shadow: '#7C3AED', symbol: '◈' },
-  { tag: '// CREATIVE CAMPAIGNS', title: '創意無界\n突破格局', sub: '從社群媒體到整合行銷，我們為您的品牌注入源源不絕的創意動能', accent: '#0891B2', shadow: '#4338CA', symbol: '◉' },
-  { tag: '// BRAND STRATEGY', title: '策略為本\n成效為王', sub: '深度洞察市場趨勢，量身打造高轉換率的全通路行銷解決方案', accent: '#059669', shadow: '#0891B2', symbol: '◇' },
-]
-
 export default function Banner() {
+  const { t } = useTranslation()
+  const slides = t('banner.slides', { returnObjects: true })
   const [current, setCurrent] = useState(0)
   const [animating, setAnimating] = useState(false)
 
@@ -81,19 +78,19 @@ export default function Banner() {
           {/* Buttons */}
           <div className="flex flex-wrap gap-5 justify-center mb-12">
             <a href="#contact" onClick={(e) => { e.preventDefault(); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }) }} className="pixel-btn">
-              開始合作
+              {t('banner.ctaPrimary')}
             </a>
             <a href="#services" onClick={(e) => { e.preventDefault(); document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' }) }} className="pixel-btn pixel-btn-cyan">
-              了解服務
+              {t('banner.ctaSecondary')}
             </a>
           </div>
 
           {/* Stats */}
           <div className="flex gap-12 md:gap-20 justify-center pt-12" style={{ borderTop: '1px solid #E0E7FF' }}>
             {[
-              { n: '20+', label: '合作品牌' },
-              { n: '98%', label: '客戶滿意度' },
-              { n: `${new Date().getFullYear() - 2020}年`, label: '業界深耕' },
+              { n: '20+', label: t('banner.statBrands') },
+              { n: '98%', label: t('banner.statSatisfaction') },
+              { n: t('banner.statExperienceValue', { years: new Date().getFullYear() - 2020 }), label: t('banner.statExperience') },
             ].map((s) => (
               <div key={s.label} className="text-center">
                 <div className="pixel-font mb-2" style={{ color: slide.accent, fontSize: '20px' }}>{s.n}</div>
@@ -113,7 +110,7 @@ export default function Banner() {
 
       {/* Scroll cue */}
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40">
-        <span className="text-xs text-slate-400 tracking-widest">SCROLL</span>
+        <span className="text-xs text-slate-400 tracking-widest">{t('banner.scroll')}</span>
         <div className="w-0.5 h-8 bg-gradient-to-b from-indigo-400 to-transparent" />
       </div>
     </section>

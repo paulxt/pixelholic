@@ -1,0 +1,239 @@
+{
+  "meta": {
+    "title": "PIXELHOLIC — Pixel-Driven, Brand Evolution",
+    "description": "PIXELHOLIC is a digital marketing agency blending bold pixel aesthetics with data-driven strategy."
+  },
+  "nav": {
+    "services": "Services",
+    "work": "Work",
+    "clients": "Case Studies",
+    "about": "About",
+    "contact": "Contact",
+    "cta": "Free Consultation"
+  },
+  "common": {
+    "viewFullCase": "View Full Case Study"
+  },
+  "banner": {
+    "slides": [
+      { "tag": "// DIGITAL MARKETING", "title": "Pixel-Driven\nBrand Evolution", "sub": "Blending bold pixel aesthetics with data-driven strategy to craft unforgettable digital brand experiences.", "accent": "#4338CA", "shadow": "#7C3AED", "symbol": "◈" },
+      { "tag": "// CREATIVE CAMPAIGNS", "title": "Creativity\nWithout Limits", "sub": "From social media to integrated marketing, we fuel your brand with an endless stream of creative momentum.", "accent": "#0891B2", "shadow": "#4338CA", "symbol": "◉" },
+      { "tag": "// BRAND STRATEGY", "title": "Strategy First\nResults That Win", "sub": "Deep market insight, tailored into omnichannel marketing solutions built for maximum conversion.", "accent": "#059669", "shadow": "#0891B2", "symbol": "◇" }
+    ],
+    "ctaPrimary": "Start a Project",
+    "ctaSecondary": "Explore Services",
+    "statBrands": "Brand Partners",
+    "statSatisfaction": "Client Satisfaction",
+    "statExperience": "Years in Industry",
+    "statExperienceValue": "{{years}}+",
+    "scroll": "SCROLL"
+  },
+  "services": {
+    "tag": "// OUR SERVICES",
+    "titleLine1": "Full-Service Digital",
+    "titleLine2": "Marketing Solutions",
+    "sub": "From strategic planning to execution, we bring pixel-precise execution to create maximum impact for your brand.",
+    "items": [
+      { "icon": "◈", "title": "Brand Strategy", "desc": "From brand positioning and visual identity to brand voice, we build a consistent, powerful brand image that helps you stand out in a competitive market.", "tags": ["Brand Positioning", "VI Design", "Brand Voice"], "color": "#4338CA", "num": "01" },
+      { "icon": "◉", "title": "Social Media Marketing", "desc": "Integrating Instagram, Facebook, and Threads with creative content and precise audience targeting to rapidly grow your brand's reach and engagement.", "tags": ["Content Strategy", "KOL Partnerships", "Community Management"], "color": "#0891B2", "num": "02" },
+      { "icon": "◇", "title": "Digital Ad Placement", "desc": "Precision targeting on Google Ads and Meta Ads, paired with A/B testing and data optimization to maximize your return on ad spend.", "tags": ["Google Ads", "Meta Ads", "ROAS Optimization"], "color": "#7C3AED", "num": "03" },
+      { "icon": "▣", "title": "Content Production", "desc": "A one-stop service for video production, copywriting, and visual design — building brand authority with high-quality original content that drives organic traffic.", "tags": ["Video Production", "Copywriting", "SEO Content"], "color": "#059669", "num": "04" },
+      { "icon": "◎", "title": "E-commerce Growth Hacking", "desc": "Optimizing the shopping journey and conversion rates for e-commerce brands, connecting the full sales funnel from SEO to remarketing and email automation.", "tags": ["CRO Optimization", "Remarketing", "Email Marketing"], "color": "#EA580C", "num": "05" },
+      { "icon": "⊕", "title": "Data Analytics & Insights", "desc": "Building a comprehensive data tracking framework with clear marketing dashboards and periodic reports, so every decision is backed by data.", "tags": ["GA4 Setup", "Custom Reporting", "Business Insights"], "color": "#D97706", "num": "06" }
+    ],
+    "ticker": ["BRAND STRATEGY", "SOCIAL MEDIA", "AD PLACEMENT", "CONTENT", "E-COMMERCE", "ANALYTICS", "BRAND", "SOCIAL", "ADS", "CONTENT", "GROWTH", "DATA"]
+  },
+  "about": {
+    "tag": "// ABOUT US",
+    "titleLine1": "About",
+    "titleLine2": "Pixelholic",
+    "sub": "Pixelholic (registered as 玖漾國際行銷有限公司) is a brand consultancy focused on integrated digital marketing, helping brands stand out in the digital age with precise strategy and bold creativity.",
+    "intro1": "Guided by our core belief of \"Pixel-Driven, Brand Evolution,\" we've worked across industries from tech (KingCart EV accessories, Polaris eSIM) to food and handmade crafts (Woolbuddy, now selling worldwide).",
+    "intro2": "We're more than just an ad agency — we're your long-term growth partner. On every project, we show up like founders, treating your brand as if it were our own.",
+    "valuesTag": "// CORE VALUES",
+    "values": [
+      { "icon": "◈", "title": "Pixel Precision", "desc": "Every detail is as precise as a pixel — we accept no deviation in execution.", "color": "#4338CA" },
+      { "icon": "◉", "title": "Bold Creativity", "desc": "Breaking conventional frameworks with unconventional creative thinking to create real brand differentiation.", "color": "#0891B2" },
+      { "icon": "◇", "title": "Data-Driven", "desc": "Every decision is grounded in data, so every marketing dollar delivers maximum impact.", "color": "#059669" },
+      { "icon": "▣", "title": "Constant Evolution", "desc": "Staying ahead of digital trends, continuously updating our knowledge and tools to keep strategy on the cutting edge.", "color": "#EA580C" }
+    ],
+    "processTag": "// HOW WE WORK",
+    "process": [
+      { "step": "01", "title": "Brand Diagnosis", "desc": "A deep dive into your brand's current state, target audience, and competitive landscape." },
+      { "step": "02", "title": "Strategic Planning", "desc": "Crafting a tailored digital marketing strategy and execution roadmap." },
+      { "step": "03", "title": "Creative Execution", "desc": "Bringing precise creative content to life across every channel." },
+      { "step": "04", "title": "Data Optimization", "desc": "Continuously tracking performance and iterating to maximize ROI." }
+    ]
+  },
+  "contact": {
+    "tag": "// GET IN TOUCH",
+    "titleLine1": "Ready to Take Your Brand",
+    "titleLine2": "to the Next Level?",
+    "sub": "Tell us your brand's story and goals — we'll get back to you within 24 hours and schedule a free brand health check consultation.",
+    "info": [
+      { "label": "EMAIL", "value": "hc@pixelholic.co\nkatie@pixelholic.co", "icon": "◈" },
+      { "label": "PHONE", "value": "+886 928 207 569", "icon": "◉" },
+      { "label": "OFFICE", "value": "No. 10, Aly. 1, Ln. 8, Hongdao St., Xizhi Dist., New Taipei City, Taiwan", "icon": "◇" },
+      { "label": "HOURS", "value": "Mon–Fri  09:00–18:00", "icon": "▣" }
+    ],
+    "form": {
+      "nameLabel": "Name *",
+      "namePlaceholder": "Your name",
+      "emailLabel": "Email *",
+      "emailPlaceholder": "email@company.com",
+      "companyLabel": "Company Name",
+      "companyPlaceholder": "Your company name",
+      "servicesLabel": "Services You're Interested In",
+      "budgetLabel": "Monthly Budget Range",
+      "messageLabel": "Project Description *",
+      "messagePlaceholder": "Briefly describe your brand and marketing goals...",
+      "serviceOptions": ["Brand Strategy", "Social Media", "Advertising", "Content Production", "E-commerce Growth", "Data Analytics"],
+      "budgetOptions": ["< NT$50K", "NT$50–200K", "NT$200–500K", "NT$500K+"],
+      "submit": "Submit Inquiry",
+      "sending": "SENDING...",
+      "note": "Your message will be sent to hc@pixelholic.co"
+    },
+    "success": { "title": "Message Sent!", "sub": "Thanks for reaching out — we'll be in touch within 24 hours.", "button": "Send Another" },
+    "error": { "title": "Send Failed", "sub": "Please try again later, or email us directly at hc@pixelholic.co", "button": "Try Again" }
+  },
+  "footer": {
+    "tagline": "Pixel-Driven, Brand Evolution.",
+    "subtagline": "We turn pixels into profits.",
+    "navGroups": [
+      { "title": "Services", "items": ["Brand Strategy", "Social Media Marketing", "Digital Ad Placement", "Content Production", "E-commerce Growth Hacking", "Data Analytics & Insights"] },
+      { "title": "About Us", "items": ["Company Overview", "Core Team", "Company Culture", "Careers"] },
+      { "title": "Resources", "items": ["Marketing Blog", "Case Studies", "Free Tools", "Market Reports"] }
+    ],
+    "newsletterTag": "// NEWSLETTER",
+    "newsletterText": "Subscribe to our newsletter for the latest digital marketing trends",
+    "newsletterSuccess": "✓ Subscribed! Thanks for joining",
+    "newsletterErrorDefault": "Subscription failed, please try again later",
+    "subscribePlaceholder": "your@email.com",
+    "subscribeButton": "Subscribe",
+    "copyright": "© {{year}} 玖漾國際行銷有限公司 PIXELHOLIC. ALL RIGHTS RESERVED.",
+    "legalLinks": ["Privacy Policy", "Terms of Service", "Cookie Settings"],
+    "statusOnline": "ALL SYSTEMS ONLINE"
+  },
+  "portfolio": {
+    "tag": "// SELECTED WORKS",
+    "titleLine1": "Selected Success",
+    "titleLine2": "Case Studies",
+    "selectPlaceholder": "Select Client",
+    "allCases": "All Cases",
+    "viewAllCta": "View All Case Studies",
+    "viewCase": "View Case",
+    "moreCasesTitle": "More Success Stories",
+    "moreCasesSub": "Want to see more? Get in touch →",
+    "bottomTag": "// READY TO START?",
+    "bottomTitle": "Let's create your success story together",
+    "bottomCta": "Contact Us Now"
+  },
+  "clientsPage": {
+    "tag": "// CLIENT CASE STUDIES",
+    "titleLine1": "Our Clients'",
+    "titleLine2": "Success Stories",
+    "sub": "Every brand has unique challenges and opportunities. Click a card to explore the full case study and see how we deliver real results for our clients.",
+    "back": "← Back",
+    "overviewTag": "// BRAND OVERVIEW",
+    "challengeTag": "// CHALLENGE",
+    "solutionTag": "// SOLUTION",
+    "resultsTag": "// KEY RESULTS",
+    "websiteTag": "// WEBSITE",
+    "bottomTag": "// JOIN OUR CLIENTS",
+    "bottomTitle": "Want to be our next success story?",
+    "bottomSub": "Get in touch and start your journey from pixels to real results.",
+    "bottomCta": "Free Consultation"
+  },
+  "clients": {
+    "kingcart": {
+      "name": "KingCart",
+      "industry": "EV Accessories",
+      "themeTag": "EV Accessories",
+      "tagline": "The go-to accessory partner for Tesla owners",
+      "description": "KingCart is Taiwan's leading Tesla accessories brand, specializing in premium accessories for the Model 3, Y, S, and X — from center console organizers to carbon fiber badges and cabin upgrades. The brand operates four showrooms across Taiwan: Taipei Neihu, Taichung Nantun, Miaoli Zhunan, and Tainan.",
+      "period": "2023 Q3 – Present",
+      "services": ["Brand Strategy", "Social Media Marketing", "Content Production", "Ad Optimization"],
+      "metrics": [
+        { "label": "Social Follower Growth", "sub": "in 6 months" },
+        { "label": "Online Revenue Growth", "sub": "YoY" },
+        { "label": "Instagram Engagement Rate", "sub": "3x industry average" },
+        { "label": "Ad ROAS", "sub": "Meta Ads" }
+      ],
+      "challenge": "Taiwan's EV market is growing fast, but Tesla owners had low brand awareness of accessory options, and competitors were mostly low-cost Chinese brands. KingCart needed to build brand recognition and a premium perception.",
+      "solution": "Centered on a \"premium Tesla lifestyle\" narrative, we produced high-quality unboxing videos and owner lifestyle content, paired with precisely targeted Meta Ads reaching Tesla owners, plus KOL partnerships to reach new owners.",
+      "testimonial": { "quote": "Pixelholic helped us shift from “selling accessories” to “selling a lifestyle.” Our brand premium grew significantly, and average order value increased by 40%.", "author": "KingCart Founder" }
+    },
+    "polaris": {
+      "name": "Polaris eSIM",
+      "industry": "Travel Tech / Telecom",
+      "themeTag": "Travel Tech",
+      "tagline": "Transparent routes, seamless roaming worldwide",
+      "description": "Polaris eSIM is a Taiwan-native travel eSIM brand and the first to introduce full \"route transparency\" — letting travelers see exactly which carrier route each plan uses before they buy. Coverage spans 200+ countries and regions, with native direct routes in 10+ popular destinations. Polaris has been featured in Commercial Times, Economic Daily News, and TechNews.",
+      "period": "2024 Q1 – Present",
+      "services": ["Brand Strategy", "Digital Advertising", "PR & Media Relations", "Data Analytics"],
+      "metrics": [
+        { "label": "Brand Search Growth", "sub": "in 6 months" },
+        { "label": "Media Placements", "sub": "major finance & tech outlets" },
+        { "label": "Order Conversion Rate", "sub": "after site CRO" },
+        { "label": "Repeat Purchase Rate", "sub": "post travel-season tracking" }
+      ],
+      "challenge": "The eSIM market is fiercely competitive, and consumers struggle to tell quality apart — while \"routed\" connections were hurting the travel experience. Polaris needed a differentiated position to break through.",
+      "solution": "We made \"route transparency\" the core brand promise, building authority through in-depth tech media PR, paired with SEO content strategy and precise Google Ads targeting to capture mindshare ahead of peak travel seasons.",
+      "testimonial": { "quote": "Pixelholic turned our technical edge into language consumers actually understand — making “route transparency” an industry talking point that drove significant organic traffic.", "author": "Polaris eSIM Marketing Director" }
+    },
+    "cmei": {
+      "name": "CMEI Select",
+      "industry": "Food Retail / E-commerce",
+      "themeTag": "Food E-commerce",
+      "tagline": "Taiwan-select ingredients, fresh to your door",
+      "description": "CMEI Select is built around carefully sourced Taiwanese ingredients, best known for its thick-cut juicy pork jerky strips (honey, garlic, Sichuan spicy, Thai lime, and more — 9 flavors), alongside imported snacks, juices, and lifestyle goods from Japan, Korea, New Zealand and Australia. Products are sold on major channels including PX Mart, PChome, momo, Shopee, and Eastern Home Shopping.",
+      "period": "2023 Q1 – 2024 Q4",
+      "services": ["E-commerce Growth Hacking", "Social Media Marketing", "Content Production", "Platform Ad Placement"],
+      "metrics": [
+        { "label": "E-commerce Revenue Growth", "sub": "in first year" },
+        { "label": "momo Category Rank", "sub": "jerky category" },
+        { "label": "Social Follower Growth", "sub": "IG + FB" },
+        { "label": "New Product Launch", "sub": "limited flavor flash sale", "value": "Sold Out" }
+      ],
+      "challenge": "Taiwan's food e-commerce market is intensely competitive, with low brand awareness, limited platform visibility, and a hard time building loyalty for a new brand.",
+      "solution": "Centered on \"genuine Taiwan-select ingredients,\" we produced ingredient-sourcing videos and taste-test unboxing content, paired with cross-platform joint promotions and limited-flavor flash sales to build buzz and drive cross-platform sales.",
+      "testimonial": { "quote": "From unknown to Top 5 in momo's jerky category — Pixelholic's e-commerce strategy helped us achieve in one year what usually takes three.", "author": "CMEI Select CEO" }
+    },
+    "yunyang": {
+      "name": "Yunyang International Travel",
+      "industry": "Travel / Visa & Passport Services",
+      "themeTag": "Travel / Visa Services",
+      "tagline": "30 years of expertise, flying you to your dream destination",
+      "description": "Founded in 1992, Yunyang International Travel has served the Tainan and Chiayi travel market for over 30 years as a licensed Category-A travel agency. Since 2005 it has been the exclusive Vietnam Airlines agent for the greater Tainan region, winning the region's top sales award year after year — including the Vietnam Airlines Platinum Sales Award in 2024. It also operates a Taiwan Compatriot Permit and passport processing center serving over 100 partner agencies across the Yunlin-Chiayi-Tainan region.",
+      "period": "2024 Q2 – Present",
+      "services": ["Digital Brand Strategy", "Social Media Marketing", "Digital Advertising", "Content Production"],
+      "metrics": [
+        { "label": "Social Follower Growth", "sub": "in first year" },
+        { "label": "Website Inquiry Growth", "sub": "after SEO + CRO" },
+        { "label": "Vietnam Tour Bookings", "sub": "peak-season comparison" },
+        { "label": "Google Business Rating", "sub": "300+ reviews" }
+      ],
+      "challenge": "A traditional travel agency with 30+ years of history faced digital transformation pressure: its existing customer base skewed older with low awareness among younger travelers, and limited online visibility made it hard to stand out on search and social.",
+      "solution": "Centered on \"30 years of trust, the top choice for Vietnam travel,\" we comprehensively optimized the website's SEO and Google Ads strategy, built a Vietnam travel content matrix on Instagram and Facebook to precisely reach travelers aged 25–45, and strengthened Google review management.",
+      "testimonial": { "quote": "Pixelholic helped us make a smooth digital transition, bringing 30 years of word-of-mouth reputation online. Vietnam tour bookings grew significantly, and even younger customers started finding us.", "author": "Yunyang International Travel General Manager" }
+    },
+    "woolbuddy": {
+      "name": "Woolbuddy",
+      "industry": "Handicrafts / Creative Lifestyle",
+      "themeTag": "Handicrafts",
+      "tagline": "Bring Creativity to Life with Wool",
+      "description": "Woolbuddy is a needle-felting brand founded by Jackie Huang, a former 3D artist at Lucasfilm, offering premium felting kits, wool roving, and felting mats. Designed around a zero-waste, eco-friendly philosophy, the brand is beloved by crafters worldwide, repeatedly ranked as a bestseller in Amazon's handicrafts category, and sold across multiple global markets.",
+      "period": "2022 Q3 – 2024 Q2",
+      "services": ["International Brand Strategy", "Social Media Marketing", "Amazon Ad Optimization", "Video Content Production"],
+      "metrics": [
+        { "label": "Amazon Category Rank", "sub": "needle-felting kit bestseller" },
+        { "label": "Global Sales Growth", "sub": "Taiwan market return" },
+        { "label": "YouTube Subscriber Growth", "sub": "tutorial video series" },
+        { "label": "Customer Rating", "sub": "Amazon average rating" }
+      ],
+      "challenge": "Woolbuddy already had solid overseas recognition, but low visibility in the Taiwan market, and the handicrafts audience is fragmented and hard to reach at scale.",
+      "solution": "Centered on the founder's story (a former Lucasfilm artist), we produced a series of Mandarin needle-felting tutorial videos, paired with IG Reels and YouTube Shorts to reach the crafting community, while optimizing Amazon product pages to boost conversion.",
+      "testimonial": { "quote": "Pixelholic helped our brand story resonate in Taiwan — the crafting community's engagement exceeded expectations and drove steady long-tail sales.", "author": "Woolbuddy Founder, Jackie" }
+    }
+  }
+}
