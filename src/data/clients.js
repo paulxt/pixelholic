@@ -3,6 +3,7 @@ import polarisLogo from '../assets/logos/polaris.png'
 import cmeiLogo from '../assets/logos/cmei.png'
 import yunyangLogo from '../assets/logos/yunyang.png'
 import woolbuddyLogo from '../assets/logos/woolbuddy.png'
+import letapeLogo from '../assets/logos/letape.png'
 
 export const clients = [
   {
@@ -49,6 +50,15 @@ export const clients = [
     colorName: 'coral',
     metrics: [{ value: 'TOP 3' }, { value: '+247%' }, { value: '+185%' }, { value: '4.8★' }],
     website: 'https://woolbuddy.com',
+  },
+  {
+    id: 'letape',
+    icon: '◎',
+    logo: letapeLogo,
+    color: '#D97706',
+    colorName: 'amber',
+    metrics: [{ value: '3,000+' }, { value: '30+' }, { value: 'A.S.O.' }, { value: 'CNN' }],
+    website: 'https://letapesunmoonlake.com',
   },
 ]
 

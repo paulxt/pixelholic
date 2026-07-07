@@ -234,6 +234,23 @@
       "challenge": "Woolbuddy already had solid overseas recognition, but low visibility in the Taiwan market, and the handicrafts audience is fragmented and hard to reach at scale.",
       "solution": "Centered on the founder's story (a former Lucasfilm artist), we produced a series of Mandarin needle-felting tutorial videos, paired with IG Reels and YouTube Shorts to reach the crafting community, while optimizing Amazon product pages to boost conversion.",
       "testimonial": { "quote": "Pixelholic helped our brand story resonate in Taiwan — the crafting community's engagement exceeded expectations and drove steady long-tail sales.", "author": "Woolbuddy Founder, Jackie" }
+    },
+    "letape": {
+      "name": "L'Étape Sun Moon Lake",
+      "industry": "Sports Event / International Cycling",
+      "themeTag": "International Cycling Event",
+      "tagline": "Bringing Tour de France glory to Sun Moon Lake",
+      "description": "L'Étape Sun Moon Lake, presented by Nutrilite, is an A.S.O.-certified international cycling event under the official Tour de France series. Its debut edition in 2024 drew over 3,000 riders from 30+ countries, making it one of Asia's most important cycling events. The route runs through Sun Moon Lake's Xiangshan Visitor Center, and the 104km Challenge category was named one of the world's most scenic cycling routes by CNN, with the champion earning a spot at the following year's Tour de France Etape World Championship.",
+      "period": "2024 Q4 – Present",
+      "services": ["Social Media Marketing", "Website Development", "Content Production"],
+      "metrics": [
+        { "label": "First-Edition Scale", "sub": "riders registered" },
+        { "label": "Countries Represented", "sub": "across five continents" },
+        { "label": "Route Certification", "sub": "Official Tour de France-certified route" },
+        { "label": "Global Recognition", "sub": "Named one of the world's most scenic cycling routes" }
+      ],
+      "challenge": "As the Tour de France's official race series made its Asian debut — and Taiwan's first A.S.O.-certified international cycling event — the brand had zero awareness and no existing community in Taiwan, yet needed to build the professional credibility of a world-class event quickly, while attracting riders from around the globe to meet the organizer's registration targets.",
+      "solution": "Pixelholic built the official website and social channels from the ground up, adapting the official Tour de France visual guidelines for a localized presence. We drove social engagement through on-course footage and rider stories, while a complete website information architecture clearly presented event highlights and registration steps, helping international riders build trust quickly and complete sign-up."
     }
   }
 }

@@ -13,6 +13,7 @@ const themes = {
   cmei:      { hdrClass: 'client-hdr-green',  bgClass: 'client-bg-green',  charType: 'heart' },
   yunyang:   { hdrClass: 'client-hdr-purple', bgClass: 'client-bg-purple', charType: 'alien' },
   woolbuddy: { hdrClass: 'client-hdr-orange', bgClass: 'client-bg-orange', charType: 'star' },
+  letape:    { hdrClass: 'client-hdr-amber',  bgClass: 'client-bg-amber',  charType: 'robot' },
 }
 
 /* ── Grid card (collapsed view) ─────────────────── */
@@ -163,13 +164,15 @@ function ClientDetail({ c, t }) {
             </div>
 
             {/* Testimonial */}
-            <div className="p-8" style={{ borderLeft: `4px solid ${c.color}`, backgroundColor: `${c.color}08` }}>
-              <p className="text-slate-600 text-base italic leading-loose mb-5">"{c.testimonial.quote}"</p>
-              <div className="flex items-center gap-3">
-                <span className="pixel-font text-lg" style={{ color: c.color }}>{c.icon}</span>
-                <span className="text-sm font-semibold text-slate-400">— {c.testimonial.author}</span>
+            {c.testimonial && (
+              <div className="p-8" style={{ borderLeft: `4px solid ${c.color}`, backgroundColor: `${c.color}08` }}>
+                <p className="text-slate-600 text-base italic leading-loose mb-5">"{c.testimonial.quote}"</p>
+                <div className="flex items-center gap-3">
+                  <span className="pixel-font text-lg" style={{ color: c.color }}>{c.icon}</span>
+                  <span className="text-sm font-semibold text-slate-400">— {c.testimonial.author}</span>
+                </div>
               </div>
-            </div>
+            )}
           </div>
 
           {/* Right 1/3: metrics */}

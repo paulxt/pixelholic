@@ -251,9 +251,11 @@ body {
 .client-bg-green  { background: linear-gradient(180deg, #ECFDF5 0%, #F6FFFA 100%); }
 .client-bg-orange { background: linear-gradient(180deg, #FFF7ED 0%, #FFFBF5 100%); }
 .client-bg-purple { background: linear-gradient(180deg, #F5F3FF 0%, #FAFAFF 100%); }
+.client-bg-amber  { background: linear-gradient(180deg, #FFFBEB 0%, #FFFDF7 100%); }
 
 .client-hdr-indigo  { background: linear-gradient(135deg, #312E81 0%, #4338CA 100%); }
 .client-hdr-cyan    { background: linear-gradient(135deg, #0C4A6E 0%, #0891B2 100%); }
 .client-hdr-green   { background: linear-gradient(135deg, #064E3B 0%, #059669 100%); }
 .client-hdr-orange  { background: linear-gradient(135deg, #7C2D12 0%, #EA580C 100%); }
 .client-hdr-purple  { background: linear-gradient(135deg, #3B0764 0%, #7C3AED 100%); }
+.client-hdr-amber   { background: linear-gradient(135deg, #78350F 0%, #D97706 100%); }

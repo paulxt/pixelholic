@@ -231,27 +231,27 @@ export default function Portfolio() {
           {displayed.length === 1 ? (
             <ClientCard c={displayed[0]} featured lang={lang} t={t} />
           ) : (
-            <>
-              {displayed.map((c) => <ClientCard key={c.id} c={c} lang={lang} t={t} />)}
-              <a
-                href="#contact"
-                onClick={(e) => { e.preventDefault(); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }) }}
-                className="group flex flex-col items-center justify-center text-center p-7 border-2 border-dashed transition-colors cursor-pointer"
-                style={{ borderColor: '#C7D2FE' }}
-              >
-                <span className="pixel-font text-2xl mb-3 text-indigo-300 group-hover:text-indigo-500 group-hover:animate-float transition-colors">
-                  +
-                </span>
-                <div className="text-slate-500 text-sm font-medium mb-1 group-hover:text-indigo-600 transition-colors">
-                  {t('portfolio.moreCasesTitle')}
-                </div>
-                <div className="text-xs text-slate-400 group-hover:text-indigo-400 transition-colors">
-                  {t('portfolio.moreCasesSub')}
-                </div>
-              </a>
-            </>
+            displayed.map((c) => <ClientCard key={c.id} c={c} lang={lang} t={t} />)
           )}
         </div>
+
+        {/* More cases — compact bar, not a full grid cell */}
+        {displayed.length > 1 && (
+          <a
+            href="#contact"
+            onClick={(e) => { e.preventDefault(); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }) }}
+            className="group flex flex-wrap items-center justify-center gap-2 text-center py-4 px-6 border-2 border-dashed transition-colors cursor-pointer"
+            style={{ borderColor: '#C7D2FE', marginTop: '1.25rem' }}
+          >
+            <span className="pixel-font text-base text-indigo-300 group-hover:text-indigo-500 transition-colors">+</span>
+            <span className="text-slate-500 text-sm font-medium group-hover:text-indigo-600 transition-colors">
+              {t('portfolio.moreCasesTitle')}
+            </span>
+            <span className="text-xs text-slate-400 group-hover:text-indigo-400 transition-colors">
+              {t('portfolio.moreCasesSub')}
+            </span>
+          </a>
+        )}
 
         {/* Bottom CTA */}
         <div className="pixel-card p-12 flex flex-col md:flex-row items-center justify-center gap-8 text-center" style={{ marginTop: '2rem' }}>
