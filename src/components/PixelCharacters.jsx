@@ -147,6 +147,114 @@ const MUSHROOM = [
   '00000000',
 ]
 
+/* Pixel icon: flag (brand positioning) */
+const FLAG = [
+  '01111110',
+  '01111111',
+  '01111110',
+  '01111100',
+  '01000000',
+  '01000000',
+  '01000000',
+  '11100000',
+]
+
+/* Pixel icon: speech bubble (social) */
+const SPEECH = [
+  '01111110',
+  '11111111',
+  '11313131',
+  '11111111',
+  '01111110',
+  '00110000',
+  '00100000',
+  '00000000',
+]
+
+/* Pixel icon: bullseye target (precise ad targeting) */
+const TARGET = [
+  '00111100',
+  '01111110',
+  '11233211',
+  '11233211',
+  '01111110',
+  '00111100',
+  '00000000',
+  '00000000',
+]
+
+/* Pixel icon: TV with play button (video content) */
+const TV = [
+  '01000010',
+  '00100100',
+  '11111111',
+  '12232221',
+  '12233221',
+  '12232221',
+  '11111111',
+  '00000000',
+]
+
+/* Pixel icon: shopping cart (e-commerce) */
+const CART = [
+  '11000000',
+  '01111111',
+  '01111111',
+  '01111111',
+  '00111110',
+  '00000000',
+  '01100110',
+  '00000000',
+]
+
+/* Pixel icon: rising bar chart (analytics) */
+const CHART = [
+  '00000011',
+  '00000011',
+  '00011011',
+  '00011011',
+  '11011011',
+  '11011011',
+  '11011011',
+  '00000000',
+]
+
+/* Pixel icon: crosshair (pixel precision) */
+const CROSSHAIR = [
+  '00011000',
+  '00011000',
+  '00011000',
+  '11133111',
+  '11133111',
+  '00011000',
+  '00011000',
+  '00011000',
+]
+
+/* Pixel icon: lightbulb (creativity) */
+const BULB = [
+  '00111100',
+  '01111110',
+  '01121110',
+  '01111110',
+  '00111100',
+  '00133100',
+  '00111100',
+  '00011000',
+]
+
+/* Pixel icon: magnifier (data insight) */
+const MAGNIFIER = [
+  '00111000',
+  '01222100',
+  '01222100',
+  '00111000',
+  '00001100',
+  '00000110',
+  '00000000',
+  '00000000',
+]
+
 /* Pixel icon: mail envelope */
 const MAIL = [
   '00000000',
@@ -249,6 +357,8 @@ export function PixelChar({ type = 'alien', color, size = 6, className = '' }) {
     alien: ALIEN, rocket: ROCKET, robot: ROBOT, heart: HEART, star: STAR, bolt: BOLT,
     ghost: GHOST, crown: CROWN, coin: COIN, mushroom: MUSHROOM,
     mail: MAIL, phone: PHONE, pin: PIN, clock: CLOCK,
+    flag: FLAG, speech: SPEECH, target: TARGET, tv: TV, cart: CART,
+    chart: CHART, crosshair: CROSSHAIR, bulb: BULB, magnifier: MAGNIFIER,
   }
   const data = map[type] || ALIEN
   const col = color || COLORS.primary

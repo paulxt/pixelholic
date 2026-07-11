@@ -2,8 +2,10 @@ import { useTranslation } from 'react-i18next'
 import { SectionCorners, PixelScatter, PixelChar } from './PixelCharacters'
 import Reveal from './Reveal'
 
-/* Cute pixel mascots, one per service (by card order) */
-const servicePixelChars = ['crown', 'heart', 'rocket', 'ghost', 'coin', 'robot']
+/* Content-matched pixel icons, one per service (by card order):
+   flag=positioning, speech=social, target=ad targeting,
+   tv=video content, cart=e-commerce, chart=analytics */
+const servicePixelChars = ['flag', 'speech', 'target', 'tv', 'cart', 'chart']
 
 function ServiceCard({ s, charType }) {
   return (

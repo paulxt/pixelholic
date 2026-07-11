@@ -2,8 +2,9 @@ import { useTranslation } from 'react-i18next'
 import { PixelScatter, SectionCorners, PixelChar } from './PixelCharacters'
 import Reveal from './Reveal'
 
-/* Cute pixel mascots, one per core value (by order) */
-const valuePixelChars = ['bolt', 'ghost', 'alien', 'mushroom']
+/* Content-matched pixel icons, one per core value (by order):
+   crosshair=precision, bulb=creativity, magnifier=data insight, mushroom=power-up/evolve */
+const valuePixelChars = ['crosshair', 'bulb', 'magnifier', 'mushroom']
 
 export default function About() {
   const { t } = useTranslation()
