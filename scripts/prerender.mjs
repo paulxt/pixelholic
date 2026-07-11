@@ -3,9 +3,11 @@
  * in headless Chromium, and writes the resulting HTML back into dist/ so
  * crawlers (and link previews) see full content without executing JS.
  * Also emits dist/sitemap.xml with hreflang alternates.
+ *
+ * Fail-soft: if the browser can't launch (e.g. a CI image without Chromium),
+ * the build still succeeds — the site ships as a plain SPA and sitemap.xml
+ * is written regardless (it needs no browser).
  */
-import { preview } from 'vite'
-import { chromium } from 'playwright'
 import { writeFileSync, mkdirSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 
@@ -16,27 +18,7 @@ const clientIds = ['kingcart', 'polaris', 'cmei', 'yunyang', 'woolbuddy', 'letap
 const zhRoutes = ['/', '/clients', ...clientIds.map((id) => `/clients/${id}`)]
 const routes = [...zhRoutes, ...zhRoutes.map((r) => (r === '/' ? '/en' : `/en${r}`))]
 
-const server = await preview({ preview: { port: PORT, strictPort: true } })
-const browser = await chromium.launch()
-const page = await browser.newPage()
-
-// Keep the language-suggestion banner out of the prerendered markup
-await page.addInitScript(() => {
-  localStorage.setItem('pixelholic_lang_banner_dismissed', '1')
-})
-
-for (const route of routes) {
-  await page.goto(`http://localhost:${PORT}${route}`, { waitUntil: 'networkidle' })
-  let html = await page.content()
-  if (!/^<!doctype/i.test(html)) html = '<!doctype html>\n' + html
-
-  const outFile = route === '/' ? join('dist', 'index.html') : join('dist', route.slice(1), 'index.html')
-  mkdirSync(dirname(outFile), { recursive: true })
-  writeFileSync(outFile, html)
-  console.log(`prerendered ${route}`)
-}
-
-/* ── sitemap.xml with hreflang alternates ─────────── */
+/* ── sitemap.xml with hreflang alternates (no browser needed) ── */
 const urlEntries = zhRoutes
   .map((r) => {
     const zh = `${SITE_URL}${r === '/' ? '/' : r}`
@@ -59,5 +41,35 @@ writeFileSync(
 )
 console.log('sitemap.xml written')
 
-await browser.close()
-await server.close()
+/* ── prerender each route ─────────────────────────── */
+let server
+let browser
+try {
+  const { preview } = await import('vite')
+  const { chromium } = await import('playwright')
+
+  server = await preview({ preview: { port: PORT, strictPort: true } })
+  browser = await chromium.launch()
+  const page = await browser.newPage()
+
+  // Keep the language-suggestion banner out of the prerendered markup
+  await page.addInitScript(() => {
+    localStorage.setItem('pixelholic_lang_banner_dismissed', '1')
+  })
+
+  for (const route of routes) {
+    await page.goto(`http://localhost:${PORT}${route}`, { waitUntil: 'networkidle' })
+    let html = await page.content()
+    if (!/^<!doctype/i.test(html)) html = '<!doctype html>\n' + html
+
+    const outFile = route === '/' ? join('dist', 'index.html') : join('dist', route.slice(1), 'index.html')
+    mkdirSync(dirname(outFile), { recursive: true })
+    writeFileSync(outFile, html)
+    console.log(`prerendered ${route}`)
+  }
+} catch (err) {
+  console.warn(`prerender skipped (build continues as plain SPA): ${err.message}`)
+} finally {
+  await browser?.close()
+  await server?.close()
+}
