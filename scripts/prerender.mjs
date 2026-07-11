@@ -11,7 +11,7 @@
 import { writeFileSync, mkdirSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 
-const SITE_URL = 'https://pixelholic.co'
+const SITE_URL = 'https://www.pixelholic.co'
 const PORT = 4173
 
 const clientIds = ['kingcart', 'polaris', 'cmei', 'yunyang', 'woolbuddy', 'letape']
@@ -41,6 +41,21 @@ writeFileSync(
 )
 console.log('sitemap.xml written')
 
+/* Launch the system Chromium if available; otherwise fall back to the
+   lambda-compatible static build (Vercel/CI images lack browser libs). */
+async function launchBrowser(chromium) {
+  try {
+    return await chromium.launch()
+  } catch (err) {
+    console.warn(`default chromium launch failed (${err.message.split('\n')[0]}); trying @sparticuz/chromium`)
+    const { default: sparticuz } = await import('@sparticuz/chromium')
+    return await chromium.launch({
+      executablePath: await sparticuz.executablePath(),
+      args: sparticuz.args,
+    })
+  }
+}
+
 /* ── prerender each route ─────────────────────────── */
 let server
 let browser
@@ -49,7 +64,7 @@ try {
   const { chromium } = await import('playwright')
 
   server = await preview({ preview: { port: PORT, strictPort: true } })
-  browser = await chromium.launch()
+  browser = await launchBrowser(chromium)
   const page = await browser.newPage()
 
   // Keep the language-suggestion banner out of the prerendered markup

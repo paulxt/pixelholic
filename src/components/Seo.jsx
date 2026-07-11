@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import { langFromPathname, stripLangPrefix, withLang } from '../utils/langPath'
 
-export const SITE_URL = 'https://pixelholic.co'
+export const SITE_URL = 'https://www.pixelholic.co'
 
 function upsertMeta(attr, key, content) {
   let el = document.head.querySelector(`meta[${attr}="${key}"]`)

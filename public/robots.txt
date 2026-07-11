@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://pixelholic.co/sitemap.xml
+Sitemap: https://www.pixelholic.co/sitemap.xml
