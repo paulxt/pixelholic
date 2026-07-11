@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import useTranslatedClients from '../hooks/useTranslatedClients'
@@ -7,10 +7,8 @@ import { PixelChar, SectionCorners } from '../components/PixelCharacters'
 import { clientThemes } from '../components/ClientDetail'
 import Reveal from '../components/Reveal'
 import Seo from '../components/Seo'
-
-/* Mega Man stage-select pacing: panel blink → READY screen → warp in */
-const BLINK_MS = 640
-const READY_MS = 1000
+import StageReady from '../components/StageReady'
+import useStageTransition from '../hooks/useStageTransition'
 
 /* ── Grid card (links to the case-study page) ─────── */
 function ClientGridCard({ c, onOpen, blinking, t }) {
@@ -92,7 +90,7 @@ export default function ClientsPage() {
   const navigate = useNavigate()
   const lang = langFromPathname(location.pathname)
   const clients = useTranslatedClients()
-  const [transition, setTransition] = useState(null) // null | { id, phase: 'blink' | 'ready' }
+  const { transition, start: openDetail } = useStageTransition(lang)
 
   useEffect(() => {
     // Legacy deep links used /clients#id — forward them to the case-study route
@@ -105,25 +103,6 @@ export default function ClientsPage() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  useEffect(() => {
-    if (!transition) return
-    if (transition.phase === 'blink') {
-      const timer = setTimeout(() => setTransition({ id: transition.id, phase: 'ready' }), BLINK_MS)
-      return () => clearTimeout(timer)
-    }
-    const timer = setTimeout(
-      () => navigate(withLang(`/clients/${transition.id}`, lang), { state: { stage: true } }),
-      READY_MS,
-    )
-    return () => clearTimeout(timer)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [transition])
-
-  const openDetail = (id) => {
-    if (transition) return
-    setTransition({ id, phase: 'blink' })
-  }
-
   const activeClient = transition ? clients.find((c) => c.id === transition.id) : null
 
   return (
@@ -131,17 +110,7 @@ export default function ClientsPage() {
       <Seo title={t('meta.clientsTitle')} description={t('meta.clientsDescription')} />
 
       {/* READY screen — Mega Man stage intro */}
-      {transition?.phase === 'ready' && activeClient && (
-        <div
-          className="fixed inset-0 z-[100] scanlines flex flex-col items-center justify-center gap-10"
-          style={{ backgroundColor: '#0B1020' }}
-        >
-          <PixelChar type={clientThemes[activeClient.id].charType} color={activeClient.color} size={9} />
-          <span className="pixel-font text-white tracking-[0.3em] animate-blink-fast" style={{ fontSize: 22 }}>
-            READY
-          </span>
-        </div>
-      )}
+      {transition?.phase === 'ready' && <StageReady client={activeClient} />}
 
       <div className="pt-24 pb-32">
         <div className="page-wrap">

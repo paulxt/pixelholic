@@ -6,6 +6,8 @@ import { withLang, langFromPathname } from '../utils/langPath'
 import { PixelScatter, SectionCorners } from './PixelCharacters'
 import Reveal from './Reveal'
 import CountUp from './CountUp'
+import StageReady from './StageReady'
+import useStageTransition from '../hooks/useStageTransition'
 
 function ClientDropdown({ clients, selected, onChange, t }) {
   const [open, setOpen] = useState(false)
@@ -65,10 +67,10 @@ function ClientDropdown({ clients, selected, onChange, t }) {
   )
 }
 
-function ClientCard({ c, featured, lang, t }) {
+function ClientCard({ c, featured, lang, t, onOpen, blinking }) {
   return (
     <div
-      className={`pixel-card group h-full ${featured ? 'col-span-full' : 'flex flex-col'}`}
+      className={`pixel-card group h-full ${featured ? 'col-span-full' : 'flex flex-col'}${blinking ? ' stage-blink' : ''}`}
       style={{ borderColor: `${c.color}40` }}
     >
       {featured ? (
@@ -123,6 +125,7 @@ function ClientCard({ c, featured, lang, t }) {
               <Link
                 to={withLang(`/clients/${c.id}`, lang)}
                 state={{ stage: true }}
+                onClick={(e) => { e.preventDefault(); onOpen(c.id) }}
                 className="pixel-btn"
                 style={{
                   borderColor: c.color,
@@ -181,6 +184,7 @@ function ClientCard({ c, featured, lang, t }) {
               <Link
                 to={withLang(`/clients/${c.id}`, lang)}
                 state={{ stage: true }}
+                onClick={(e) => { e.preventDefault(); onOpen(c.id) }}
                 className="text-sm font-semibold inline-flex items-center gap-1.5 transition-all group-hover:gap-3"
                 style={{ color: c.color }}
               >
@@ -200,11 +204,16 @@ export default function Portfolio() {
   const lang = langFromPathname(location.pathname)
   const clients = useTranslatedClients()
   const [selected, setSelected] = useState(null)
+  const { transition, start: openDetail } = useStageTransition(lang)
 
   const displayed = selected ? [selected] : clients
+  const activeClient = transition ? clients.find((c) => c.id === transition.id) : null
 
   return (
     <section id="portfolio" className="section-pad-l relative overflow-hidden">
+      {/* READY screen — Mega Man stage intro */}
+      {transition?.phase === 'ready' && <StageReady client={activeClient} />}
+
       <SectionCorners color="#0891B2" />
       <PixelScatter count={4} />
 
@@ -236,11 +245,11 @@ export default function Portfolio() {
         {/* Cards */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {displayed.length === 1 ? (
-            <ClientCard c={displayed[0]} featured lang={lang} t={t} />
+            <ClientCard c={displayed[0]} featured lang={lang} t={t} onOpen={openDetail} blinking={transition?.id === displayed[0].id} />
           ) : (
             displayed.map((c, i) => (
               <Reveal key={c.id} delay={(i % 3) * 90} className="h-full">
-                <ClientCard c={c} lang={lang} t={t} />
+                <ClientCard c={c} lang={lang} t={t} onOpen={openDetail} blinking={transition?.id === c.id} />
               </Reveal>
             ))
           )}
