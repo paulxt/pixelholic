@@ -171,15 +171,15 @@
       "tagline": "The go-to accessory partner for Tesla owners",
       "description": "KingCart is Taiwan's leading Tesla accessories brand, specializing in premium accessories for the Model 3, Y, S, and X — from center console organizers to carbon fiber badges and cabin upgrades. The brand operates three showrooms across Taiwan: Taipei Neihu, Taichung Nantun, and Tainan.",
       "period": "2023 Q3 – Present",
-      "services": ["Brand Strategy", "Social Media Marketing", "Content Production", "Ad Optimization"],
+      "services": ["Brand Strategy", "SEO Content Marketing", "Social Media Marketing", "Ad Optimization"],
       "metrics": [
         { "label": "Social Follower Growth", "sub": "in 6 months" },
-        { "label": "Online Revenue Growth", "sub": "YoY" },
-        { "label": "Instagram Engagement Rate", "sub": "3x industry average" },
+        { "label": "Website Share of Revenue", "sub": "up from ~10%" },
+        { "label": "\"Tesla Accessories\" Keyword Rank", "sub": "Google organic, page 1" },
         { "label": "Ad ROAS", "sub": "Meta Ads" }
       ],
       "challenge": "Tesla registrations in Taiwan keep hitting record highs, yet the accessory market is flooded with cheap no-name products: owners can't tell quality apart, so price decides everything. KingCart had the product strength — what it lacked was a brand owners would recognize and pay a premium for.",
-      "solution": "We repositioned KingCart from \"selling accessories\" to \"the premium lifestyle brand for Tesla owners\": high-craft unboxing videos and owner lifestyle content built the taste association, precisely targeted Meta Ads reached current and soon-to-be Tesla owners, and owner-community KOLs spread the word — giving the brand premium real support, with order value and repeat purchases growing together.",
+      "solution": "We repositioned KingCart from \"selling accessories\" to \"the premium lifestyle brand for Tesla owners\": high-craft unboxing videos and owner lifestyle content built the taste association, precisely targeted Meta Ads reached current and soon-to-be Tesla owners, and owner-community KOLs spread the word. In parallel, an SEO content strategy grew the brand's blog until keywords like \"Tesla accessories recommendation\" held page one of Google — a steady stream of free organic traffic and orders that grew the official site from ~10% to about half of total revenue.",
       "testimonial": { "quote": "Pixelholic helped us shift from “selling accessories” to “selling a lifestyle.” Our brand premium grew significantly, and average order value increased by 40%.", "author": "KingCart Founder" }
     },
     "polaris": {
@@ -189,7 +189,7 @@
       "tagline": "Transparent routes, seamless roaming worldwide",
       "description": "Polaris eSIM is a Taiwan-native travel eSIM brand and the first to introduce full \"route transparency\" — letting travelers see exactly which carrier route each plan uses before they buy. Coverage spans 200+ countries and regions, with native direct routes in 10+ popular destinations. Polaris has been featured in Commercial Times, Economic Daily News, and TechNews.",
       "period": "2024 Q1 – Present",
-      "services": ["Brand Strategy", "Digital Advertising", "PR & Media Relations", "Data Analytics"],
+      "services": ["Social Media Marketing", "Brand Strategy", "PR & Media Relations", "Digital Advertising"],
       "metrics": [
         { "label": "Brand Search Growth", "sub": "in 6 months" },
         { "label": "Media Placements", "sub": "major finance & tech outlets" },
@@ -197,7 +197,7 @@
         { "label": "Repeat Purchase Rate", "sub": "post travel-season tracking" }
       ],
       "challenge": "An eSIM is the classic \"invisible product\": buyers can't judge quality before purchase, and if they end up on a detoured route, they just eat the loss. Everyone in the market competes on price and nobody talks about quality — Polaris needed a claim that was both memorable and verifiable.",
-      "solution": "We translated a technical edge into consumer language with the \"route transparency\" brand promise: see the exit route before you pay. In-depth tech media PR built authority (coverage in Commercial Times, Economic Daily News, and TechNews), while SEO content and Google Ads captured mindshare ahead of peak travel season — making \"route transparency\" the talking point of the entire category.",
+      "solution": "We translated a technical edge into consumer language with the \"route transparency\" brand promise: see the exit route before you pay. Social media led the charge, building brand voice and conversation with travel-scenario content; in-depth tech media PR added authority (coverage in Commercial Times, Economic Daily News, and TechNews), while Google Ads captured mindshare ahead of peak travel season — driving major growth in brand search and organic traffic.",
       "testimonial": { "quote": "Pixelholic turned our technical edge into language consumers actually understand — making “route transparency” an industry talking point that drove significant organic traffic.", "author": "Polaris eSIM Marketing Director" }
     },
     "cmei": {
@@ -207,7 +207,7 @@
       "tagline": "Taiwan-select ingredients, fresh to your door",
       "description": "CMEI Select is built around carefully sourced Taiwanese ingredients, best known for its thick-cut juicy pork jerky strips (honey, garlic, Sichuan spicy, Thai lime, and more — 9 flavors), alongside imported snacks, juices, and lifestyle goods from Japan, Korea, New Zealand and Australia. Products are sold on major channels including PX Mart, PChome, momo, Shopee, and Eastern Home Shopping.",
       "period": "2023 Q1 – 2024 Q4",
-      "services": ["E-commerce Growth Hacking", "Social Media Marketing", "Content Production", "Platform Ad Placement"],
+      "services": ["E-commerce Growth Hacking", "SEO Content Marketing", "Social Media Marketing", "Platform Ad Placement"],
       "metrics": [
         { "label": "E-commerce Revenue Growth", "sub": "in first year" },
         { "label": "momo Category Rank", "sub": "jerky category" },
@@ -215,7 +215,7 @@
         { "label": "New Product Launch", "sub": "limited flavor flash sale", "value": "Sold Out" }
       ],
       "challenge": "Food e-commerce is the reddest of red oceans: a new brand has no shelf advantage and no voice — why would a shopper pick you out of a wall of jerky? CMEI needed to build \"we dare to show what's inside\" trust, fast.",
-      "solution": "Centered on \"genuine Taiwan-select ingredients,\" we made quality visible with ingredient-sourcing videos and taste-test unboxings, then used cross-platform joint promotions and limited-flavor flash drops to create scarcity buzz — rolling each wave of traffic into cross-platform sales and reaching momo's jerky-category Top 5 within the first year.",
+      "solution": "Centered on \"genuine Taiwan-select ingredients,\" we made quality visible with ingredient-sourcing videos and taste-test unboxings, while SEO built out brand and product keywords so organic search and platform traffic compounded each other; cross-platform joint promotions and limited-flavor flash drops created scarcity buzz — rolling each wave of traffic into cross-platform sales and reaching momo's jerky-category Top 5 within the first year.",
       "testimonial": { "quote": "From unknown to Top 5 in momo's jerky category — Pixelholic's e-commerce strategy helped us achieve in one year what usually takes three.", "author": "CMEI Select CEO" }
     },
     "yunyang": {
@@ -225,7 +225,7 @@
       "tagline": "30 years of expertise, flying you to your dream destination",
       "description": "Founded in 1992, Yunyang International Travel has served the Tainan and Chiayi travel market for over 30 years as a licensed Category-A travel agency. Since 2005 it has been the exclusive Vietnam Airlines agent for the greater Tainan region, winning the region's top sales award year after year — including the Vietnam Airlines Platinum Sales Award in 2024. It also operates a Taiwan Compatriot Permit and passport processing center serving over 100 partner agencies across the Yunlin-Chiayi-Tainan region.",
       "period": "2024 Q2 – Present",
-      "services": ["Digital Brand Strategy", "Social Media Marketing", "Digital Advertising", "Content Production"],
+      "services": ["Social Media Marketing", "Digital Brand Strategy", "Digital Advertising", "Content Production"],
       "metrics": [
         { "label": "Social Follower Growth", "sub": "in first year" },
         { "label": "Website Inquiry Growth", "sub": "after SEO + CRO" },
@@ -233,7 +233,7 @@
         { "label": "Google Business Rating", "sub": "300+ reviews" }
       ],
       "challenge": "The classic problem of a 30-year institution: all the reputation lives offline, while online the brand is nearly invisible. Its customer base skewed older, and younger travelers searching \"Vietnam travel\" never saw Yunyang at all — for a legacy brand, digital transformation isn't extra credit, it's survival.",
-      "solution": "We brought 30 years of reputation online: repositioning the brand around \"30 years of trust, the top choice for Vietnam travel,\" fully optimizing website SEO and Google Ads, building a Vietnam travel content matrix on Instagram and Facebook to reach travelers aged 25–45, and managing Google reviews — turning old word-of-mouth into proof new customers can see at a glance.",
+      "solution": "We brought 30 years of reputation online with social media as the main battlefield: a Vietnam travel content matrix on Instagram and Facebook reached travelers aged 25–45 and made social the brand's new storefront, driving major traffic growth. In parallel we repositioned the brand around \"30 years of trust, the top choice for Vietnam travel,\" optimized the website and Google Ads, and managed Google reviews — turning old word-of-mouth into proof new customers can see at a glance.",
       "testimonial": { "quote": "Pixelholic helped us make a smooth digital transition, bringing 30 years of word-of-mouth reputation online. Vietnam tour bookings grew significantly, and even younger customers started finding us.", "author": "Yunyang International Travel General Manager" }
     },
     "woolbuddy": {
@@ -261,15 +261,15 @@
       "tagline": "Bringing Tour de France glory to Sun Moon Lake",
       "description": "L'Étape Sun Moon Lake, presented by Nutrilite, is an A.S.O.-certified international cycling event under the official Tour de France series. Its debut edition in 2024 drew 2,600 riders from 25+ countries, making it one of Asia's most important cycling events. The route runs through Sun Moon Lake's Xiangshan Visitor Center and links up with the Sun Moon Lake bikeway, named one of the world's most beautiful cycling routes by CNN, with the champion earning a spot at the following year's L'Étape World Championship.",
       "period": "2024 Q4 – Present",
-      "services": ["Social Media Marketing", "Website Development", "Content Production"],
+      "services": ["Website Development", "Social Media Marketing", "Content Production"],
       "metrics": [
         { "label": "First-Edition Scale", "sub": "riders registered" },
         { "label": "Countries Represented", "sub": "across five continents" },
         { "label": "Route Certification", "sub": "Official Tour de France-certified route" },
         { "label": "Global Recognition", "sub": "Route links the CNN top-10 most beautiful bikeway" }
       ],
-      "challenge": "The Tour de France's official series was landing in Taiwan for the first time — starting from zero: no awareness, no community, no website. In just months it had to earn the professional trust a world-class event demands, and convince riders worldwide to fly to Taiwan — with registration numbers as the only scoreboard.",
-      "solution": "Pixelholic built the official website and social channels from the ground up: adapting the Tour de France visual guidelines for a localized presence, growing buzz with on-course footage and rider stories, and laying out event highlights and registration steps in one clear information architecture — so international riders could trust fast and sign up fast. The debut edition drew 2,600 riders from 25+ countries."
+      "challenge": "The Tour de France's official series was landing in Taiwan for the first time, with no existing digital assets locally. The website would be the first gateway for riders worldwide to discover the event and register — it had to earn the professional trust of a world-class event in months, with registration conversion as its only scoreboard.",
+      "solution": "Pixelholic built the official event website: adapting the Tour de France visual guidelines for a localized presence, laying out event highlights, routes, and registration steps in one clear information architecture, and optimizing the registration flow for conversion — so international riders could trust fast and sign up smoothly. We also supported social channels with on-course footage and rider stories. The debut edition drew 2,600 riders from 25+ countries."
     }
   }
 }

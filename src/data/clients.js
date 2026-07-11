@@ -12,7 +12,7 @@ export const clients = [
     logo: kingcartLogo,
     color: '#4338CA',
     colorName: 'primary',
-    metrics: [{ value: '+286%' }, { value: '+192%' }, { value: '8.4%' }, { value: '6.8x' }],
+    metrics: [{ value: '+286%' }, { value: '50%' }, { value: 'TOP 3' }, { value: '6.8x' }],
     website: 'https://www.kingcart.co',
   },
   {
