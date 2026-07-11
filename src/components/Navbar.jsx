@@ -14,13 +14,20 @@ const links = [
 export default function Navbar() {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [progress, setProgress] = useState(0)
   const location = useLocation()
   const navigate = useNavigate()
   const { t } = useTranslation()
   const lang = langFromPathname(location.pathname)
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40)
+    const onScroll = () => {
+      setScrolled(window.scrollY > 40)
+      const max = document.documentElement.scrollHeight - window.innerHeight
+      // Quantized to 2% steps for an EXP-bar feel
+      setProgress(max > 0 ? Math.round((window.scrollY / max) * 50) * 2 : 0)
+    }
+    onScroll()
     window.addEventListener('scroll', onScroll)
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
@@ -52,6 +59,12 @@ export default function Navbar() {
           : 'bg-white/60 backdrop-blur-sm'
       }`}
     >
+      {/* EXP-style scroll progress bar */}
+      <div
+        className="absolute bottom-0 left-0 h-[3px] pointer-events-none"
+        style={{ width: `${progress}%`, background: 'linear-gradient(90deg, #4338CA, #0891B2)', transition: 'width 0.2s steps(3)' }}
+      />
+
       <div className="max-w-7xl mx-auto px-8 flex items-center justify-between h-18 py-4">
         {/* Logo */}
         <Link

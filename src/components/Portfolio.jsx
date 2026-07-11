@@ -4,6 +4,8 @@ import { useTranslation } from 'react-i18next'
 import useTranslatedClients from '../hooks/useTranslatedClients'
 import { withLang, langFromPathname } from '../utils/langPath'
 import { PixelScatter, SectionCorners } from './PixelCharacters'
+import Reveal from './Reveal'
+import CountUp from './CountUp'
 
 function ClientDropdown({ clients, selected, onChange, t }) {
   const [open, setOpen] = useState(false)
@@ -66,7 +68,7 @@ function ClientDropdown({ clients, selected, onChange, t }) {
 function ClientCard({ c, featured, lang, t }) {
   return (
     <div
-      className={`pixel-card group ${featured ? 'col-span-full' : ''}`}
+      className={`pixel-card group h-full ${featured ? 'col-span-full' : 'flex flex-col'}`}
       style={{ borderColor: `${c.color}40` }}
     >
       {featured ? (
@@ -97,8 +99,8 @@ function ClientCard({ c, featured, lang, t }) {
               // {c.industry.toUpperCase()}
             </div>
             <h3 className="pixel-font text-slate-800 mb-2" style={{ fontSize: '16px' }}>{c.name}</h3>
-            <p className="text-slate-400 text-sm mb-6 italic">"{c.tagline}"</p>
-            <p className="text-slate-500 text-sm leading-relaxed mb-8">{c.description}</p>
+            <p className="text-slate-500 text-sm mb-6 italic">"{c.tagline}"</p>
+            <p className="text-slate-600 text-sm leading-relaxed mb-8">{c.description}</p>
 
             {/* Metrics */}
             <div className="grid grid-cols-2 gap-3 mb-8">
@@ -109,7 +111,7 @@ function ClientCard({ c, featured, lang, t }) {
                   style={{ borderColor: `${c.color}30`, backgroundColor: `${c.color}06`, border: `1px solid ${c.color}30` }}
                 >
                   <div className="pixel-font mb-1" style={{ color: c.color, fontSize: '14px' }}>
-                    {m.value}
+                    <CountUp value={m.value} />
                   </div>
                   <div className="text-xs text-slate-600 font-medium">{m.label}</div>
                   <div className="text-xs text-slate-400">{m.sub}</div>
@@ -119,7 +121,8 @@ function ClientCard({ c, featured, lang, t }) {
 
             <div className="flex justify-center">
               <Link
-                to={withLang(`/clients#${c.id}`, lang)}
+                to={withLang(`/clients/${c.id}`, lang)}
+                state={{ stage: true }}
                 className="pixel-btn"
                 style={{
                   borderColor: c.color,
@@ -134,10 +137,10 @@ function ClientCard({ c, featured, lang, t }) {
           </div>
         </div>
       ) : (
-        <div>
+        <div className="flex flex-col h-full">
           {/* Mini visual */}
           <div
-            className="h-24 flex items-center justify-center relative overflow-hidden"
+            className="h-24 shrink-0 flex items-center justify-center relative overflow-hidden"
             style={{ backgroundColor: `${c.color}08` }}
           >
             <div
@@ -155,8 +158,8 @@ function ClientCard({ c, featured, lang, t }) {
             />
           </div>
 
-          {/* Content */}
-          <div className="p-4 text-center">
+          {/* Content — flex column so the link pins to the bottom across cards */}
+          <div className="p-4 text-center flex flex-col flex-1">
             <div className="pixel-font text-[9px] mb-1" style={{ color: c.color }}>{c.industry}</div>
             <h3 className="font-semibold text-slate-800 text-base mb-1 group-hover:text-indigo-600 transition-colors">
               {c.name}
@@ -165,18 +168,19 @@ function ClientCard({ c, featured, lang, t }) {
 
             {/* Top metric */}
             <div
-              className="inline-flex items-center gap-3 px-3 py-2 mb-3"
+              className="inline-flex items-center justify-center gap-3 px-3 py-2 mb-3 mx-auto"
               style={{ backgroundColor: `${c.color}08`, borderLeft: `3px solid ${c.color}` }}
             >
               <span className="pixel-font font-bold" style={{ color: c.color, fontSize: '13px' }}>
-                {c.metrics[0].value}
+                <CountUp value={c.metrics[0].value} />
               </span>
               <span className="text-xs text-slate-500">{c.metrics[0].label}</span>
             </div>
 
-            <div className="flex justify-center">
+            <div className="flex justify-center mt-auto">
               <Link
-                to={withLang(`/clients#${c.id}`, lang)}
+                to={withLang(`/clients/${c.id}`, lang)}
+                state={{ stage: true }}
                 className="text-sm font-semibold inline-flex items-center gap-1.5 transition-all group-hover:gap-3"
                 style={{ color: c.color }}
               >
@@ -211,12 +215,15 @@ export default function Portfolio() {
             {t('portfolio.tag')}
           </div>
           <h2
-            className="pixel-font text-slate-800 leading-relaxed mb-4"
-            style={{ fontSize: 'clamp(18px, 3vw, 30px)' }}
+            className="pixel-font text-slate-800 mb-4"
+            style={{ fontSize: 'clamp(18px, 3vw, 30px)', lineHeight: 1.6 }}
           >
             {t('portfolio.titleLine1')}<br />
             <span style={{ color: '#0891B2' }}>{t('portfolio.titleLine2')}</span>
           </h2>
+          <p className="text-slate-600 text-base leading-loose max-w-2xl mx-auto mb-6">
+            {t('portfolio.sub')}
+          </p>
 
           <div className="flex flex-wrap items-center gap-4 justify-center">
             <ClientDropdown clients={clients} selected={selected} onChange={setSelected} t={t} />
@@ -231,7 +238,11 @@ export default function Portfolio() {
           {displayed.length === 1 ? (
             <ClientCard c={displayed[0]} featured lang={lang} t={t} />
           ) : (
-            displayed.map((c) => <ClientCard key={c.id} c={c} lang={lang} t={t} />)
+            displayed.map((c, i) => (
+              <Reveal key={c.id} delay={(i % 3) * 90} className="h-full">
+                <ClientCard c={c} lang={lang} t={t} />
+              </Reveal>
+            ))
           )}
         </div>
 
@@ -256,7 +267,7 @@ export default function Portfolio() {
         {/* Bottom CTA */}
         <div className="pixel-card p-12 flex flex-col md:flex-row items-center justify-center gap-8 text-center" style={{ marginTop: '2rem' }}>
           <div>
-            <div className="pixel-font text-[9px] text-green-600 mb-2">{t('portfolio.bottomTag')}</div>
+            <div className="pixel-font text-[9px] text-indigo-500 mb-2">{t('portfolio.bottomTag')}</div>
             <p className="text-slate-800 text-lg font-semibold">
               {t('portfolio.bottomTitle')}
             </p>

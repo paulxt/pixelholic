@@ -1,30 +1,38 @@
 import { useTranslation } from 'react-i18next'
-import { SectionCorners, PixelScatter } from './PixelCharacters'
+import { SectionCorners, PixelScatter, PixelChar } from './PixelCharacters'
+import Reveal from './Reveal'
 
-function ServiceCard({ s }) {
+/* Cute pixel mascots, one per service (by card order) */
+const servicePixelChars = ['crown', 'heart', 'rocket', 'ghost', 'coin', 'robot']
+
+function ServiceCard({ s, charType }) {
   return (
-    <div className="float-card p-10 group cursor-default flex flex-col items-center text-center">
+    <div className="float-card p-10 group cursor-default flex flex-col items-center text-center h-full">
       {/* Number */}
       <div className="pixel-font text-[9px] text-slate-200 mb-4 self-end">{s.num}</div>
 
-      {/* Icon */}
-      <span className="pixel-font group-hover:animate-float inline-block mb-6" style={{ color: s.color, lineHeight: 1, fontSize: '40px' }}>
-        {s.icon}
+      {/* Pixel mascot */}
+      <span className="group-hover:animate-float inline-block mb-6">
+        <PixelChar type={charType} color={s.color} size={6} />
       </span>
 
       <h3 className="text-slate-800 font-semibold text-lg mb-4 leading-snug tracking-wide group-hover:text-indigo-600 transition-colors">
         {s.title}
       </h3>
 
-      <p className="text-slate-400 text-sm leading-loose mb-8 flex-1">
+      <p className="text-slate-500 text-sm leading-loose mb-8 flex-1">
         {s.desc}
       </p>
 
-      {/* Tags */}
-      <div className="flex flex-wrap gap-2 justify-center">
+      {/* Tags — chip style, no trailing separator */}
+      <div className="flex flex-wrap gap-1.5 justify-center">
         {s.tags.map((t) => (
-          <span key={t} className="text-[11px] font-medium tracking-wide" style={{ color: s.color }}>
-            {t} ·
+          <span
+            key={t}
+            className="text-[11px] font-medium px-2 py-1 whitespace-nowrap"
+            style={{ color: s.color, backgroundColor: `${s.color}0D` }}
+          >
+            {t}
           </span>
         ))}
       </div>
@@ -52,18 +60,22 @@ export default function Services() {
           <div className="pixel-font text-[10px] text-indigo-400 mb-4 animate-pulse-glow tracking-widest">
             {t('services.tag')}
           </div>
-          <h2 className="pixel-font text-slate-800 mb-4 mx-auto" style={{ fontSize: 'clamp(18px, 3vw, 30px)', lineHeight: 2 }}>
+          <h2 className="pixel-font text-slate-800 mb-4 mx-auto" style={{ fontSize: 'clamp(18px, 3vw, 30px)', lineHeight: 1.6 }}>
             {t('services.titleLine1')}<br />
             <span style={{ color: '#4338CA' }}>{t('services.titleLine2')}</span>
           </h2>
-          <p className="text-slate-400 text-base leading-loose max-w-xl mx-auto">
+          <p className="text-slate-600 text-base leading-loose max-w-2xl mx-auto">
             {t('services.sub')}
           </p>
         </div>
 
         {/* Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((s) => <ServiceCard key={s.title} s={s} />)}
+          {services.map((s, i) => (
+            <Reveal key={s.title} delay={(i % 3) * 90} className="h-full">
+              <ServiceCard s={s} charType={servicePixelChars[i % servicePixelChars.length]} />
+            </Reveal>
+          ))}
         </div>
 
         {/* Ticker */}

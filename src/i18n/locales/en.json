@@ -1,7 +1,14 @@
 {
   "meta": {
-    "title": "PIXELHOLIC — Pixel-Driven, Brand Evolution",
-    "description": "PIXELHOLIC is a digital marketing agency blending bold pixel aesthetics with data-driven strategy."
+    "title": "PIXELHOLIC | Digital Marketing Agency in Taiwan — Brand Strategy, Social Media & Paid Ads",
+    "description": "PIXELHOLIC is a Taiwan-based digital marketing agency specializing in brand strategy, social media marketing, Google / Meta ads, and e-commerce growth. 20+ brands grown. Book a free brand audit.",
+    "clientsTitle": "Client Success Stories | PIXELHOLIC Digital Marketing",
+    "clientsDescription": "From Tesla accessories and travel eSIMs to international cycling events — see how PIXELHOLIC drives multi-fold growth with brand strategy, social media, and paid advertising."
+  },
+  "media": {
+    "tag": "// MEDIA COVERAGE",
+    "title": "Our clients' brands have been featured in",
+    "outlets": ["Commercial Times", "Economic Daily News", "TechNews", "CNN", "Tour de France / A.S.O."]
   },
   "nav": {
     "services": "Services",
@@ -16,11 +23,11 @@
   },
   "banner": {
     "slides": [
-      { "tag": "// DIGITAL MARKETING", "title": "Pixel-Driven\nBrand Evolution", "sub": "Blending bold pixel aesthetics with data-driven strategy to craft unforgettable digital brand experiences.", "accent": "#4338CA", "shadow": "#7C3AED", "symbol": "◈" },
+      { "tag": "// DIGITAL MARKETING", "title": "We Turn Pixels\nInto Brands", "sub": "Your brand, leveled up — strategy, content, and ads that clear every stage with you.", "accent": "#4338CA", "shadow": "#7C3AED", "symbol": "◈" },
       { "tag": "// CREATIVE CAMPAIGNS", "title": "Creativity\nWithout Limits", "sub": "From social media to integrated marketing, we fuel your brand with an endless stream of creative momentum.", "accent": "#0891B2", "shadow": "#4338CA", "symbol": "◉" },
-      { "tag": "// BRAND STRATEGY", "title": "Strategy First\nResults That Win", "sub": "Deep market insight, tailored into omnichannel marketing solutions built for maximum conversion.", "accent": "#059669", "shadow": "#0891B2", "symbol": "◇" }
+      { "tag": "// BRAND STRATEGY", "title": "Strategy First\nResults That Win", "sub": "Deep market insight, tailored into omnichannel marketing solutions built for maximum conversion.", "accent": "#4338CA", "shadow": "#0891B2", "symbol": "◇" }
     ],
-    "ctaPrimary": "Start a Project",
+    "ctaPrimary": "PRESS START",
     "ctaSecondary": "Explore Services",
     "statBrands": "Brand Partners",
     "statSatisfaction": "Client Satisfaction",
@@ -30,16 +37,16 @@
   },
   "services": {
     "tag": "// OUR SERVICES",
-    "titleLine1": "Full-Service Digital",
-    "titleLine2": "Marketing Solutions",
-    "sub": "From strategic planning to execution, we bring pixel-precise execution to create maximum impact for your brand.",
+    "titleLine1": "Full-Service",
+    "titleLine2": "Digital Marketing",
+    "sub": "Strategy through execution under one roof — pixel-precise work that turns every dollar into visible growth.",
     "items": [
       { "icon": "◈", "title": "Brand Strategy", "desc": "From brand positioning and visual identity to brand voice, we build a consistent, powerful brand image that helps you stand out in a competitive market.", "tags": ["Brand Positioning", "VI Design", "Brand Voice"], "color": "#4338CA", "num": "01" },
       { "icon": "◉", "title": "Social Media Marketing", "desc": "Integrating Instagram, Facebook, and Threads with creative content and precise audience targeting to rapidly grow your brand's reach and engagement.", "tags": ["Content Strategy", "KOL Partnerships", "Community Management"], "color": "#0891B2", "num": "02" },
-      { "icon": "◇", "title": "Digital Ad Placement", "desc": "Precision targeting on Google Ads and Meta Ads, paired with A/B testing and data optimization to maximize your return on ad spend.", "tags": ["Google Ads", "Meta Ads", "ROAS Optimization"], "color": "#7C3AED", "num": "03" },
-      { "icon": "▣", "title": "Content Production", "desc": "A one-stop service for video production, copywriting, and visual design — building brand authority with high-quality original content that drives organic traffic.", "tags": ["Video Production", "Copywriting", "SEO Content"], "color": "#059669", "num": "04" },
-      { "icon": "◎", "title": "E-commerce Growth Hacking", "desc": "Optimizing the shopping journey and conversion rates for e-commerce brands, connecting the full sales funnel from SEO to remarketing and email automation.", "tags": ["CRO Optimization", "Remarketing", "Email Marketing"], "color": "#EA580C", "num": "05" },
-      { "icon": "⊕", "title": "Data Analytics & Insights", "desc": "Building a comprehensive data tracking framework with clear marketing dashboards and periodic reports, so every decision is backed by data.", "tags": ["GA4 Setup", "Custom Reporting", "Business Insights"], "color": "#D97706", "num": "06" }
+      { "icon": "◇", "title": "Digital Ad Placement", "desc": "Precision targeting on Google Ads and Meta Ads, paired with A/B testing and data optimization to maximize your return on ad spend.", "tags": ["Google Ads", "Meta Ads", "ROAS Optimization"], "color": "#4338CA", "num": "03" },
+      { "icon": "▣", "title": "Content Production", "desc": "A one-stop service for video production, copywriting, and visual design — building brand authority with high-quality original content that drives organic traffic.", "tags": ["Video Production", "Copywriting", "SEO Content"], "color": "#0891B2", "num": "04" },
+      { "icon": "◎", "title": "E-commerce Growth Hacking", "desc": "Optimizing the shopping journey and conversion rates for e-commerce brands, connecting the full sales funnel from SEO to remarketing and email automation.", "tags": ["CRO Optimization", "Remarketing", "Email Marketing"], "color": "#4338CA", "num": "05" },
+      { "icon": "⊕", "title": "Data Analytics & Insights", "desc": "Building a comprehensive data tracking framework with clear marketing dashboards and periodic reports, so every decision is backed by data.", "tags": ["GA4 Setup", "Custom Reporting", "Business Insights"], "color": "#0891B2", "num": "06" }
     ],
     "ticker": ["BRAND STRATEGY", "SOCIAL MEDIA", "AD PLACEMENT", "CONTENT", "E-COMMERCE", "ANALYTICS", "BRAND", "SOCIAL", "ADS", "CONTENT", "GROWTH", "DATA"]
   },
@@ -48,21 +55,21 @@
     "titleLine1": "About",
     "titleLine2": "Pixelholic",
     "sub": "Pixelholic (registered as 玖漾國際行銷有限公司) is a brand consultancy focused on integrated digital marketing, helping brands stand out in the digital age with precise strategy and bold creativity.",
-    "intro1": "Guided by our core belief of \"Pixel-Driven, Brand Evolution,\" we've worked across industries from tech (KingCart EV accessories, Polaris eSIM) to food and handmade crafts (Woolbuddy, now selling worldwide).",
+    "intro1": "We believe brand growth works like a video game — you clear it one level at a time. From KingCart EV accessories and Polaris eSIM to Woolbuddy selling worldwide, we've helped brands across tech, food, and handmade crafts level up, stage by stage.",
     "intro2": "We're more than just an ad agency — we're your long-term growth partner. On every project, we show up like founders, treating your brand as if it were our own.",
     "valuesTag": "// CORE VALUES",
     "values": [
       { "icon": "◈", "title": "Pixel Precision", "desc": "Every detail is as precise as a pixel — we accept no deviation in execution.", "color": "#4338CA" },
       { "icon": "◉", "title": "Bold Creativity", "desc": "Breaking conventional frameworks with unconventional creative thinking to create real brand differentiation.", "color": "#0891B2" },
-      { "icon": "◇", "title": "Data-Driven", "desc": "Every decision is grounded in data, so every marketing dollar delivers maximum impact.", "color": "#059669" },
-      { "icon": "▣", "title": "Constant Evolution", "desc": "Staying ahead of digital trends, continuously updating our knowledge and tools to keep strategy on the cutting edge.", "color": "#EA580C" }
+      { "icon": "◇", "title": "Data-Driven", "desc": "Every decision is grounded in data, so every marketing dollar delivers maximum impact.", "color": "#4338CA" },
+      { "icon": "▣", "title": "Constant Evolution", "desc": "Staying ahead of digital trends, continuously updating our knowledge and tools to keep strategy on the cutting edge.", "color": "#0891B2" }
     ],
     "processTag": "// HOW WE WORK",
     "process": [
-      { "step": "01", "title": "Brand Diagnosis", "desc": "A deep dive into your brand's current state, target audience, and competitive landscape." },
-      { "step": "02", "title": "Strategic Planning", "desc": "Crafting a tailored digital marketing strategy and execution roadmap." },
-      { "step": "03", "title": "Creative Execution", "desc": "Bringing precise creative content to life across every channel." },
-      { "step": "04", "title": "Data Optimization", "desc": "Continuously tracking performance and iterating to maximize ROI." }
+      { "step": "LV.1", "title": "Brand Diagnosis", "desc": "A deep dive into your brand's current state, target audience, and competitive landscape." },
+      { "step": "LV.2", "title": "Strategic Planning", "desc": "Crafting a tailored digital marketing strategy and execution roadmap." },
+      { "step": "LV.3", "title": "Creative Execution", "desc": "Bringing precise creative content to life across every channel." },
+      { "step": "LV.4", "title": "Data Optimization", "desc": "Continuously tracking performance and iterating to maximize ROI." }
     ]
   },
   "contact": {
@@ -97,12 +104,23 @@
     "error": { "title": "Send Failed", "sub": "Please try again later, or email us directly at hc@pixelholic.co", "button": "Try Again" }
   },
   "footer": {
-    "tagline": "Pixel-Driven, Brand Evolution.",
-    "subtagline": "We turn pixels into profits.",
+    "tagline": "We turn pixels into brands.",
+    "subtagline": "",
     "navGroups": [
-      { "title": "Services", "items": ["Brand Strategy", "Social Media Marketing", "Digital Ad Placement", "Content Production", "E-commerce Growth Hacking", "Data Analytics & Insights"] },
-      { "title": "About Us", "items": ["Company Overview", "Core Team", "Company Culture", "Careers"] },
-      { "title": "Resources", "items": ["Marketing Blog", "Case Studies", "Free Tools", "Market Reports"] }
+      { "title": "Services", "items": [
+        { "label": "Brand Strategy", "href": "/#services" },
+        { "label": "Social Media Marketing", "href": "/#services" },
+        { "label": "Digital Ad Placement", "href": "/#services" },
+        { "label": "Content Production", "href": "/#services" },
+        { "label": "E-commerce Growth Hacking", "href": "/#services" },
+        { "label": "Data Analytics & Insights", "href": "/#services" }
+      ] },
+      { "title": "Quick Links", "items": [
+        { "label": "Client Success Stories", "href": "/clients" },
+        { "label": "About Us", "href": "/#about" },
+        { "label": "Contact", "href": "/#contact" },
+        { "label": "Free Consultation", "href": "/#contact" }
+      ] }
     ],
     "newsletterTag": "// NEWSLETTER",
     "newsletterText": "Subscribe to our newsletter for the latest digital marketing trends",
@@ -111,13 +129,13 @@
     "subscribePlaceholder": "your@email.com",
     "subscribeButton": "Subscribe",
     "copyright": "© {{year}} 玖漾國際行銷有限公司 PIXELHOLIC. ALL RIGHTS RESERVED.",
-    "legalLinks": ["Privacy Policy", "Terms of Service", "Cookie Settings"],
     "statusOnline": "ALL SYSTEMS ONLINE"
   },
   "portfolio": {
     "tag": "// SELECTED WORKS",
-    "titleLine1": "Selected Success",
-    "titleLine2": "Case Studies",
+    "titleLine1": "Battle-Tested",
+    "titleLine2": "Success Stories",
+    "sub": "No fluff — real brands, real numbers. Every case is a campaign we actually ran.",
     "selectPlaceholder": "Select Client",
     "allCases": "All Cases",
     "viewAllCta": "View All Case Studies",
@@ -134,6 +152,7 @@
     "titleLine2": "Success Stories",
     "sub": "Every brand has unique challenges and opportunities. Click a card to explore the full case study and see how we deliver real results for our clients.",
     "back": "← Back",
+    "caseMetaTitle": "{{name}} Marketing Case Study | PIXELHOLIC",
     "overviewTag": "// BRAND OVERVIEW",
     "challengeTag": "// CHALLENGE",
     "solutionTag": "// SOLUTION",
@@ -150,7 +169,7 @@
       "industry": "EV Accessories",
       "themeTag": "EV Accessories",
       "tagline": "The go-to accessory partner for Tesla owners",
-      "description": "KingCart is Taiwan's leading Tesla accessories brand, specializing in premium accessories for the Model 3, Y, S, and X — from center console organizers to carbon fiber badges and cabin upgrades. The brand operates four showrooms across Taiwan: Taipei Neihu, Taichung Nantun, Miaoli Zhunan, and Tainan.",
+      "description": "KingCart is Taiwan's leading Tesla accessories brand, specializing in premium accessories for the Model 3, Y, S, and X — from center console organizers to carbon fiber badges and cabin upgrades. The brand operates three showrooms across Taiwan: Taipei Neihu, Taichung Nantun, and Tainan.",
       "period": "2023 Q3 – Present",
       "services": ["Brand Strategy", "Social Media Marketing", "Content Production", "Ad Optimization"],
       "metrics": [
@@ -159,8 +178,8 @@
         { "label": "Instagram Engagement Rate", "sub": "3x industry average" },
         { "label": "Ad ROAS", "sub": "Meta Ads" }
       ],
-      "challenge": "Taiwan's EV market is growing fast, but Tesla owners had low brand awareness of accessory options, and competitors were mostly low-cost Chinese brands. KingCart needed to build brand recognition and a premium perception.",
-      "solution": "Centered on a \"premium Tesla lifestyle\" narrative, we produced high-quality unboxing videos and owner lifestyle content, paired with precisely targeted Meta Ads reaching Tesla owners, plus KOL partnerships to reach new owners.",
+      "challenge": "Tesla registrations in Taiwan keep hitting record highs, yet the accessory market is flooded with cheap no-name products: owners can't tell quality apart, so price decides everything. KingCart had the product strength — what it lacked was a brand owners would recognize and pay a premium for.",
+      "solution": "We repositioned KingCart from \"selling accessories\" to \"the premium lifestyle brand for Tesla owners\": high-craft unboxing videos and owner lifestyle content built the taste association, precisely targeted Meta Ads reached current and soon-to-be Tesla owners, and owner-community KOLs spread the word — giving the brand premium real support, with order value and repeat purchases growing together.",
       "testimonial": { "quote": "Pixelholic helped us shift from “selling accessories” to “selling a lifestyle.” Our brand premium grew significantly, and average order value increased by 40%.", "author": "KingCart Founder" }
     },
     "polaris": {
@@ -177,8 +196,8 @@
         { "label": "Order Conversion Rate", "sub": "after site CRO" },
         { "label": "Repeat Purchase Rate", "sub": "post travel-season tracking" }
       ],
-      "challenge": "The eSIM market is fiercely competitive, and consumers struggle to tell quality apart — while \"routed\" connections were hurting the travel experience. Polaris needed a differentiated position to break through.",
-      "solution": "We made \"route transparency\" the core brand promise, building authority through in-depth tech media PR, paired with SEO content strategy and precise Google Ads targeting to capture mindshare ahead of peak travel seasons.",
+      "challenge": "An eSIM is the classic \"invisible product\": buyers can't judge quality before purchase, and if they end up on a detoured route, they just eat the loss. Everyone in the market competes on price and nobody talks about quality — Polaris needed a claim that was both memorable and verifiable.",
+      "solution": "We translated a technical edge into consumer language with the \"route transparency\" brand promise: see the exit route before you pay. In-depth tech media PR built authority (coverage in Commercial Times, Economic Daily News, and TechNews), while SEO content and Google Ads captured mindshare ahead of peak travel season — making \"route transparency\" the talking point of the entire category.",
       "testimonial": { "quote": "Pixelholic turned our technical edge into language consumers actually understand — making “route transparency” an industry talking point that drove significant organic traffic.", "author": "Polaris eSIM Marketing Director" }
     },
     "cmei": {
@@ -195,8 +214,8 @@
         { "label": "Social Follower Growth", "sub": "IG + FB" },
         { "label": "New Product Launch", "sub": "limited flavor flash sale", "value": "Sold Out" }
       ],
-      "challenge": "Taiwan's food e-commerce market is intensely competitive, with low brand awareness, limited platform visibility, and a hard time building loyalty for a new brand.",
-      "solution": "Centered on \"genuine Taiwan-select ingredients,\" we produced ingredient-sourcing videos and taste-test unboxing content, paired with cross-platform joint promotions and limited-flavor flash sales to build buzz and drive cross-platform sales.",
+      "challenge": "Food e-commerce is the reddest of red oceans: a new brand has no shelf advantage and no voice — why would a shopper pick you out of a wall of jerky? CMEI needed to build \"we dare to show what's inside\" trust, fast.",
+      "solution": "Centered on \"genuine Taiwan-select ingredients,\" we made quality visible with ingredient-sourcing videos and taste-test unboxings, then used cross-platform joint promotions and limited-flavor flash drops to create scarcity buzz — rolling each wave of traffic into cross-platform sales and reaching momo's jerky-category Top 5 within the first year.",
       "testimonial": { "quote": "From unknown to Top 5 in momo's jerky category — Pixelholic's e-commerce strategy helped us achieve in one year what usually takes three.", "author": "CMEI Select CEO" }
     },
     "yunyang": {
@@ -213,8 +232,8 @@
         { "label": "Vietnam Tour Bookings", "sub": "peak-season comparison" },
         { "label": "Google Business Rating", "sub": "300+ reviews" }
       ],
-      "challenge": "A traditional travel agency with 30+ years of history faced digital transformation pressure: its existing customer base skewed older with low awareness among younger travelers, and limited online visibility made it hard to stand out on search and social.",
-      "solution": "Centered on \"30 years of trust, the top choice for Vietnam travel,\" we comprehensively optimized the website's SEO and Google Ads strategy, built a Vietnam travel content matrix on Instagram and Facebook to precisely reach travelers aged 25–45, and strengthened Google review management.",
+      "challenge": "The classic problem of a 30-year institution: all the reputation lives offline, while online the brand is nearly invisible. Its customer base skewed older, and younger travelers searching \"Vietnam travel\" never saw Yunyang at all — for a legacy brand, digital transformation isn't extra credit, it's survival.",
+      "solution": "We brought 30 years of reputation online: repositioning the brand around \"30 years of trust, the top choice for Vietnam travel,\" fully optimizing website SEO and Google Ads, building a Vietnam travel content matrix on Instagram and Facebook to reach travelers aged 25–45, and managing Google reviews — turning old word-of-mouth into proof new customers can see at a glance.",
       "testimonial": { "quote": "Pixelholic helped us make a smooth digital transition, bringing 30 years of word-of-mouth reputation online. Vietnam tour bookings grew significantly, and even younger customers started finding us.", "author": "Yunyang International Travel General Manager" }
     },
     "woolbuddy": {
@@ -231,8 +250,8 @@
         { "label": "YouTube Subscriber Growth", "sub": "tutorial video series" },
         { "label": "Customer Rating", "sub": "Amazon average rating" }
       ],
-      "challenge": "Woolbuddy already had solid overseas recognition, but low visibility in the Taiwan market, and the handicrafts audience is fragmented and hard to reach at scale.",
-      "solution": "Centered on the founder's story (a former Lucasfilm artist), we produced a series of Mandarin needle-felting tutorial videos, paired with IG Reels and YouTube Shorts to reach the crafting community, while optimizing Amazon product pages to boost conversion.",
+      "challenge": "Woolbuddy is an Amazon bestseller in the West, yet almost unknown in Taiwan; the crafting audience is scattered across niche groups where paid ads can't reach — influence there has to be grown through content.",
+      "solution": "We put the brand's strongest asset — the founder's story as a former Lucasfilm artist — at the heart of the narrative, produced a series of Mandarin needle-felting tutorials, and rode IG Reels and YouTube Shorts into the crafting community, while optimizing Amazon product pages so that attention actually converted into orders and long-tail sales.",
       "testimonial": { "quote": "Pixelholic helped our brand story resonate in Taiwan — the crafting community's engagement exceeded expectations and drove steady long-tail sales.", "author": "Woolbuddy Founder, Jackie" }
     },
     "letape": {
@@ -240,17 +259,17 @@
       "industry": "Sports Event / International Cycling",
       "themeTag": "International Cycling Event",
       "tagline": "Bringing Tour de France glory to Sun Moon Lake",
-      "description": "L'Étape Sun Moon Lake, presented by Nutrilite, is an A.S.O.-certified international cycling event under the official Tour de France series. Its debut edition in 2024 drew over 3,000 riders from 30+ countries, making it one of Asia's most important cycling events. The route runs through Sun Moon Lake's Xiangshan Visitor Center, and the 104km Challenge category was named one of the world's most scenic cycling routes by CNN, with the champion earning a spot at the following year's Tour de France Etape World Championship.",
+      "description": "L'Étape Sun Moon Lake, presented by Nutrilite, is an A.S.O.-certified international cycling event under the official Tour de France series. Its debut edition in 2024 drew 2,600 riders from 25+ countries, making it one of Asia's most important cycling events. The route runs through Sun Moon Lake's Xiangshan Visitor Center and links up with the Sun Moon Lake bikeway, named one of the world's most beautiful cycling routes by CNN, with the champion earning a spot at the following year's L'Étape World Championship.",
       "period": "2024 Q4 – Present",
       "services": ["Social Media Marketing", "Website Development", "Content Production"],
       "metrics": [
         { "label": "First-Edition Scale", "sub": "riders registered" },
         { "label": "Countries Represented", "sub": "across five continents" },
         { "label": "Route Certification", "sub": "Official Tour de France-certified route" },
-        { "label": "Global Recognition", "sub": "Named one of the world's most scenic cycling routes" }
+        { "label": "Global Recognition", "sub": "Route links the CNN top-10 most beautiful bikeway" }
       ],
-      "challenge": "As the Tour de France's official race series made its Asian debut — and Taiwan's first A.S.O.-certified international cycling event — the brand had zero awareness and no existing community in Taiwan, yet needed to build the professional credibility of a world-class event quickly, while attracting riders from around the globe to meet the organizer's registration targets.",
-      "solution": "Pixelholic built the official website and social channels from the ground up, adapting the official Tour de France visual guidelines for a localized presence. We drove social engagement through on-course footage and rider stories, while a complete website information architecture clearly presented event highlights and registration steps, helping international riders build trust quickly and complete sign-up."
+      "challenge": "The Tour de France's official series was landing in Taiwan for the first time — starting from zero: no awareness, no community, no website. In just months it had to earn the professional trust a world-class event demands, and convince riders worldwide to fly to Taiwan — with registration numbers as the only scoreboard.",
+      "solution": "Pixelholic built the official website and social channels from the ground up: adapting the Tour de France visual guidelines for a localized presence, growing buzz with on-course footage and rider stories, and laying out event highlights and registration steps in one clear information architecture — so international riders could trust fast and sign up fast. The debut edition drew 2,600 riders from 25+ countries."
     }
   }
 }

@@ -57,7 +57,7 @@ export const clients = [
     logo: letapeLogo,
     color: '#D97706',
     colorName: 'amber',
-    metrics: [{ value: '3,000+' }, { value: '30+' }, { value: 'A.S.O.' }, { value: 'CNN' }],
+    metrics: [{ value: '2,600+' }, { value: '25+' }, { value: 'A.S.O.' }, { value: 'CNN' }],
     website: 'https://letapesunmoonlake.com',
   },
 ]

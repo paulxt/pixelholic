@@ -29,7 +29,8 @@ function PixelGrid({ pixels, color, size = 6, className = '' }) {
             style={{
               width: size,
               height: size,
-              backgroundColor: cell === '1' ? color : cell === '2' ? '#fff' : 'transparent',
+              backgroundColor:
+                cell === '1' ? color : cell === '2' ? '#fff' : cell === '3' ? '#1E293B' : 'transparent',
             }}
           />
         )),
@@ -38,12 +39,12 @@ function PixelGrid({ pixels, color, size = 6, className = '' }) {
   )
 }
 
-/* Pixel character: rocket */
+/* Pixel character: rocket (with porthole window) */
 const ROCKET = [
   '00011000',
   '00111100',
-  '01111110',
-  '11111111',
+  '01122110',
+  '11122111',
   '01111110',
   '00100100',
   '01100110',
@@ -86,16 +87,112 @@ const ROBOT = [
   '01100110',
 ]
 
-/* Pixel character: heart */
+/* Pixel character: heart (with a face) */
 const HEART = [
   '01100110',
   '11111111',
+  '11311311',
   '11111111',
-  '01111110',
+  '01133110',
   '00111100',
   '00011000',
   '00000000',
+]
+
+/* Pixel character: ghost (arcade style, with eyes) */
+const GHOST = [
+  '00111100',
+  '01111110',
+  '11311311',
+  '11311311',
+  '11111111',
+  '11111111',
+  '11111111',
+  '11011011',
+]
+
+/* Pixel character: crown (with gems) */
+const CROWN = [
   '00000000',
+  '10100101',
+  '11100111',
+  '11111111',
+  '12112121',
+  '11111111',
+  '01111110',
+  '00000000',
+]
+
+/* Pixel character: coin (with a face) */
+const COIN = [
+  '00111100',
+  '01111110',
+  '11311311',
+  '11111111',
+  '11133111',
+  '01111110',
+  '00111100',
+  '00000000',
+]
+
+/* Pixel character: mushroom (power-up, with eyes) */
+const MUSHROOM = [
+  '00111100',
+  '01211210',
+  '11211211',
+  '11111111',
+  '01311310',
+  '01111110',
+  '00111100',
+  '00000000',
+]
+
+/* Pixel icon: mail envelope */
+const MAIL = [
+  '00000000',
+  '11111111',
+  '11100111',
+  '11011011',
+  '10111101',
+  '11111111',
+  '11111111',
+  '00000000',
+]
+
+/* Pixel icon: mobile phone */
+const PHONE = [
+  '00111100',
+  '00133100',
+  '00133100',
+  '00133100',
+  '00133100',
+  '00111100',
+  '00111100',
+  '00000000',
+]
+
+/* Pixel icon: location pin */
+const PIN = [
+  '00111100',
+  '01111110',
+  '01133110',
+  '01133110',
+  '01111110',
+  '00111100',
+  '00011000',
+  '00011000',
+]
+
+/* Pixel icon: clock */
+const CLOCK = [
+  '00111100',
+  '01111110',
+  '11131111',
+  '11131111',
+  '11133111',
+  '11111111',
+  '01111110',
+  '00111100',
 ]
 
 /* Pixel character: lightning */
@@ -148,7 +245,11 @@ export function PixelScatter({ count = 4, className = '' }) {
 
 /* Single character for inline decoration */
 export function PixelChar({ type = 'alien', color, size = 6, className = '' }) {
-  const map = { alien: ALIEN, rocket: ROCKET, robot: ROBOT, heart: HEART, star: STAR, bolt: BOLT }
+  const map = {
+    alien: ALIEN, rocket: ROCKET, robot: ROBOT, heart: HEART, star: STAR, bolt: BOLT,
+    ghost: GHOST, crown: CROWN, coin: COIN, mushroom: MUSHROOM,
+    mail: MAIL, phone: PHONE, pin: PIN, clock: CLOCK,
+  }
   const data = map[type] || ALIEN
   const col = color || COLORS.primary
   return <PixelGrid pixels={data} color={col} size={size} className={className} />

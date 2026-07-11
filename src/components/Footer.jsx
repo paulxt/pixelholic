@@ -1,5 +1,7 @@
 import { useState } from 'react'
+import { useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import { langFromPathname } from '../utils/langPath'
 
 function subscribeMailchimp(email) {
   return new Promise((resolve, reject) => {
@@ -29,7 +31,12 @@ function subscribeMailchimp(email) {
 
 export default function Footer() {
   const { t } = useTranslation()
+  const location = useLocation()
+  const lang = langFromPathname(location.pathname)
   const navGroups = t('footer.navGroups', { returnObjects: true })
+  // '/#services' → '/en#services', '/clients' → '/en/clients'
+  const localize = (href) =>
+    lang === 'en' ? (href.startsWith('/#') ? `/en${href.slice(1)}` : `/en${href}`) : href
   const [email, setEmail] = useState('')
   const [subStatus, setSubStatus] = useState(null) // null | 'sending' | 'done' | 'error'
   const [errMsg, setErrMsg] = useState('')
@@ -63,7 +70,9 @@ export default function Footer() {
             <p className="text-slate-400 text-sm leading-relaxed mb-3">
               {t('footer.tagline')}
             </p>
-            <p className="text-slate-500 text-xs mb-8">{t('footer.subtagline')}</p>
+            {t('footer.subtagline') && (
+              <p className="text-slate-500 text-xs mb-8">{t('footer.subtagline')}</p>
+            )}
             <div className="flex gap-2">
               {[
                 { label: 'IG', href: 'https://www.instagram.com/pixelholic.tpe/' },
@@ -88,14 +97,13 @@ export default function Footer() {
               <h4 className="pixel-font text-[10px] text-indigo-400 mb-5">{group.title}</h4>
               <ul className="space-y-3">
                 {group.items.map((item) => (
-                  <li key={item}>
+                  <li key={item.label}>
                     <a
-                      href="#"
-                      onClick={(e) => e.preventDefault()}
-                      className="text-sm text-slate-500 hover:text-indigo-400 transition-colors flex items-center gap-2 group"
+                      href={localize(item.href)}
+                      className="text-sm text-slate-400 hover:text-indigo-400 transition-colors flex items-center gap-2 group"
                     >
                       <span className="inline-block w-1 h-1 bg-indigo-500 opacity-0 group-hover:opacity-100 transition-opacity shrink-0" />
-                      {item}
+                      {item.label}
                     </a>
                   </li>
                 ))}
@@ -155,18 +163,6 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-8 border-t border-slate-800">
           <div className="pixel-font text-[9px] text-slate-600">
             {t('footer.copyright', { year: new Date().getFullYear() })}
-          </div>
-          <div className="flex gap-6">
-            {t('footer.legalLinks', { returnObjects: true }).map((l) => (
-              <a
-                key={l}
-                href="#"
-                onClick={(e) => e.preventDefault()}
-                className="text-xs text-slate-600 hover:text-indigo-400 transition-colors"
-              >
-                {l}
-              </a>
-            ))}
           </div>
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse-glow" />

@@ -6,11 +6,13 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "postbuild": "node scripts/prerender.mjs",
     "lint": "oxlint",
     "preview": "vite preview"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
+    "@fontsource/fusion-pixel-12px-proportional-tc": "^5.2.5",
     "framer-motion": "^12.42.2",
     "i18next": "^26.3.4",
     "react": "^19.2.7",

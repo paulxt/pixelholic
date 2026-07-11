@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { PixelHeroDecor, SectionCorners } from './PixelCharacters'
+import CountUp from './CountUp'
 
 export default function Banner() {
   const { t } = useTranslation()
@@ -66,19 +67,19 @@ export default function Banner() {
           <h1
             className="glitch pixel-font mb-6 mx-auto"
             data-text={slide.title}
-            style={{ fontSize: 'clamp(26px, 5vw, 52px)', lineHeight: 1.8, color: '#0F172A', whiteSpace: 'pre-line' }}
+            style={{ fontSize: 'clamp(26px, 5vw, 52px)', lineHeight: 1.5, color: '#0F172A', whiteSpace: 'pre-line' }}
           >
             {slide.title}
           </h1>
 
-          <p className="text-slate-400 text-lg leading-loose mb-8 max-w-xl mx-auto" style={{ letterSpacing: '0.01em' }}>
+          <p className="text-slate-600 text-lg leading-loose mb-8 max-w-xl mx-auto" style={{ letterSpacing: '0.01em', textWrap: 'balance' }}>
             {slide.sub}
           </p>
 
           {/* Buttons */}
           <div className="flex flex-wrap gap-5 justify-center mb-12">
             <a href="#contact" onClick={(e) => { e.preventDefault(); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }) }} className="pixel-btn">
-              {t('banner.ctaPrimary')}
+              <span className="animate-blink" style={{ marginRight: 10 }}>▶</span>{t('banner.ctaPrimary')}
             </a>
             <a href="#services" onClick={(e) => { e.preventDefault(); document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' }) }} className="pixel-btn pixel-btn-cyan">
               {t('banner.ctaSecondary')}
@@ -93,8 +94,10 @@ export default function Banner() {
               { n: t('banner.statExperienceValue', { years: new Date().getFullYear() - 2020 }), label: t('banner.statExperience') },
             ].map((s) => (
               <div key={s.label} className="text-center">
-                <div className="pixel-font mb-2" style={{ color: slide.accent, fontSize: '20px' }}>{s.n}</div>
-                <div className="text-slate-400 text-sm tracking-wide">{s.label}</div>
+                <div className="pixel-font mb-2" style={{ color: slide.accent, fontSize: '20px' }}>
+                  <CountUp value={s.n} />
+                </div>
+                <div className="text-slate-500 text-sm tracking-wide">{s.label}</div>
               </div>
             ))}
           </div>
@@ -106,12 +109,12 @@ export default function Banner() {
             <button key={i} onClick={() => goTo(i)} className="transition-all duration-200" style={{ width: i === current ? 28 : 10, height: 10, backgroundColor: i === current ? slide.accent : '#C7D2FE' }} aria-label={`slide ${i + 1}`} />
           ))}
         </div>
-      </div>
 
-      {/* Scroll cue */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40">
-        <span className="text-xs text-slate-400 tracking-widest">{t('banner.scroll')}</span>
-        <div className="w-0.5 h-8 bg-gradient-to-b from-indigo-400 to-transparent" />
+        {/* Scroll cue — in flow below the dots so long slides never overlap it */}
+        <div className="flex flex-col items-center gap-1.5 mt-10 opacity-50">
+          <span className="text-xs text-slate-400 tracking-widest">{t('banner.scroll')}</span>
+          <span className="pixel-font text-indigo-400 animate-pixel-bounce" style={{ fontSize: 14 }}>▼</span>
+        </div>
       </div>
     </section>
   )

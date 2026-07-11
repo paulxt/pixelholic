@@ -1,7 +1,11 @@
 import { useState } from 'react'
 import emailjs from '@emailjs/browser'
 import { useTranslation } from 'react-i18next'
-import { SectionCorners } from './PixelCharacters'
+import { SectionCorners, PixelChar } from './PixelCharacters'
+import Reveal from './Reveal'
+
+/* Pixel icons for the contact info rows (by order: email / phone / office / hours) */
+const infoPixelChars = ['mail', 'phone', 'pin', 'clock']
 
 const EMAILJS_SERVICE_ID  = import.meta.env.VITE_EMAILJS_SERVICE_ID  || 'YOUR_SERVICE_ID'
 const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'YOUR_TEMPLATE_ID'
@@ -52,11 +56,11 @@ export default function Contact() {
         {/* Header — centered */}
         <div className="text-center mb-8">
           <div className="pixel-font text-[10px] text-indigo-400 mb-3 animate-pulse-glow tracking-widest">{t('contact.tag')}</div>
-          <h2 className="pixel-font text-slate-800 mb-3" style={{ fontSize: 'clamp(18px, 3vw, 30px)', lineHeight: 2 }}>
+          <h2 className="pixel-font text-slate-800 mb-3" style={{ fontSize: 'clamp(18px, 3vw, 30px)', lineHeight: 1.6 }}>
             {t('contact.titleLine1')}<br />
             <span style={{ color: '#4338CA' }}>{t('contact.titleLine2')}</span>
           </h2>
-          <p className="text-slate-400 text-base leading-loose max-w-xl mx-auto">
+          <p className="text-slate-600 text-base leading-loose max-w-xl mx-auto">
             {t('contact.sub')}
           </p>
         </div>
@@ -64,13 +68,15 @@ export default function Contact() {
         <div className="grid lg:grid-cols-2 gap-20">
 
           {/* Left: contact info */}
-          <div className="flex flex-col justify-center items-center lg:items-start text-center lg:text-left">
+          <Reveal className="flex flex-col justify-center items-center lg:items-start text-center lg:text-left">
             <div className="space-y-5 w-full max-w-sm">
-              {info.map((item) => (
-                <div key={item.label} className="flex items-start gap-6">
-                  <span className="pixel-font text-indigo-400 text-xl shrink-0">{item.icon}</span>
-                  <div>
-                    <div className="pixel-font text-[9px] text-slate-300 mb-2 tracking-widest">{item.label}</div>
+              {info.map((item, i) => (
+                <div key={item.label} className="flex items-start gap-5 justify-center lg:justify-start">
+                  <span className="shrink-0 mt-1">
+                    <PixelChar type={infoPixelChars[i % infoPixelChars.length]} color="#4338CA" size={4} />
+                  </span>
+                  <div className="text-left">
+                    <div className="pixel-font text-[9px] text-slate-400 mb-2 tracking-widest">{item.label}</div>
                     <div className="text-slate-600 text-base leading-relaxed whitespace-pre-line">{item.value}</div>
                   </div>
                 </div>
@@ -78,19 +84,24 @@ export default function Contact() {
             </div>
 
             <div className="mt-6 flex gap-3">
-              {['IG', 'FB', 'LI', 'YT'].map((s) => (
-                <button key={s} className="pixel-font text-[9px] w-10 h-10 border border-indigo-100 text-slate-400 hover:border-indigo-400 hover:text-indigo-500 transition-colors tracking-widest flex items-center justify-center">
-                  {s}
-                </button>
-              ))}
+              <a
+                href="https://www.instagram.com/pixelholic.tpe/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="pixel-font text-[9px] w-10 h-10 border border-indigo-100 text-slate-500 hover:border-indigo-400 hover:text-indigo-500 transition-colors tracking-widest flex items-center justify-center"
+              >
+                IG
+              </a>
             </div>
-          </div>
+          </Reveal>
 
           {/* Right: form */}
-          <div>
+          <Reveal delay={120}>
             {status === 'done' ? (
               <div className="float-card p-16 text-center flex flex-col items-center justify-center min-h-96">
-                <span className="pixel-font text-5xl text-green-500 mb-10 animate-float" style={{ fontSize: '56px' }}>◈</span>
+                <span className="mb-10 animate-float inline-block">
+                  <PixelChar type="heart" color="#0891B2" size={8} />
+                </span>
                 <div className="pixel-font text-slate-800 mb-4" style={{ fontSize: '12px' }}>{t('contact.success.title')}</div>
                 <p className="text-slate-400 text-sm leading-loose mb-10 max-w-xs">{t('contact.success.sub')}</p>
                 <button onClick={reset} className="pixel-btn">{t('contact.success.button')}</button>
@@ -106,22 +117,22 @@ export default function Contact() {
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div className="grid sm:grid-cols-2 gap-8">
                   <div>
-                    <label className="pixel-font text-[9px] text-slate-300 block mb-2 tracking-widest">{form_.nameLabel}</label>
+                    <label className="pixel-font text-[9px] text-slate-500 block mb-2 tracking-widest">{form_.nameLabel}</label>
                     <input required className="pixel-input" placeholder={form_.namePlaceholder} value={form.name} onChange={set('name')} />
                   </div>
                   <div>
-                    <label className="pixel-font text-[9px] text-slate-300 block mb-2 tracking-widest">{form_.emailLabel}</label>
+                    <label className="pixel-font text-[9px] text-slate-500 block mb-2 tracking-widest">{form_.emailLabel}</label>
                     <input required type="email" className="pixel-input" placeholder={form_.emailPlaceholder} value={form.email} onChange={set('email')} />
                   </div>
                 </div>
 
                 <div>
-                  <label className="pixel-font text-[9px] text-slate-300 block mb-2 tracking-widest">{form_.companyLabel}</label>
+                  <label className="pixel-font text-[9px] text-slate-500 block mb-2 tracking-widest">{form_.companyLabel}</label>
                   <input className="pixel-input" placeholder={form_.companyPlaceholder} value={form.company} onChange={set('company')} />
                 </div>
 
                 <div>
-                  <label className="pixel-font text-[9px] text-slate-300 block mb-2 tracking-widest">{form_.servicesLabel}</label>
+                  <label className="pixel-font text-[9px] text-slate-500 block mb-2 tracking-widest">{form_.servicesLabel}</label>
                   <div className="flex flex-wrap gap-3">
                     {form_.serviceOptions.map((s) => (
                       <button key={s} type="button" onClick={() => toggleService(s)}
@@ -139,7 +150,7 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label className="pixel-font text-[9px] text-slate-300 block mb-2 tracking-widest">{form_.budgetLabel}</label>
+                  <label className="pixel-font text-[9px] text-slate-500 block mb-2 tracking-widest">{form_.budgetLabel}</label>
                   <div className="grid grid-cols-4 gap-3">
                     {form_.budgetOptions.map((b) => (
                       <button key={b} type="button" onClick={() => setForm((f) => ({ ...f, budget: b }))}
@@ -157,7 +168,7 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label className="pixel-font text-[9px] text-slate-300 block mb-2 tracking-widest">{form_.messageLabel}</label>
+                  <label className="pixel-font text-[9px] text-slate-500 block mb-2 tracking-widest">{form_.messageLabel}</label>
                   <textarea required rows={3} className="pixel-input resize-none" placeholder={form_.messagePlaceholder} value={form.message} onChange={set('message')} />
                 </div>
 
@@ -165,12 +176,12 @@ export default function Contact() {
                   {status === 'sending' ? <span className="animate-pulse-glow">{form_.sending}</span> : form_.submit}
                 </button>
 
-                <p className="text-xs text-slate-300 text-center tracking-wide">
+                <p className="text-xs text-slate-400 text-center tracking-wide">
                   {form_.note}
                 </p>
               </form>
             )}
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>
