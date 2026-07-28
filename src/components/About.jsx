@@ -42,11 +42,11 @@ export default function About() {
         </div>
 
         {/* Core values / How we work — symmetric two columns */}
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
+        <div className="grid lg:grid-cols-2 gap-16 items-stretch">
 
-          <div>
+          <div className="flex flex-col">
             <div className="pixel-font text-[10px] text-indigo-400 mb-6 tracking-widest text-center">{t('about.valuesTag')}</div>
-            <div className="grid grid-cols-2 gap-8">
+            <div className="grid grid-cols-2 gap-8 flex-1 content-center">
               {values.map((v, i) => (
                 <Reveal key={v.title} delay={i * 90} className="group flex flex-col items-center text-center">
                   <span className="mb-5 inline-block group-hover:animate-float">
