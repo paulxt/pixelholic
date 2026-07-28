@@ -24,8 +24,8 @@
   "banner": {
     "slides": [
       { "tag": "// DIGITAL MARKETING", "title": "像素驅動\n品牌進化", "sub": "你的品牌，該升級了 — 從策略、內容到廣告，一關一關帶你的品牌往上打", "accent": "#4338CA", "shadow": "#7C3AED", "symbol": "◈" },
-      { "tag": "// CREATIVE CAMPAIGNS", "title": "創意無界\n突破格局", "sub": "從社群媒體到整合行銷，我們為您的品牌注入源源不絕的創意動能", "accent": "#0891B2", "shadow": "#4338CA", "symbol": "◉" },
-      { "tag": "// BRAND STRATEGY", "title": "策略為本\n成效為王", "sub": "深度洞察市場趨勢，量身打造高轉換率的全通路行銷解決方案", "accent": "#4338CA", "shadow": "#0891B2", "symbol": "◇" }
+      { "tag": "// CREATIVE CAMPAIGNS", "title": "創意無界\n突破格局", "sub": "不只做創意，更把聲量變成訂單 — 社群、內容、廣告一手包辦", "accent": "#0891B2", "shadow": "#4338CA", "symbol": "◉" },
+      { "tag": "// BRAND STRATEGY", "title": "策略為本\n成效為王", "sub": "先看數據再出手，把每一分預算，花在真正帶來轉換的地方", "accent": "#4338CA", "shadow": "#0891B2", "symbol": "◇" }
     ],
     "ctaPrimary": "PRESS START",
     "ctaSecondary": "了解服務",

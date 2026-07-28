@@ -24,8 +24,8 @@
   "banner": {
     "slides": [
       { "tag": "// DIGITAL MARKETING", "title": "We Turn Pixels\nInto Brands", "sub": "Your brand, leveled up — strategy, content, and ads that clear every stage with you.", "accent": "#4338CA", "shadow": "#7C3AED", "symbol": "◈" },
-      { "tag": "// CREATIVE CAMPAIGNS", "title": "Creativity\nWithout Limits", "sub": "From social media to integrated marketing, we fuel your brand with an endless stream of creative momentum.", "accent": "#0891B2", "shadow": "#4338CA", "symbol": "◉" },
-      { "tag": "// BRAND STRATEGY", "title": "Strategy First\nResults That Win", "sub": "Deep market insight, tailored into omnichannel marketing solutions built for maximum conversion.", "accent": "#4338CA", "shadow": "#0891B2", "symbol": "◇" }
+      { "tag": "// CREATIVE CAMPAIGNS", "title": "Creativity\nWithout Limits", "sub": "Creative that sells — we turn attention into orders across social, content, and ads.", "accent": "#0891B2", "shadow": "#4338CA", "symbol": "◉" },
+      { "tag": "// BRAND STRATEGY", "title": "Strategy First\nResults That Win", "sub": "Data before decisions — every dollar spent where it actually converts.", "accent": "#4338CA", "shadow": "#0891B2", "symbol": "◇" }
     ],
     "ctaPrimary": "PRESS START",
     "ctaSecondary": "Explore Services",
