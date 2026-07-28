@@ -95,7 +95,7 @@
       "messageLabel": "專案說明 *",
       "messagePlaceholder": "請簡述您的品牌現況與行銷目標...",
       "serviceOptions": ["品牌策略", "社群行銷", "廣告投放", "內容製作", "電商成長", "數據分析"],
-      "budgetOptions": ["< 5萬", "5–20萬", "20–50萬", "50萬以上"],
+      "budgetOptions": ["< 3萬", "3–10萬", "10–30萬", "30萬以上"],
       "submit": "送出諮詢申請",
       "sending": "SENDING...",
       "note": "送出後將寄送至 hc@pixelholic.co"

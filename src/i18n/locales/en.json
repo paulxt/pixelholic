@@ -95,7 +95,7 @@
       "messageLabel": "Project Description *",
       "messagePlaceholder": "Briefly describe your brand and marketing goals...",
       "serviceOptions": ["Brand Strategy", "Social Media", "Advertising", "Content Production", "E-commerce Growth", "Data Analytics"],
-      "budgetOptions": ["< NT$50K", "NT$50–200K", "NT$200–500K", "NT$500K+"],
+      "budgetOptions": ["< NT$30K", "NT$30–100K", "NT$100–300K", "NT$300K+"],
       "submit": "Submit Inquiry",
       "sending": "SENDING...",
       "note": "Your message will be sent to hc@pixelholic.co"
