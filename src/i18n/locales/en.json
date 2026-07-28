@@ -1,9 +1,9 @@
 {
   "meta": {
-    "title": "PIXELHOLIC | Digital Marketing Agency in Taiwan — Brand Strategy, Social Media & Paid Ads",
-    "description": "PIXELHOLIC is a Taiwan-based digital marketing agency specializing in brand strategy, social media marketing, Google / Meta ads, and e-commerce growth. 20+ brands grown. Book a free brand audit.",
-    "clientsTitle": "Client Success Stories | PIXELHOLIC Digital Marketing",
-    "clientsDescription": "From Tesla accessories and travel eSIMs to international cycling events — see how PIXELHOLIC drives multi-fold growth with brand strategy, social media, and paid advertising."
+    "title": "PIXELHOLIC | Integrated Marketing Agency in Taiwan — SEO, Paid Ads, Creators & Live Events",
+    "description": "PIXELHOLIC is a Taiwan-based integrated marketing agency. Digital at the core — SEO, Google / Meta ads, social media — combined with a creator and pro-athlete network, brand partnerships, and offline events and retail. 20+ brands grown. Book a free brand audit.",
+    "clientsTitle": "Client Success Stories | PIXELHOLIC Integrated Marketing",
+    "clientsDescription": "From Tesla accessories and travel eSIMs to international cycling events — see how PIXELHOLIC drives multi-fold growth with SEO, social media, paid ads, and an online-to-offline resource network."
   },
   "media": {
     "tag": "// MEDIA COVERAGE",
@@ -23,8 +23,8 @@
   },
   "banner": {
     "slides": [
-      { "tag": "// DIGITAL MARKETING", "title": "We Turn Pixels\nInto Brands", "sub": "Your brand, leveled up — strategy, content, and ads that clear every stage with you.", "accent": "#4338CA", "shadow": "#7C3AED", "symbol": "◈" },
-      { "tag": "// CREATIVE CAMPAIGNS", "title": "Creativity\nWithout Limits", "sub": "Creative that sells — we turn attention into orders across social, content, and ads.", "accent": "#0891B2", "shadow": "#4338CA", "symbol": "◉" },
+      { "tag": "// INTEGRATED MARKETING", "title": "We Turn Pixels\nInto Brands", "sub": "Your brand, leveled up — SEO, ads, creators, and live events that clear every stage with you.", "accent": "#4338CA", "shadow": "#7C3AED", "symbol": "◈" },
+      { "tag": "// NETWORK & PARTNERSHIPS", "title": "The Right People\nReal Reach", "sub": "Creators, pro athletes, and brand collaborations — a network built over years, put to work for you.", "accent": "#0891B2", "shadow": "#4338CA", "symbol": "◉" },
       { "tag": "// BRAND STRATEGY", "title": "Strategy First\nResults That Win", "sub": "Data before decisions — every dollar spent where it actually converts.", "accent": "#4338CA", "shadow": "#0891B2", "symbol": "◇" }
     ],
     "ctaPrimary": "PRESS START",
@@ -37,26 +37,38 @@
   },
   "services": {
     "tag": "// OUR SERVICES",
-    "titleLine1": "Full-Service",
-    "titleLine2": "Digital Marketing",
-    "sub": "Strategy through execution under one roof — pixel-precise work that turns every dollar into visible growth.",
+    "titleLine1": "Online to Offline",
+    "titleLine2": "Integrated Marketing",
+    "sub": "Digital is our home turf — but we don't stop there. SEO, ads, and social, through creator networks, brand collaborations, and live events, all run by one team.",
     "items": [
       { "icon": "◈", "title": "Brand Strategy", "desc": "From brand positioning and visual identity to brand voice, we build a consistent, powerful brand image that helps you stand out in a competitive market.", "tags": ["Brand Positioning", "VI Design", "Brand Voice"], "color": "#4338CA", "num": "01" },
-      { "icon": "◉", "title": "Social Media Marketing", "desc": "Integrating Instagram, Facebook, and Threads with creative content and precise audience targeting to rapidly grow your brand's reach and engagement.", "tags": ["Content Strategy", "KOL Partnerships", "Community Management"], "color": "#0891B2", "num": "02" },
+      { "icon": "⊕", "title": "SEO & Organic Growth", "desc": "Our sharpest edge. Keyword architecture, content structure, and technical optimization that keep brands on page one of Google — turning free organic traffic into steady orders.", "tags": ["Keyword Strategy", "Content SEO", "Technical SEO"], "color": "#0891B2", "num": "02" },
       { "icon": "◇", "title": "Digital Ad Placement", "desc": "Precision targeting on Google Ads and Meta Ads, paired with A/B testing and data optimization to maximize your return on ad spend.", "tags": ["Google Ads", "Meta Ads", "ROAS Optimization"], "color": "#4338CA", "num": "03" },
-      { "icon": "▣", "title": "Content Production", "desc": "A one-stop service for video production, copywriting, and visual design — building brand authority with high-quality original content that drives organic traffic.", "tags": ["Video Production", "Copywriting", "SEO Content"], "color": "#0891B2", "num": "04" },
-      { "icon": "◎", "title": "E-commerce Growth Hacking", "desc": "Optimizing the shopping journey and conversion rates for e-commerce brands, connecting the full sales funnel from SEO to remarketing and email automation.", "tags": ["CRO Optimization", "Remarketing", "Email Marketing"], "color": "#4338CA", "num": "05" },
-      { "icon": "⊕", "title": "Data Analytics & Insights", "desc": "Building a comprehensive data tracking framework with clear marketing dashboards and periodic reports, so every decision is backed by data.", "tags": ["GA4 Setup", "Custom Reporting", "Business Insights"], "color": "#0891B2", "num": "06" }
+      { "icon": "◉", "title": "Social Media Marketing", "desc": "Integrating Instagram, Facebook, and Threads with creative content and precise audience targeting to rapidly grow your brand's reach and engagement.", "tags": ["Content Strategy", "Community Management", "Engagement"], "color": "#0891B2", "num": "04" },
+      { "icon": "★", "title": "Creator & Athlete Marketing", "desc": "From beauty and lifestyle to travel and sport, we hold a roster of creators and professional athletes across verticals — matched to your brand's tone and budget so partnerships don't just get seen, they convert.", "tags": ["KOL / KOC Matching", "Pro Athletes", "Word of Mouth"], "color": "#4338CA", "num": "05" },
+      { "icon": "▣", "title": "Content & Video Production", "desc": "A one-stop service for video production, copywriting, and visual design — building brand authority with high-quality original content that drives organic traffic.", "tags": ["Video Production", "Copywriting", "SEO Content"], "color": "#0891B2", "num": "06" },
+      { "icon": "◈", "title": "Brand Partnerships & Collabs", "desc": "Years of industry relationships let us broker introductions to category leaders and major brands — co-branded campaigns, event sponsorships, and channel partnerships that borrow their brand power to amplify yours.", "tags": ["Co-Branding", "Cross-Industry Alliances", "Sponsorships"], "color": "#4338CA", "num": "07" },
+      { "icon": "◎", "title": "Events & Experiential", "desc": "Built on a family legacy in offline marketing: pop-ups, press events, race-day activations, and retail displays executed end to end — then amplified digitally so the buzz outlives the day.", "tags": ["Event Production", "Pop-ups & Press", "Retail Display"], "color": "#0891B2", "num": "08" },
+      { "icon": "◎", "title": "E-commerce & Data", "desc": "Optimizing the shopping journey and conversion rates, with a full tracking framework and marketing dashboards — from CRO and remarketing to email automation, every decision backed by data.", "tags": ["CRO", "Remarketing", "GA4 Data"], "color": "#4338CA", "num": "09" }
     ],
-    "ticker": ["BRAND STRATEGY", "SOCIAL MEDIA", "AD PLACEMENT", "CONTENT", "E-COMMERCE", "ANALYTICS", "BRAND", "SOCIAL", "ADS", "CONTENT", "GROWTH", "DATA"]
+    "ticker": ["BRAND STRATEGY", "SEO", "AD PLACEMENT", "SOCIAL MEDIA", "CREATORS", "CONTENT", "PARTNERSHIPS", "LIVE EVENTS", "DATA", "ONLINE", "OFFLINE", "GROWTH"]
   },
   "about": {
     "tag": "// ABOUT US",
     "titleLine1": "About",
     "titleLine2": "Pixelholic",
-    "sub": "Pixelholic (registered as 玖漾國際行銷有限公司) is a brand consultancy focused on integrated digital marketing, helping brands stand out in the digital age with precise strategy and bold creativity.",
-    "intro1": "We believe brand growth works like a video game — you clear it one level at a time. From KingCart EV accessories and Polaris eSIM to Woolbuddy selling worldwide, we've helped brands across tech, food, and handmade crafts level up, stage by stage.",
-    "intro2": "We're more than just an ad agency — we're your long-term growth partner. On every project, we show up like founders, treating your brand as if it were our own.",
+    "sub": "Pixelholic (registered as 玖漾國際行銷有限公司) is a marketing consultancy built across online and offline — digital as the engine, relationships and resources as the accelerator.",
+    "intro1": "We started from two directions. The family business grew up in offline marketing, building deep relationships across event production, retail channels, and brands. The founder came in from digital, turning SEO, paid ads, and social into a repeatable growth engine. Where those two lines meet is what we offer today: not just campaign execution, but complete marketing that connects online and offline, from first impression to closed sale.",
+    "intro2": "Digital is still our main battlefield, and SEO is where we're strongest — KingCart's blog holds page one of Google organic for keywords like \"Tesla accessories recommendation,\" and its official site grew from roughly 10% of revenue before we started to about half today. We've also matched Polaris eSIM with professional athletes, carrying the brand from online reach into the real world.",
+    "intro3": "We believe brand growth works like a video game — you clear it one level at a time. From KingCart EV accessories and Polaris eSIM to Woolbuddy selling worldwide, across tech, food, travel, and international sport, we show up like founders on every project, treating your brand as if it were our own.",
+    "networkTag": "// OUR NETWORK",
+    "networkTitle": "Resources we can put to work for you",
+    "network": [
+      { "title": "Creator / KOL Roster", "desc": "Creators across beauty, lifestyle, travel, sport, and tech — matched to your brand's tone and budget.", "color": "#4338CA" },
+      { "title": "Pro Athletes & Sport", "desc": "Experience with professional athlete partnerships and international sporting events, already brokered for our clients.", "color": "#0891B2" },
+      { "title": "Major Brand Collaborations", "desc": "Industry relationships that open doors to category leaders and well-known brands for co-branding, sponsorship, and channel deals.", "color": "#7C3AED" },
+      { "title": "Offline Channels & Events", "desc": "Venues, retail channels, and production crews from our family's offline marketing roots — events run end to end.", "color": "#059669" }
+    ],
     "valuesTag": "// CORE VALUES",
     "values": [
       { "icon": "◈", "title": "Pixel Precision", "desc": "Every detail is as precise as a pixel — we accept no deviation in execution.", "color": "#4338CA" },
@@ -67,9 +79,10 @@
     "processTag": "// HOW WE WORK",
     "process": [
       { "step": "LV.1", "title": "Brand Diagnosis", "desc": "A deep dive into your brand's current state, target audience, and competitive landscape." },
-      { "step": "LV.2", "title": "Strategic Planning", "desc": "Crafting a tailored digital marketing strategy and execution roadmap." },
-      { "step": "LV.3", "title": "Creative Execution", "desc": "Bringing precise creative content to life across every channel." },
-      { "step": "LV.4", "title": "Data Optimization", "desc": "Continuously tracking performance and iterating to maximize ROI." }
+      { "step": "LV.2", "title": "Strategic Planning", "desc": "A tailored integrated roadmap that allocates online and offline resources deliberately." },
+      { "step": "LV.3", "title": "Resources Lined Up", "desc": "Matching creators, athletes, partner brands, and event resources to reach where your own channels can't." },
+      { "step": "LV.4", "title": "Creative Execution", "desc": "Content, ads, social, and live events brought to life across every channel at once." },
+      { "step": "LV.5", "title": "Data Optimization", "desc": "Continuously tracking performance and iterating to maximize ROI." }
     ]
   },
   "contact": {
@@ -94,7 +107,7 @@
       "budgetLabel": "Monthly Budget Range",
       "messageLabel": "Project Description *",
       "messagePlaceholder": "Briefly describe your brand and marketing goals...",
-      "serviceOptions": ["Brand Strategy", "Social Media", "Advertising", "Content Production", "E-commerce Growth", "Data Analytics"],
+      "serviceOptions": ["Brand Strategy", "SEO", "Advertising", "Social Media", "Creators & Athletes", "Content Production", "Brand Partnerships", "Live Events", "E-commerce & Data"],
       "budgetOptions": ["< NT$30K", "NT$30–100K", "NT$100–300K", "NT$300K+"],
       "submit": "Submit Inquiry",
       "sending": "SENDING...",
@@ -109,11 +122,14 @@
     "navGroups": [
       { "title": "Services", "items": [
         { "label": "Brand Strategy", "href": "/#services" },
-        { "label": "Social Media Marketing", "href": "/#services" },
+        { "label": "SEO & Organic Growth", "href": "/#services" },
         { "label": "Digital Ad Placement", "href": "/#services" },
-        { "label": "Content Production", "href": "/#services" },
-        { "label": "E-commerce Growth Hacking", "href": "/#services" },
-        { "label": "Data Analytics & Insights", "href": "/#services" }
+        { "label": "Social Media Marketing", "href": "/#services" },
+        { "label": "Creator & Athlete Marketing", "href": "/#services" },
+        { "label": "Content & Video Production", "href": "/#services" },
+        { "label": "Brand Partnerships & Collabs", "href": "/#services" },
+        { "label": "Events & Experiential", "href": "/#services" },
+        { "label": "E-commerce & Data", "href": "/#services" }
       ] },
       { "title": "Quick Links", "items": [
         { "label": "Client Success Stories", "href": "/clients" },
@@ -189,7 +205,7 @@
       "tagline": "Transparent routes, seamless roaming worldwide",
       "description": "Polaris eSIM is a Taiwan-native travel eSIM brand and the first to introduce full \"route transparency\" — letting travelers see exactly which carrier route each plan uses before they buy. Coverage spans 200+ countries and regions, with native direct routes in 10+ popular destinations. Polaris has been featured in Commercial Times, Economic Daily News, and TechNews.",
       "period": "2024 Q1 – Present",
-      "services": ["Social Media Marketing", "Brand Strategy", "PR & Media Relations", "Digital Advertising"],
+      "services": ["Social Media Marketing", "Brand Strategy", "PR & Media Relations", "Creator & Athlete Partnerships", "Digital Advertising"],
       "metrics": [
         { "label": "Brand Search Growth", "sub": "in 6 months" },
         { "label": "Media Placements", "sub": "major finance & tech outlets" },
@@ -197,7 +213,7 @@
         { "label": "Repeat Purchase Rate", "sub": "post travel-season tracking" }
       ],
       "challenge": "An eSIM is the classic \"invisible product\": buyers can't judge quality before purchase, and if they end up on a detoured route, they just eat the loss. Everyone in the market competes on price and nobody talks about quality — Polaris needed a claim that was both memorable and verifiable.",
-      "solution": "We translated a technical edge into consumer language with the \"route transparency\" brand promise: see the exit route before you pay. Social media led the charge, building brand voice and conversation with travel-scenario content; in-depth tech media PR added authority (coverage in Commercial Times, Economic Daily News, and TechNews), while Google Ads captured mindshare ahead of peak travel season — driving major growth in brand search and organic traffic.",
+      "solution": "We translated a technical edge into consumer language with the \"route transparency\" brand promise: see the exit route before you pay. Social media led the charge, building brand voice and conversation with travel-scenario content; in-depth tech media PR added authority (coverage in Commercial Times, Economic Daily News, and TechNews), while Google Ads captured mindshare ahead of peak travel season — driving major growth in brand search and organic traffic. We also matched Polaris with professional athletes: people who cross borders constantly and are the harshest judges of connection quality, turning \"route transparency\" from an ad line into credible first-hand testimony.",
       "testimonial": { "quote": "Pixelholic turned our technical edge into language consumers actually understand — making “route transparency” an industry talking point that drove significant organic traffic.", "author": "Polaris eSIM Marketing Director" }
     },
     "cmei": {

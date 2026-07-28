@@ -3,9 +3,10 @@ import { SectionCorners, PixelScatter, PixelChar } from './PixelCharacters'
 import Reveal from './Reveal'
 
 /* Content-matched pixel icons, one per service (by card order):
-   flag=positioning, speech=social, target=ad targeting,
-   tv=video content, cart=e-commerce, chart=analytics */
-const servicePixelChars = ['flag', 'speech', 'target', 'tv', 'cart', 'chart']
+   flag=positioning, magnifier=SEO, target=ad targeting, speech=social,
+   crown=creators & athletes, tv=video content, heart=brand partnerships,
+   rocket=live events, cart=e-commerce & data */
+const servicePixelChars = ['flag', 'magnifier', 'target', 'speech', 'crown', 'tv', 'heart', 'rocket', 'cart']
 
 function ServiceCard({ s, charType }) {
   return (

@@ -10,6 +10,7 @@ export default function About() {
   const { t } = useTranslation()
   const values = t('about.values', { returnObjects: true })
   const process = t('about.process', { returnObjects: true })
+  const network = t('about.network', { returnObjects: true })
 
   return (
     <section id="about" className="section-pad-l relative bg-white overflow-hidden">
@@ -39,6 +40,28 @@ export default function About() {
           <p className="text-slate-600 text-base leading-loose">
             {t('about.intro2')}
           </p>
+          <p className="text-slate-600 text-base leading-loose">
+            {t('about.intro3')}
+          </p>
+        </div>
+
+        {/* Resource network — what we can mobilize beyond our own channels */}
+        <div className="mb-16">
+          <div className="pixel-font text-[10px] text-indigo-400 mb-3 tracking-widest text-center">{t('about.networkTag')}</div>
+          <h3 className="text-slate-700 font-semibold text-base mb-8 tracking-wide text-center">{t('about.networkTitle')}</h3>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {network.map((n, i) => (
+              <Reveal key={n.title} delay={i * 90} className="h-full">
+                <div className="h-full bg-white p-6" style={{ borderTop: `3px solid ${n.color}`, boxShadow: '0 1px 0 #EEF2FF, 0 0 0 1px #EEF2FF' }}>
+                  <div className="pixel-font text-[9px] mb-4 tracking-widest" style={{ color: n.color }}>
+                    {String(i + 1).padStart(2, '0')}
+                  </div>
+                  <h4 className="text-slate-700 font-semibold text-sm mb-3 tracking-wide leading-snug">{n.title}</h4>
+                  <p className="text-slate-500 text-xs leading-loose">{n.desc}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
         </div>
 
         {/* Core values / How we work — symmetric two columns */}
