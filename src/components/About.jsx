@@ -48,7 +48,8 @@ export default function About() {
         {/* Resource network — what we can mobilize beyond our own channels */}
         <div className="mb-16">
           <div className="pixel-font text-[10px] text-indigo-400 mb-3 tracking-widest text-center">{t('about.networkTag')}</div>
-          <h3 className="text-slate-700 font-semibold text-base mb-8 tracking-wide text-center">{t('about.networkTitle')}</h3>
+          <h3 className="text-slate-700 font-semibold text-base mb-3 tracking-wide text-center">{t('about.networkTitle')}</h3>
+          <p className="text-slate-500 text-sm leading-loose mb-8 max-w-2xl mx-auto text-center">{t('about.networkSub')}</p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {network.map((n, i) => (
               <Reveal key={n.title} delay={i * 90} className="h-full">

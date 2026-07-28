@@ -24,7 +24,7 @@
   "banner": {
     "slides": [
       { "tag": "// INTEGRATED MARKETING", "title": "We Turn Pixels\nInto Brands", "sub": "Your brand, leveled up — SEO, ads, creators, and live events that clear every stage with you.", "accent": "#4338CA", "shadow": "#7C3AED", "symbol": "◈" },
-      { "tag": "// NETWORK & PARTNERSHIPS", "title": "The Right People\nReal Reach", "sub": "Creators, pro athletes, and brand collaborations — a network built over years, put to work for you.", "accent": "#0891B2", "shadow": "#4338CA", "symbol": "◉" },
+      { "tag": "// NETWORK & PARTNERSHIPS", "title": "The Right People\nReal Reach", "sub": "Creators, pro athletes, brand collaborations — marketing with a network behind it plays a different game.", "accent": "#0891B2", "shadow": "#4338CA", "symbol": "◉" },
       { "tag": "// BRAND STRATEGY", "title": "Strategy First\nResults That Win", "sub": "Data before decisions — every dollar spent where it actually converts.", "accent": "#4338CA", "shadow": "#0891B2", "symbol": "◇" }
     ],
     "ctaPrimary": "PRESS START",
@@ -47,7 +47,7 @@
       { "icon": "◉", "title": "Social Media Marketing", "desc": "Integrating Instagram, Facebook, and Threads with creative content and precise audience targeting to rapidly grow your brand's reach and engagement.", "tags": ["Content Strategy", "Community Management", "Engagement"], "color": "#0891B2", "num": "04" },
       { "icon": "★", "title": "Creator & Athlete Marketing", "desc": "From beauty and lifestyle to travel and sport, we hold a roster of creators and professional athletes across verticals — matched to your brand's tone and budget so partnerships don't just get seen, they convert.", "tags": ["KOL / KOC Matching", "Pro Athletes", "Word of Mouth"], "color": "#4338CA", "num": "05" },
       { "icon": "▣", "title": "Content & Video Production", "desc": "A one-stop service for video production, copywriting, and visual design — building brand authority with high-quality original content that drives organic traffic.", "tags": ["Video Production", "Copywriting", "SEO Content"], "color": "#0891B2", "num": "06" },
-      { "icon": "◈", "title": "Brand Partnerships & Collabs", "desc": "Years of industry relationships let us broker introductions to category leaders and major brands — co-branded campaigns, event sponsorships, and channel partnerships that borrow their brand power to amplify yours.", "tags": ["Co-Branding", "Cross-Industry Alliances", "Sponsorships"], "color": "#4338CA", "num": "07" },
+      { "icon": "◈", "title": "Brand Partnerships & Collabs", "desc": "Some doors open through relationships built over years; the rest we go and negotiate for you. Co-branded campaigns, event sponsorships, and channel partnerships that turn their brand power into yours.", "tags": ["Co-Branding", "Cross-Industry Alliances", "Sponsorships"], "color": "#4338CA", "num": "07" },
       { "icon": "◎", "title": "Events & Experiential", "desc": "Built on a family legacy in offline marketing: pop-ups, press events, race-day activations, and retail displays executed end to end — then amplified digitally so the buzz outlives the day.", "tags": ["Event Production", "Pop-ups & Press", "Retail Display"], "color": "#0891B2", "num": "08" },
       { "icon": "◎", "title": "E-commerce & Data", "desc": "Optimizing the shopping journey and conversion rates, with a full tracking framework and marketing dashboards — from CRO and remarketing to email automation, every decision backed by data.", "tags": ["CRO", "Remarketing", "GA4 Data"], "color": "#4338CA", "num": "09" }
     ],
@@ -63,10 +63,11 @@
     "intro3": "We believe brand growth works like a video game — you clear it one level at a time. From KingCart EV accessories and Polaris eSIM to Woolbuddy selling worldwide, across tech, food, travel, and international sport, we show up like founders on every project, treating your brand as if it were our own.",
     "networkTag": "// OUR NETWORK",
     "networkTitle": "Resources we can put to work for you",
+    "networkSub": "Same budget, entirely different outcomes — with the right resources behind it versus without. That's where we're different.",
     "network": [
       { "title": "Creator / KOL Roster", "desc": "Creators across beauty, lifestyle, travel, sport, and tech — matched to your brand's tone and budget.", "color": "#4338CA" },
       { "title": "Pro Athletes & Sport", "desc": "Experience with professional athlete partnerships and international sporting events, already brokered for our clients.", "color": "#0891B2" },
-      { "title": "Major Brand Collaborations", "desc": "Industry relationships that open doors to category leaders and well-known brands for co-branding, sponsorship, and channel deals.", "color": "#7C3AED" },
+      { "title": "Major Brand Collaborations", "desc": "Brands we know will lend a hand; the ones we don't, we go pitch on your behalf — co-branding, sponsorship, and channel deals all start here.", "color": "#7C3AED" },
       { "title": "Offline Channels & Events", "desc": "Venues, retail channels, and production crews from our family's offline marketing roots — events run end to end.", "color": "#059669" }
     ],
     "valuesTag": "// CORE VALUES",
