@@ -55,8 +55,8 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-white/90 backdrop-blur-md shadow-sm border-b-2 border-indigo-100'
-          : 'bg-white/60 backdrop-blur-sm'
+          ? 'bg-white shadow-sm border-b-2 border-indigo-100'
+          : 'bg-white/85 backdrop-blur-md'
       }`}
     >
       {/* EXP-style scroll progress bar */}
