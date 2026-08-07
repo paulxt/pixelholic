@@ -138,7 +138,7 @@ export default function Contact() {
                       <button key={s} type="button" onClick={() => toggleService(s)}
                         className="text-sm px-5 py-2.5 font-medium transition-all duration-150"
                         style={{
-                          color: form.services.includes(s) ? '#4338CA' : '#94A3B8',
+                          color: form.services.includes(s) ? 'var(--primary)' : 'var(--text-3)',
                           backgroundColor: form.services.includes(s) ? '#EEF2FF' : '#fff',
                           boxShadow: form.services.includes(s) ? 'var(--shadow-sm)' : 'none',
                           borderBottom: form.services.includes(s) ? '2px solid #4338CA' : '2px solid transparent',
@@ -156,7 +156,7 @@ export default function Contact() {
                       <button key={b} type="button" onClick={() => setForm((f) => ({ ...f, budget: b }))}
                         className="text-sm py-3 font-medium transition-all text-center"
                         style={{
-                          color: form.budget === b ? '#0891B2' : '#94A3B8',
+                          color: form.budget === b ? 'var(--cyan-ink)' : 'var(--text-3)',
                           backgroundColor: form.budget === b ? '#ECFEFF' : '#fff',
                           boxShadow: form.budget === b ? 'var(--shadow-sm)' : 'none',
                           borderBottom: form.budget === b ? '2px solid #0891B2' : '2px solid transparent',

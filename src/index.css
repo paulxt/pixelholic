@@ -62,7 +62,10 @@
 
   --text:    #0F172A;
   --text-2:  #475569;
-  --text-3:  #94A3B8;
+  /* Muted text — the form's unselected chips and every input placeholder.
+     Was #94A3B8 (2.56:1 on white); slate-500 clears AA at 4.76:1 while
+     staying clearly quieter than --text and the selected accents. */
+  --text-3:  #64748B;
   --border:  #E0E7FF;
   --shadow-sm: 0 2px 8px rgba(67,56,202,0.06), 0 1px 3px rgba(0,0,0,0.04);
   --shadow-md: 0 8px 24px rgba(67,56,202,0.10), 0 2px 8px rgba(0,0,0,0.05);
