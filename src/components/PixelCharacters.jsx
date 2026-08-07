@@ -1,11 +1,12 @@
 /* Pure CSS pixel-art characters using div grids — no images needed */
 
+/* Mirrors the tokens in index.css :root — keep in sync. */
 const COLORS = {
   primary: '#4338CA',
   cyan: '#0891B2',
-  green: '#059669',
   coral: '#EA580C',
-  purple: '#7C3AED',
+  purple: '#5B4FD6',
+  teal: '#0D9488',
   amber: '#D97706',
 }
 
@@ -321,7 +322,7 @@ const CHARACTERS = [
   { data: ROBOT,  color: COLORS.purple,   label: 'robot'  },
   { data: HEART,  color: COLORS.coral,    label: 'heart'  },
   { data: STAR,   color: COLORS.amber,    label: 'star'   },
-  { data: BOLT,   color: COLORS.green,    label: 'bolt'   },
+  { data: BOLT,   color: COLORS.teal,     label: 'bolt'   },
 ]
 
 /* Decorative scattered pixel characters — distributed on both left and right sides */

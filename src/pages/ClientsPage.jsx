@@ -9,6 +9,7 @@ import Reveal from '../components/Reveal'
 import Seo from '../components/Seo'
 import StageReady from '../components/StageReady'
 import useStageTransition from '../hooks/useStageTransition'
+import { ink } from '../utils/accent'
 
 /* ── Grid card (links to the case-study page) ─────── */
 function ClientGridCard({ c, onOpen, blinking, t }) {
@@ -62,20 +63,20 @@ function ClientGridCard({ c, onOpen, blinking, t }) {
 
         {/* Top metric — centered */}
         <div className="flex items-baseline gap-3 mb-6 justify-center" style={{ borderLeft: `3px solid ${c.color}`, paddingLeft: 14 }}>
-          <span className="pixel-font font-bold" style={{ color: c.color, fontSize: '16px' }}>{c.metrics[0].value}</span>
+          <span className="pixel-font font-bold" style={{ color: ink(c.color), fontSize: '16px' }}>{c.metrics[0].value}</span>
           <span className="text-xs text-slate-500">{c.metrics[0].label}</span>
         </div>
 
         {/* Service tags — centered */}
         <div className="flex flex-wrap gap-2 mb-6 justify-center">
           {c.services.slice(0, 3).map((s) => (
-            <span key={s} className="text-[11px] font-medium" style={{ color: c.color }}>
+            <span key={s} className="text-[11px] font-medium" style={{ color: ink(c.color) }}>
               {s} ·
             </span>
           ))}
         </div>
 
-        <div className="flex items-center gap-2 text-sm font-semibold transition-all duration-200 group-hover:gap-4 justify-center" style={{ color: c.color }}>
+        <div className="flex items-center gap-2 text-sm font-semibold transition-all duration-200 group-hover:gap-4 justify-center" style={{ color: ink(c.color) }}>
           {t('common.viewFullCase')} <span>→</span>
         </div>
       </div>
@@ -119,7 +120,7 @@ export default function ClientsPage() {
           <div className="py-20 mb-16 relative grid-bg overflow-hidden text-center">
             <SectionCorners color="#4338CA" inset={16} opacity={0.2} />
             <div className="relative z-10">
-              <div className="pixel-font text-[10px] text-indigo-400 mb-6 animate-pulse-glow tracking-widest">
+              <div className="pixel-font text-[10px] section-tag mb-6 animate-pulse-glow tracking-widest">
                 {t('clientsPage.tag')}
               </div>
               <h1 className="pixel-font text-slate-800 mb-8 mx-auto" style={{ fontSize: 'clamp(20px, 4vw, 36px)', lineHeight: 1.6 }}>

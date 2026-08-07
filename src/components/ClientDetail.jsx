@@ -1,12 +1,13 @@
 import { motion } from 'framer-motion'
 import { PixelChar } from './PixelCharacters'
 import CountUp from './CountUp'
+import { ink } from '../utils/accent'
 
 /* ── Theme map (styling only — text comes from translations) ──────────── */
 export const clientThemes = {
   kingcart:  { hdrClass: 'client-hdr-indigo', bgClass: 'client-bg-indigo', charType: 'bolt' },
   polaris:   { hdrClass: 'client-hdr-cyan',   bgClass: 'client-bg-cyan',   charType: 'rocket' },
-  cmei:      { hdrClass: 'client-hdr-green',  bgClass: 'client-bg-green',  charType: 'heart' },
+  cmei:      { hdrClass: 'client-hdr-teal',   bgClass: 'client-bg-teal',   charType: 'heart' },
   yunyang:   { hdrClass: 'client-hdr-purple', bgClass: 'client-bg-purple', charType: 'alien' },
   woolbuddy: { hdrClass: 'client-hdr-orange', bgClass: 'client-bg-orange', charType: 'star' },
   letape:    { hdrClass: 'client-hdr-amber',  bgClass: 'client-bg-amber',  charType: 'robot' },
@@ -83,7 +84,7 @@ export default function ClientDetail({ c, t, titleTag: TitleTag = 'h2', beamIn =
           <div className="lg:col-span-2 space-y-8">
             {/* Brand overview */}
             <div className="bg-white p-8 shadow-sm">
-              <div className="pixel-font text-[10px] mb-5 tracking-widest text-center" style={{ color: c.color }}>{t('clientsPage.overviewTag')}</div>
+              <div className="pixel-font text-[10px] mb-5 tracking-widest text-center" style={{ color: ink(c.color) }}>{t('clientsPage.overviewTag')}</div>
               <p className="text-slate-600 text-sm leading-loose">{c.description}</p>
             </div>
 
@@ -93,7 +94,7 @@ export default function ClientDetail({ c, t, titleTag: TitleTag = 'h2', beamIn =
                 <p className="text-slate-600 text-sm leading-loose">{c.challenge}</p>
               </div>
               <div className="bg-white p-8 shadow-sm">
-                <div className="pixel-font text-[10px] mb-5 tracking-widest text-center" style={{ color: c.color }}>{t('clientsPage.solutionTag')}</div>
+                <div className="pixel-font text-[10px] mb-5 tracking-widest text-center" style={{ color: ink(c.color) }}>{t('clientsPage.solutionTag')}</div>
                 <p className="text-slate-600 text-sm leading-loose">{c.solution}</p>
               </div>
             </div>
@@ -103,7 +104,7 @@ export default function ClientDetail({ c, t, titleTag: TitleTag = 'h2', beamIn =
               <div className="p-8" style={{ borderLeft: `4px solid ${c.color}`, backgroundColor: `${c.color}08` }}>
                 <p className="text-slate-600 text-base italic leading-loose mb-5">"{c.testimonial.quote}"</p>
                 <div className="flex items-center gap-3">
-                  <span className="pixel-font text-lg" style={{ color: c.color }}>{c.icon}</span>
+                  <span className="pixel-font text-lg" style={{ color: ink(c.color) }}>{c.icon}</span>
                   <span className="text-sm font-semibold text-slate-500">— {c.testimonial.author}</span>
                 </div>
               </div>
@@ -116,7 +117,7 @@ export default function ClientDetail({ c, t, titleTag: TitleTag = 'h2', beamIn =
             <div className="grid grid-cols-2 gap-3 mb-6">
               {c.metrics.map((m) => (
                 <div key={m.label} className="bg-white p-5 shadow-sm flex flex-col items-center text-center">
-                  <div className="pixel-font mb-2" style={{ color: c.color, fontSize: '15px' }}>
+                  <div className="pixel-font mb-2" style={{ color: ink(c.color), fontSize: '15px' }}>
                     <CountUp value={m.value} />
                   </div>
                   <div className="text-xs font-semibold text-slate-600 leading-snug">{m.label}</div>
@@ -126,7 +127,7 @@ export default function ClientDetail({ c, t, titleTag: TitleTag = 'h2', beamIn =
             </div>
             <div className="bg-white p-6 shadow-sm text-center">
               <div className="pixel-font text-[9px] text-slate-400 mb-3 tracking-widest">{t('clientsPage.websiteTag')}</div>
-              <a href={c.website} target="_blank" rel="noopener noreferrer" className="text-sm font-medium" style={{ color: c.color }}>
+              <a href={c.website} target="_blank" rel="noopener noreferrer" className="text-sm font-medium" style={{ color: ink(c.color) }}>
                 {c.website.replace('https://', '')} →
               </a>
             </div>

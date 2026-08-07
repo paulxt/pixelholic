@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { withLang, langFromPathname, stripLangPrefix } from '../utils/langPath'
+import Logo from './Logo'
 
 const links = [
   { labelKey: 'nav.services', id: 'services' },
@@ -14,19 +15,13 @@ const links = [
 export default function Navbar() {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
-  const [progress, setProgress] = useState(0)
   const location = useLocation()
   const navigate = useNavigate()
   const { t } = useTranslation()
   const lang = langFromPathname(location.pathname)
 
   useEffect(() => {
-    const onScroll = () => {
-      setScrolled(window.scrollY > 40)
-      const max = document.documentElement.scrollHeight - window.innerHeight
-      // Quantized to 2% steps for an EXP-bar feel
-      setProgress(max > 0 ? Math.round((window.scrollY / max) * 50) * 2 : 0)
-    }
+    const onScroll = () => setScrolled(window.scrollY > 40)
     onScroll()
     window.addEventListener('scroll', onScroll)
     return () => window.removeEventListener('scroll', onScroll)
@@ -59,19 +54,13 @@ export default function Navbar() {
           : 'bg-white/85 backdrop-blur-md'
       }`}
     >
-      {/* EXP-style scroll progress bar */}
-      <div
-        className="absolute bottom-0 left-0 h-[3px] pointer-events-none"
-        style={{ width: `${progress}%`, background: 'linear-gradient(90deg, #4338CA, #0891B2)', transition: 'width 0.2s steps(3)' }}
-      />
-
       <div className="max-w-7xl mx-auto px-8 flex items-center justify-between h-18 py-4">
         {/* Logo */}
         <Link
           to={withLang('/', lang)}
           className="flex items-center gap-2.5"
         >
-          <span className="inline-block w-3.5 h-3.5 bg-indigo-600 animate-pulse-glow" />
+          <Logo size={30} />
           <span className="pixel-font text-indigo-700" style={{ fontSize: '11px' }}>
             PIXELHOLIC
           </span>
@@ -117,7 +106,7 @@ export default function Navbar() {
           <a
             href={`${withLang('/', lang)}#contact`}
             onClick={(e) => handleAnchor(e, 'contact')}
-            className="pixel-btn"
+            className="pixel-btn pixel-btn-coral"
             style={{ fontSize: '12px', padding: '7px 14px' }}
           >
             {t('nav.cta')}
@@ -178,7 +167,7 @@ export default function Navbar() {
           <a
             href={`${withLang('/', lang)}#contact`}
             onClick={(e) => handleAnchor(e, 'contact')}
-            className="pixel-btn inline-block mt-4 text-center"
+            className="pixel-btn pixel-btn-coral inline-block mt-4 text-center"
             style={{ fontSize: '12px' }}
           >
             {t('nav.cta')}

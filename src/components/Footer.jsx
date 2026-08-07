@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { langFromPathname } from '../utils/langPath'
+import Logo from './Logo'
 
 function subscribeMailchimp(email) {
   return new Promise((resolve, reject) => {
@@ -64,7 +65,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2.5 mb-6">
-              <span className="inline-block w-3.5 h-3.5 bg-indigo-400 animate-pulse-glow" />
+              <Logo size={30} on="dark" />
               <span className="pixel-font text-indigo-400" style={{ fontSize: '11px' }}>PIXELHOLIC</span>
             </div>
             <p className="text-slate-400 text-sm leading-relaxed mb-3">
@@ -119,7 +120,7 @@ export default function Footer() {
         >
           <div className="flex flex-col md:flex-row items-center gap-6">
             <div className="flex-1">
-              <div className="pixel-font text-[10px] text-purple-400 mb-2">{t('footer.newsletterTag')}</div>
+              <div className="pixel-font text-[10px] section-tag-dark mb-2">{t('footer.newsletterTag')}</div>
               <p className="text-white font-semibold text-base">{t('footer.newsletterText')}</p>
               {subStatus === 'done' && (
                 <p className="text-green-400 text-sm mt-2 pixel-font text-[9px]">{t('footer.newsletterSuccess')}</p>
@@ -165,7 +166,10 @@ export default function Footer() {
             {t('footer.copyright', { year: new Date().getFullYear() })}
           </div>
           <div className="flex items-center gap-2">
-            <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse-glow" />
+            <span
+              className="inline-block w-2 h-2 animate-pulse-glow"
+              style={{ backgroundColor: 'var(--status-ok)' }}
+            />
             <span className="pixel-font text-[9px] text-slate-600">{t('footer.statusOnline')}</span>
           </div>
         </div>

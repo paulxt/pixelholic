@@ -47,15 +47,15 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="section-pad-l relative overflow-hidden">
+    <section id="contact" className="section-pad-l relative overflow-hidden contact-ground">
       <div className="absolute inset-0 grid-bg" />
-      <SectionCorners color="#4338CA" />
+      <SectionCorners color="#C2410C" />
 
       <div className="page-wrap relative z-10">
 
         {/* Header — centered */}
         <div className="text-center mb-8">
-          <div className="pixel-font text-[10px] text-indigo-400 mb-3 animate-pulse-glow tracking-widest">{t('contact.tag')}</div>
+          <div className="pixel-font text-[10px] section-tag mb-3 animate-pulse-glow tracking-widest">{t('contact.tag')}</div>
           <h2 className="pixel-font text-slate-800 mb-3" style={{ fontSize: 'clamp(18px, 3vw, 30px)', lineHeight: 1.6 }}>
             {t('contact.titleLine1')}<br />
             <span style={{ color: '#4338CA' }}>{t('contact.titleLine2')}</span>
@@ -172,7 +172,7 @@ export default function Contact() {
                   <textarea required rows={3} className="pixel-input resize-none" placeholder={form_.messagePlaceholder} value={form.message} onChange={set('message')} />
                 </div>
 
-                <button type="submit" disabled={status === 'sending'} className="pixel-btn w-full text-center" style={{ display: 'block' }}>
+                <button type="submit" disabled={status === 'sending'} className="pixel-btn pixel-btn-coral w-full text-center" style={{ display: 'block' }}>
                   {status === 'sending' ? <span className="animate-pulse-glow">{form_.sending}</span> : form_.submit}
                 </button>
 

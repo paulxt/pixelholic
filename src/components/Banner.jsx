@@ -78,7 +78,7 @@ export default function Banner() {
 
           {/* Buttons */}
           <div className="flex flex-wrap gap-5 justify-center mb-12">
-            <a href="#contact" onClick={(e) => { e.preventDefault(); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }) }} className="pixel-btn">
+            <a href="#contact" onClick={(e) => { e.preventDefault(); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }) }} className="pixel-btn pixel-btn-coral">
               <span className="animate-blink" style={{ marginRight: 10 }}>▶</span>{t('banner.ctaPrimary')}
             </a>
             <a href="#services" onClick={(e) => { e.preventDefault(); document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' }) }} className="pixel-btn pixel-btn-cyan">

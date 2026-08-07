@@ -23,7 +23,7 @@
   },
   "banner": {
     "slides": [
-      { "tag": "// INTEGRATED MARKETING", "title": "We Turn Pixels\nInto Brands", "sub": "Your brand, leveled up — SEO, ads, creators, and live events that clear every stage with you.", "accent": "#4338CA", "shadow": "#7C3AED", "symbol": "◈" },
+      { "tag": "// INTEGRATED MARKETING", "title": "We Turn Pixels\nInto Brands", "sub": "Your brand, leveled up — SEO, ads, creators, and live events that clear every stage with you.", "accent": "#4338CA", "shadow": "#5B4FD6", "symbol": "◈" },
       { "tag": "// NETWORK & PARTNERSHIPS", "title": "The Right People\nReal Reach", "sub": "Creators, pro athletes, brand collaborations — marketing with a network behind it plays a different game.", "accent": "#0891B2", "shadow": "#4338CA", "symbol": "◉" },
       { "tag": "// BRAND STRATEGY", "title": "Strategy First\nResults That Win", "sub": "Data before decisions — every dollar spent where it actually converts.", "accent": "#4338CA", "shadow": "#0891B2", "symbol": "◇" }
     ],
@@ -43,13 +43,13 @@
     "items": [
       { "icon": "◈", "title": "Brand Strategy", "desc": "From brand positioning and visual identity to brand voice, we build a consistent, powerful brand image that helps you stand out in a competitive market.", "tags": ["Brand Positioning", "VI Design", "Brand Voice"], "color": "#4338CA", "num": "01" },
       { "icon": "⊕", "title": "SEO & Organic Growth", "desc": "Our sharpest edge. Keyword architecture, content structure, and technical optimization that keep brands on page one of Google — turning free organic traffic into steady orders.", "tags": ["Keyword Strategy", "Content SEO", "Technical SEO"], "color": "#0891B2", "num": "02" },
-      { "icon": "◇", "title": "Digital Ad Placement", "desc": "Precision targeting on Google Ads and Meta Ads, paired with A/B testing and data optimization to maximize your return on ad spend.", "tags": ["Google Ads", "Meta Ads", "ROAS Optimization"], "color": "#4338CA", "num": "03" },
-      { "icon": "◉", "title": "Social Media Marketing", "desc": "Integrating Instagram, Facebook, and Threads with creative content and precise audience targeting to rapidly grow your brand's reach and engagement.", "tags": ["Content Strategy", "Community Management", "Engagement"], "color": "#0891B2", "num": "04" },
-      { "icon": "★", "title": "Creator & Athlete Marketing", "desc": "From beauty and lifestyle to travel and sport, we hold a roster of creators and professional athletes across verticals — matched to your brand's tone and budget so partnerships don't just get seen, they convert.", "tags": ["KOL / KOC Matching", "Pro Athletes", "Word of Mouth"], "color": "#4338CA", "num": "05" },
-      { "icon": "▣", "title": "Content & Video Production", "desc": "A one-stop service for video production, copywriting, and visual design — building brand authority with high-quality original content that drives organic traffic.", "tags": ["Video Production", "Copywriting", "SEO Content"], "color": "#0891B2", "num": "06" },
-      { "icon": "◈", "title": "Brand Partnerships & Collabs", "desc": "Some doors open through relationships built over years; the rest we go and negotiate for you. Co-branded campaigns, event sponsorships, and channel partnerships that turn their brand power into yours.", "tags": ["Co-Branding", "Cross-Industry Alliances", "Sponsorships"], "color": "#4338CA", "num": "07" },
-      { "icon": "◎", "title": "Events & Experiential", "desc": "Built on a family legacy in offline marketing: pop-ups, press events, race-day activations, and retail displays executed end to end — then amplified digitally so the buzz outlives the day.", "tags": ["Event Production", "Pop-ups & Press", "Retail Display"], "color": "#0891B2", "num": "08" },
-      { "icon": "◎", "title": "E-commerce & Data", "desc": "Optimizing the shopping journey and conversion rates, with a full tracking framework and marketing dashboards — from CRO and remarketing to email automation, every decision backed by data.", "tags": ["CRO", "Remarketing", "GA4 Data"], "color": "#4338CA", "num": "09" }
+      { "icon": "◇", "title": "Digital Ad Placement", "desc": "Precision targeting on Google Ads and Meta Ads, paired with A/B testing and data optimization to maximize your return on ad spend.", "tags": ["Google Ads", "Meta Ads", "ROAS Optimization"], "color": "#5B4FD6", "num": "03" },
+      { "icon": "◉", "title": "Social Media Marketing", "desc": "Integrating Instagram, Facebook, and Threads with creative content and precise audience targeting to rapidly grow your brand's reach and engagement.", "tags": ["Content Strategy", "Community Management", "Engagement"], "color": "#0D9488", "num": "04" },
+      { "icon": "★", "title": "Creator & Athlete Marketing", "desc": "From beauty and lifestyle to travel and sport, we hold a roster of creators and professional athletes across verticals — matched to your brand's tone and budget so partnerships don't just get seen, they convert.", "tags": ["KOL / KOC Matching", "Pro Athletes", "Word of Mouth"], "color": "#C2410C", "num": "05" },
+      { "icon": "▣", "title": "Content & Video Production", "desc": "A one-stop service for video production, copywriting, and visual design — building brand authority with high-quality original content that drives organic traffic.", "tags": ["Video Production", "Copywriting", "SEO Content"], "color": "#4338CA", "num": "06" },
+      { "icon": "◈", "title": "Brand Partnerships & Collabs", "desc": "Some doors open through relationships built over years; the rest we go and negotiate for you. Co-branded campaigns, event sponsorships, and channel partnerships that turn their brand power into yours.", "tags": ["Co-Branding", "Cross-Industry Alliances", "Sponsorships"], "color": "#0891B2", "num": "07" },
+      { "icon": "◎", "title": "Events & Experiential", "desc": "Built on a family legacy in offline marketing: pop-ups, press events, race-day activations, and retail displays executed end to end — then amplified digitally so the buzz outlives the day.", "tags": ["Event Production", "Pop-ups & Press", "Retail Display"], "color": "#5B4FD6", "num": "08" },
+      { "icon": "◎", "title": "E-commerce & Data", "desc": "Optimizing the shopping journey and conversion rates, with a full tracking framework and marketing dashboards — from CRO and remarketing to email automation, every decision backed by data.", "tags": ["CRO", "Remarketing", "GA4 Data"], "color": "#0D9488", "num": "09" }
     ],
     "ticker": ["BRAND STRATEGY", "SEO", "AD PLACEMENT", "SOCIAL MEDIA", "CREATORS", "CONTENT", "PARTNERSHIPS", "LIVE EVENTS", "DATA", "ONLINE", "OFFLINE", "GROWTH"]
   },
@@ -67,8 +67,8 @@
     "network": [
       { "title": "Creator / KOL Roster", "desc": "Creators across beauty, lifestyle, travel, sport, and tech — matched to your brand's tone and budget.", "color": "#4338CA" },
       { "title": "Pro Athletes & Sport", "desc": "Experience with professional athlete partnerships and international sporting events, already brokered for our clients.", "color": "#0891B2" },
-      { "title": "Major Brand Collaborations", "desc": "Brands we know will lend a hand; the ones we don't, we go pitch on your behalf — co-branding, sponsorship, and channel deals all start here.", "color": "#7C3AED" },
-      { "title": "Offline Channels & Events", "desc": "Venues, retail channels, and production crews from our family's offline marketing roots — events run end to end.", "color": "#059669" }
+      { "title": "Major Brand Collaborations", "desc": "Brands we know will lend a hand; the ones we don't, we go pitch on your behalf — co-branding, sponsorship, and channel deals all start here.", "color": "#5B4FD6" },
+      { "title": "Offline Channels & Events", "desc": "Venues, retail channels, and production crews from our family's offline marketing roots — events run end to end.", "color": "#0D9488" }
     ],
     "valuesTag": "// CORE VALUES",
     "values": [

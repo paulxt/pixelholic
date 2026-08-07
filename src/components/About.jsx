@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next'
 import { PixelScatter, SectionCorners, PixelChar } from './PixelCharacters'
 import Reveal from './Reveal'
+import { ink } from '../utils/accent'
 
 /* Content-matched pixel icons, one per core value (by order):
    crosshair=precision, bulb=creativity, magnifier=data insight, mushroom=power-up/evolve */
@@ -20,7 +21,7 @@ export default function About() {
 
         {/* Header — centered */}
         <div className="mb-12 text-center">
-          <div className="pixel-font text-[10px] text-cyan-600 mb-4 animate-pulse-glow tracking-widest">
+          <div className="pixel-font text-[10px] section-tag mb-4 animate-pulse-glow tracking-widest">
             {t('about.tag')}
           </div>
           <h2 className="pixel-font text-slate-800 mb-4 mx-auto" style={{ fontSize: 'clamp(18px, 3vw, 30px)', lineHeight: 1.6 }}>
@@ -54,7 +55,7 @@ export default function About() {
             {network.map((n, i) => (
               <Reveal key={n.title} delay={i * 90} className="h-full">
                 <div className="h-full bg-white p-6" style={{ borderTop: `3px solid ${n.color}`, boxShadow: '0 1px 0 #EEF2FF, 0 0 0 1px #EEF2FF' }}>
-                  <div className="pixel-font text-[9px] mb-4 tracking-widest" style={{ color: n.color }}>
+                  <div className="pixel-font text-[9px] mb-4 tracking-widest" style={{ color: ink(n.color) }}>
                     {String(i + 1).padStart(2, '0')}
                   </div>
                   <h4 className="text-slate-700 font-semibold text-sm mb-3 tracking-wide leading-snug">{n.title}</h4>

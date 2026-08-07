@@ -8,6 +8,7 @@ import Reveal from './Reveal'
 import CountUp from './CountUp'
 import StageReady from './StageReady'
 import useStageTransition from '../hooks/useStageTransition'
+import { ink } from '../utils/accent'
 
 function ClientDropdown({ clients, selected, onChange, t }) {
   const [open, setOpen] = useState(false)
@@ -24,7 +25,7 @@ function ClientDropdown({ clients, selected, onChange, t }) {
       >
         {selected ? (
           <>
-            <span style={{ color: selected.color }}>{selected.icon}</span>
+            <span style={{ color: ink(selected.color) }}>{selected.icon}</span>
             <span>{selected.name}</span>
           </>
         ) : (
@@ -54,7 +55,7 @@ function ClientDropdown({ clients, selected, onChange, t }) {
               className="w-full text-left px-5 py-3 flex items-center gap-3 hover:bg-indigo-50 transition-colors border-b border-indigo-50 last:border-0"
               onClick={() => { onChange(c); setOpen(false) }}
             >
-              <span className="pixel-font text-lg" style={{ color: c.color }}>{c.icon}</span>
+              <span className="pixel-font text-lg" style={{ color: ink(c.color) }}>{c.icon}</span>
               <div>
                 <div className="text-sm font-semibold text-slate-700">{c.name}</div>
                 <div className="text-xs text-slate-400">{c.industry}</div>
@@ -97,7 +98,7 @@ function ClientCard({ c, featured, lang, t, onOpen, blinking }) {
 
           {/* Content */}
           <div className="p-10 flex flex-col justify-center text-center">
-            <div className="pixel-font text-[9px] mb-3" style={{ color: c.color }}>
+            <div className="pixel-font text-[9px] mb-3" style={{ color: ink(c.color) }}>
               // {c.industry.toUpperCase()}
             </div>
             <h3 className="pixel-font text-slate-800 mb-2" style={{ fontSize: '16px' }}>{c.name}</h3>
@@ -112,7 +113,7 @@ function ClientCard({ c, featured, lang, t, onOpen, blinking }) {
                   className="p-4 flex flex-col items-center text-center"
                   style={{ borderColor: `${c.color}30`, backgroundColor: `${c.color}06`, border: `1px solid ${c.color}30` }}
                 >
-                  <div className="pixel-font mb-1" style={{ color: c.color, fontSize: '14px' }}>
+                  <div className="pixel-font mb-1" style={{ color: ink(c.color), fontSize: '14px' }}>
                     <CountUp value={m.value} />
                   </div>
                   <div className="text-xs text-slate-600 font-medium">{m.label}</div>
@@ -129,7 +130,7 @@ function ClientCard({ c, featured, lang, t, onOpen, blinking }) {
                 className="pixel-btn"
                 style={{
                   borderColor: c.color,
-                  color: c.color,
+                  color: ink(c.color),
                   boxShadow: `3px 3px 0px ${c.color}60`,
                   fontSize: '13px',
                 }}
@@ -163,7 +164,7 @@ function ClientCard({ c, featured, lang, t, onOpen, blinking }) {
 
           {/* Content — flex column so the link pins to the bottom across cards */}
           <div className="p-4 text-center flex flex-col flex-1">
-            <div className="pixel-font text-[9px] mb-1" style={{ color: c.color }}>{c.industry}</div>
+            <div className="pixel-font text-[9px] mb-1" style={{ color: ink(c.color) }}>{c.industry}</div>
             <h3 className="font-semibold text-slate-800 text-base mb-1 group-hover:text-indigo-600 transition-colors">
               {c.name}
             </h3>
@@ -174,7 +175,7 @@ function ClientCard({ c, featured, lang, t, onOpen, blinking }) {
               className="inline-flex items-center justify-center gap-3 px-3 py-2 mb-3 mx-auto"
               style={{ backgroundColor: `${c.color}08`, borderLeft: `3px solid ${c.color}` }}
             >
-              <span className="pixel-font font-bold" style={{ color: c.color, fontSize: '13px' }}>
+              <span className="pixel-font font-bold" style={{ color: ink(c.color), fontSize: '13px' }}>
                 <CountUp value={c.metrics[0].value} />
               </span>
               <span className="text-xs text-slate-500">{c.metrics[0].label}</span>
@@ -186,7 +187,7 @@ function ClientCard({ c, featured, lang, t, onOpen, blinking }) {
                 state={{ stage: true }}
                 onClick={(e) => { e.preventDefault(); onOpen(c.id) }}
                 className="text-sm font-semibold inline-flex items-center gap-1.5 transition-all group-hover:gap-3"
-                style={{ color: c.color }}
+                style={{ color: ink(c.color) }}
               >
                 {t('portfolio.viewCase')} <span>→</span>
               </Link>
@@ -220,7 +221,7 @@ export default function Portfolio() {
       <div className="page-wrap relative z-10">
         {/* Header — centered */}
         <div className="text-center" style={{ marginBottom: '1.25rem' }}>
-          <div className="pixel-font text-[10px] text-cyan-600 mb-3 animate-pulse-glow">
+          <div className="pixel-font text-[10px] section-tag mb-3 animate-pulse-glow">
             {t('portfolio.tag')}
           </div>
           <h2

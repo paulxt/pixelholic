@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next'
 import { SectionCorners, PixelScatter, PixelChar } from './PixelCharacters'
 import Reveal from './Reveal'
+import { ink } from '../utils/accent'
 
 /* Content-matched pixel icons, one per service (by card order):
    flag=positioning, magnifier=SEO, target=ad targeting, speech=social,
@@ -33,7 +34,7 @@ function ServiceCard({ s, charType }) {
           <span
             key={t}
             className="text-[11px] font-medium px-2 py-1 whitespace-nowrap"
-            style={{ color: s.color, backgroundColor: `${s.color}0D` }}
+            style={{ color: ink(s.color), backgroundColor: `${s.color}0D` }}
           >
             {t}
           </span>
@@ -60,7 +61,7 @@ export default function Services() {
 
         {/* Header — centered */}
         <div className="mb-12 text-center">
-          <div className="pixel-font text-[10px] text-indigo-400 mb-4 animate-pulse-glow tracking-widest">
+          <div className="pixel-font text-[10px] section-tag mb-4 animate-pulse-glow tracking-widest">
             {t('services.tag')}
           </div>
           <h2 className="pixel-font text-slate-800 mb-4 mx-auto" style={{ fontSize: 'clamp(18px, 3vw, 30px)', lineHeight: 1.6 }}>
