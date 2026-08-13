@@ -67,7 +67,7 @@
     "network": [
       { "title": "Creator / KOL Roster", "desc": "Creators across beauty, lifestyle, travel, sport, and tech — matched to your brand's tone and budget.", "color": "#4338CA" },
       { "title": "Pro Athletes & Sport", "desc": "Experience with professional athlete partnerships and international sporting events, already brokered for our clients.", "color": "#0891B2" },
-      { "title": "Major Brand Collaborations", "desc": "Brands we know will lend a hand; the ones we don't, we go pitch on your behalf — co-branding, sponsorship, and channel deals all start here.", "color": "#5B4FD6" },
+      { "title": "Major Brand Collaborations", "desc": "Brands we know will lend a hand; the ones we don't, we go pitch on your behalf — we've already brokered a partnership between Polaris eSIM and Shin Kong Mitsukoshi. Co-branding, sponsorship, and channel deals all start here.", "color": "#5B4FD6" },
       { "title": "Offline Channels & Events", "desc": "Venues, retail channels, and production crews from our family's offline marketing roots — events run end to end.", "color": "#0D9488" }
     ],
     "valuesTag": "// CORE VALUES",
@@ -173,6 +173,7 @@
     "overviewTag": "// BRAND OVERVIEW",
     "challengeTag": "// CHALLENGE",
     "solutionTag": "// SOLUTION",
+    "voiceTag": "// CLIENT VOICE",
     "resultsTag": "// KEY RESULTS",
     "websiteTag": "// WEBSITE",
     "bottomTag": "// JOIN OUR CLIENTS",
@@ -206,7 +207,7 @@
       "tagline": "Transparent routes, seamless roaming worldwide",
       "description": "Polaris eSIM is a Taiwan-native travel eSIM brand and the first to introduce full \"route transparency\" — letting travelers see exactly which carrier route each plan uses before they buy. Coverage spans 200+ countries and regions, with native direct routes in 10+ popular destinations. Polaris has been featured in Commercial Times, Economic Daily News, and TechNews.",
       "period": "2024 Q1 – Present",
-      "services": ["Social Media Marketing", "Brand Strategy", "PR & Media Relations", "Creator & Athlete Partnerships", "Digital Advertising"],
+      "services": ["Social Media Marketing", "Brand Strategy", "PR & Media Relations", "Creator & Athlete Partnerships", "Major Brand Collaborations", "Digital Advertising"],
       "metrics": [
         { "label": "Brand Search Growth", "sub": "in 6 months" },
         { "label": "Media Placements", "sub": "major finance & tech outlets" },
@@ -214,8 +215,8 @@
         { "label": "Repeat Purchase Rate", "sub": "post travel-season tracking" }
       ],
       "challenge": "An eSIM is the classic \"invisible product\": buyers can't judge quality before purchase, and if they end up on a detoured route, they just eat the loss. Everyone in the market competes on price and nobody talks about quality — Polaris needed a claim that was both memorable and verifiable.",
-      "solution": "We translated a technical edge into consumer language with the \"route transparency\" brand promise: see the exit route before you pay. Social media led the charge, building brand voice and conversation with travel-scenario content; in-depth tech media PR added authority (coverage in Commercial Times, Economic Daily News, and TechNews), while Google Ads captured mindshare ahead of peak travel season — driving major growth in brand search and organic traffic. We also matched Polaris with professional athletes: people who cross borders constantly and are the harshest judges of connection quality, turning \"route transparency\" from an ad line into credible first-hand testimony.",
-      "testimonial": { "quote": "Pixelholic turned our technical edge into language consumers actually understand — making “route transparency” an industry talking point that drove significant organic traffic.", "author": "Polaris eSIM Marketing Director" }
+      "solution": "We translated a technical edge into consumer language with the \"route transparency\" brand promise: see the exit route before you pay. Social media led the charge, building brand voice and conversation with travel-scenario content; in-depth tech media PR added authority (coverage in Commercial Times, Economic Daily News, and TechNews), while Google Ads captured mindshare ahead of peak travel season — driving major growth in brand search and organic traffic. We also matched Polaris with professional athletes: people who cross borders constantly and are the harshest judges of connection quality, turning \"route transparency\" from an ad line into credible first-hand testimony. We've also brokered a collaboration between Polaris and Shin Kong Mitsukoshi, launching soon — carrying the brand from online reach onto the floors of Taiwan's landmark department store, right where travelers make pre-trip decisions.",
+      "testimonial": { "quote": "Pixelholic turned our technical edge into language consumers actually understand — making “route transparency” an industry talking point that drove significant organic traffic.", "author": "Polaris eSIM General Manager" }
     },
     "cmei": {
       "name": "CMEI Select",

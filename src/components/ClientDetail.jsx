@@ -13,9 +13,47 @@ export const clientThemes = {
   letape:    { hdrClass: 'client-hdr-amber',  bgClass: 'client-bg-amber',  charType: 'robot' },
 }
 
+/* ── Narrative ramp ──────────────────────────────────────────────────────
+   The steps deepen through the client's own theme colour instead of borrowing
+   a neutral: pale at the brand背景, full strength at the 解法, darkest at the
+   客戶的話 — so the colour itself tells you how far along the story you are. */
+function stepRamp(color) {
+  return [
+    `color-mix(in srgb, ${color} 32%, white)`,
+    `color-mix(in srgb, ${color} 60%, white)`,
+    color,
+    ink(color),
+  ]
+}
+
+/* ── One stage of the case-study narrative ──────────────────────────────
+   The order is implied rather than announced: a bare step number, the section
+   name, and a rule that deepens through the client's theme as the story
+   advances — no "STAGE" label, no numbered chrome. */
+function Stage({ n, tag, tagColor, ruleColor, textColor, last, children }) {
+  return (
+    <div>
+      <div className="flex items-center gap-3 mb-3">
+        <span className="pixel-font text-[10px] tracking-widest whitespace-nowrap" style={{ color: textColor }}>
+          {n}
+        </span>
+        <span className="pixel-font text-[10px] tracking-widest whitespace-nowrap" style={{ color: tagColor }}>
+          {tag}
+        </span>
+        <span className="flex-1 h-px" style={{ backgroundColor: ruleColor }} />
+      </div>
+      {children}
+      {!last && (
+        <div className="pixel-font text-[9px] text-center mt-4" style={{ color: ruleColor }}>▼</div>
+      )}
+    </div>
+  )
+}
+
 /* ── Full case-study detail panel ─────────────────── */
 export default function ClientDetail({ c, t, titleTag: TitleTag = 'h2', beamIn = false }) {
   const th = clientThemes[c.id]
+  const ramp = stepRamp(c.color)
   return (
     <div className="animate-fadeUp">
       {/* Colored header strip */}
@@ -80,56 +118,66 @@ export default function ClientDetail({ c, t, titleTag: TitleTag = 'h2', beamIn =
       <div className={`${th.bgClass} px-10 md:px-16 py-14`} style={{ boxShadow: 'var(--shadow-sm)' }}>
         <div className="grid lg:grid-cols-3 gap-10">
 
-          {/* Left 2/3: story */}
+          {/* Left 2/3: story — stacked full width so every paragraph reads at the
+              same comfortable measure instead of being squeezed into a narrow ribbon */}
           <div className="lg:col-span-2 space-y-8">
-            {/* Brand overview */}
-            <div className="bg-white p-8 shadow-sm">
-              <div className="pixel-font text-[10px] mb-5 tracking-widest text-center" style={{ color: ink(c.color) }}>{t('clientsPage.overviewTag')}</div>
-              <p className="text-slate-600 text-sm leading-loose">{c.description}</p>
-            </div>
-
-            <div className="grid sm:grid-cols-2 gap-6">
+            {/* 01 — Brand overview */}
+            <Stage n="01" tag={t('clientsPage.overviewTag')} tagColor={ink(c.color)} ruleColor={ramp[0]} textColor={ink(c.color)}>
               <div className="bg-white p-8 shadow-sm">
-                <div className="pixel-font text-[10px] mb-5 text-slate-400 tracking-widest text-center">{t('clientsPage.challengeTag')}</div>
+                <p className="text-slate-600 text-sm leading-loose">{c.description}</p>
+              </div>
+            </Stage>
+
+            {/* 02 — Challenge. Tag stays grey — the problem isn't our credit. */}
+            <Stage n="02" tag={t('clientsPage.challengeTag')} tagColor="#94A3B8" ruleColor={ramp[1]} textColor={ink(c.color)}>
+              <div className="bg-white p-8 shadow-sm">
                 <p className="text-slate-600 text-sm leading-loose">{c.challenge}</p>
               </div>
+            </Stage>
+
+            {/* 03 — Solution */}
+            <Stage n="03" tag={t('clientsPage.solutionTag')} tagColor={ink(c.color)} ruleColor={ramp[2]} textColor={ink(c.color)} last={!c.testimonial}>
               <div className="bg-white p-8 shadow-sm">
-                <div className="pixel-font text-[10px] mb-5 tracking-widest text-center" style={{ color: ink(c.color) }}>{t('clientsPage.solutionTag')}</div>
                 <p className="text-slate-600 text-sm leading-loose">{c.solution}</p>
               </div>
-            </div>
+            </Stage>
 
-            {/* Testimonial */}
+            {/* 04 — Testimonial: the client's own words close the sequence */}
             {c.testimonial && (
-              <div className="p-8" style={{ borderLeft: `4px solid ${c.color}`, backgroundColor: `${c.color}08` }}>
-                <p className="text-slate-600 text-base italic leading-loose mb-5">"{c.testimonial.quote}"</p>
-                <div className="flex items-center gap-3">
-                  <span className="pixel-font text-lg" style={{ color: ink(c.color) }}>{c.icon}</span>
-                  <span className="text-sm font-semibold text-slate-500">— {c.testimonial.author}</span>
+              <Stage n="04" tag={t('clientsPage.voiceTag')} tagColor={ink(c.color)} ruleColor={ramp[3]} textColor={ink(c.color)} last>
+                <div className="p-8" style={{ borderLeft: `4px solid ${c.color}`, backgroundColor: `${c.color}08` }}>
+                  <p className="text-slate-600 text-base italic leading-loose mb-5">"{c.testimonial.quote}"</p>
+                  <div className="flex items-center gap-3">
+                    <span className="pixel-font text-lg" style={{ color: ink(c.color) }}>{c.icon}</span>
+                    <span className="text-sm font-semibold text-slate-500">— {c.testimonial.author}</span>
+                  </div>
                 </div>
-              </div>
+              </Stage>
             )}
           </div>
 
-          {/* Right 1/3: metrics */}
+          {/* Right 1/3: metrics — sticky so the short rail travels with the story
+              instead of leaving a dead column beside it */}
           <div>
-            <div className="pixel-font text-[10px] mb-6 text-slate-400 tracking-widest text-center">{t('clientsPage.resultsTag')}</div>
-            <div className="grid grid-cols-2 gap-3 mb-6">
-              {c.metrics.map((m) => (
-                <div key={m.label} className="bg-white p-5 shadow-sm flex flex-col items-center text-center">
-                  <div className="pixel-font mb-2" style={{ color: ink(c.color), fontSize: '15px' }}>
-                    <CountUp value={m.value} />
+            <div className="lg:sticky lg:top-24">
+              <div className="pixel-font text-[10px] mb-6 text-slate-400 tracking-widest text-center">{t('clientsPage.resultsTag')}</div>
+              <div className="grid grid-cols-2 gap-3 mb-6">
+                {c.metrics.map((m) => (
+                  <div key={m.label} className="bg-white p-5 shadow-sm flex flex-col items-center text-center">
+                    <div className="pixel-font mb-2" style={{ color: ink(c.color), fontSize: '15px' }}>
+                      <CountUp value={m.value} />
+                    </div>
+                    <div className="text-xs font-semibold text-slate-600 leading-snug">{m.label}</div>
+                    {m.sub && <div className="text-[11px] text-slate-500 mt-1">{m.sub}</div>}
                   </div>
-                  <div className="text-xs font-semibold text-slate-600 leading-snug">{m.label}</div>
-                  {m.sub && <div className="text-[11px] text-slate-500 mt-1">{m.sub}</div>}
-                </div>
-              ))}
-            </div>
-            <div className="bg-white p-6 shadow-sm text-center">
-              <div className="pixel-font text-[9px] text-slate-400 mb-3 tracking-widest">{t('clientsPage.websiteTag')}</div>
-              <a href={c.website} target="_blank" rel="noopener noreferrer" className="text-sm font-medium" style={{ color: ink(c.color) }}>
-                {c.website.replace('https://', '')} →
-              </a>
+                ))}
+              </div>
+              <div className="bg-white p-6 shadow-sm text-center">
+                <div className="pixel-font text-[9px] text-slate-400 mb-3 tracking-widest">{t('clientsPage.websiteTag')}</div>
+                <a href={c.website} target="_blank" rel="noopener noreferrer" className="text-sm font-medium" style={{ color: ink(c.color) }}>
+                  {c.website.replace('https://', '')} →
+                </a>
+              </div>
             </div>
           </div>
         </div>

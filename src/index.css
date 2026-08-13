@@ -81,7 +81,9 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: 'Space Grotesk', sans-serif;
-  overflow-x: hidden;
+  /* clip, not hidden — `hidden` makes body a scroll container and silently
+     kills position:sticky anywhere in the page (e.g. the KEY RESULTS rail) */
+  overflow-x: clip;
   line-height: 1.8;
   letter-spacing: 0.01em;
 }
