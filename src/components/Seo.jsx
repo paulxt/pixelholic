@@ -63,5 +63,16 @@ export default function Seo({ title, description }) {
     upsertMeta('name', 'twitter:image', `${SITE_URL}/og.png`)
   }, [pathname, title, description])
 
+  // GA4 page view, one per route. The tag is configured with send_page_view:
+  // false, so this covers the first load too. Declared after the effect above
+  // so document.title is already the new route's title when the hit is sent.
+  useEffect(() => {
+    if (typeof window.gtag !== 'function') return
+    window.gtag('event', 'page_view', {
+      page_location: window.location.href,
+      page_title: document.title,
+    })
+  }, [pathname])
+
   return null
 }

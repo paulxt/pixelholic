@@ -15,6 +15,21 @@
     <meta property="og:site_name" content="PIXELHOLIC" />
     <meta property="og:locale" content="zh_TW" />
     <meta name="twitter:card" content="summary_large_image" />
+    <!-- Google tag (gtag.js) — loaded only on the live domain, so `npm run dev`,
+         Vercel previews and the headless-Chromium prerender don't send hits.
+         Page views are sent per route from src/components/Seo.jsx instead. -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      if (location.hostname === 'www.pixelholic.co' || location.hostname === 'pixelholic.co') {
+        var gaScript = document.createElement('script');
+        gaScript.async = true;
+        gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-B5LRLL8WLX';
+        document.head.appendChild(gaScript);
+        gtag('js', new Date());
+        gtag('config', 'G-B5LRLL8WLX', { send_page_view: false });
+      }
+    </script>
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
