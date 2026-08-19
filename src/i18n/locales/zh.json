@@ -16,6 +16,7 @@
     "clients": "客戶案例",
     "about": "關於我們",
     "contact": "聯絡",
+    "tools": "免費工具",
     "cta": "免費諮詢"
   },
   "common": {
@@ -34,6 +35,12 @@
     "statExperience": "業界深耕",
     "statExperienceValue": "{{years}}年",
     "scroll": "SCROLL"
+  },
+  "toolStrip": {
+    "tag": "// FREE TOOL",
+    "title": "還沒準備好聊？先讓工具看一遍你的網站",
+    "sub": "輸入網址，30 秒看完 SEO 設定、行動版效能與數據追蹤 — 不用註冊。",
+    "cta": "免費檢測 →"
   },
   "services": {
     "tag": "// OUR SERVICES",
@@ -136,7 +143,8 @@
         { "label": "客戶成功案例", "href": "/clients" },
         { "label": "關於我們", "href": "/#about" },
         { "label": "聯絡我們", "href": "/#contact" },
-        { "label": "免費諮詢", "href": "/#contact" }
+        { "label": "免費諮詢", "href": "/#contact" },
+        { "label": "免費網站健檢", "href": "https://pixelholic-toolbox.com/?utm_source=pixelholic&utm_medium=site&utm_campaign=footer" }
       ] }
     ],
     "newsletterTag": "// NEWSLETTER",

@@ -16,6 +16,7 @@
     "clients": "Case Studies",
     "about": "About",
     "contact": "Contact",
+    "tools": "FREE TOOLS",
     "cta": "Free Consultation"
   },
   "common": {
@@ -34,6 +35,12 @@
     "statExperience": "Years in Industry",
     "statExperienceValue": "{{years}}+",
     "scroll": "SCROLL"
+  },
+  "toolStrip": {
+    "tag": "// FREE TOOL",
+    "title": "Not ready to talk yet? Let the tool look first.",
+    "sub": "Enter a URL and see your SEO setup, mobile performance and tracking in 30 seconds — no signup.",
+    "cta": "Run a free check →"
   },
   "services": {
     "tag": "// OUR SERVICES",
@@ -136,7 +143,8 @@
         { "label": "Client Success Stories", "href": "/clients" },
         { "label": "About Us", "href": "/#about" },
         { "label": "Contact", "href": "/#contact" },
-        { "label": "Free Consultation", "href": "/#contact" }
+        { "label": "Free Consultation", "href": "/#contact" },
+        { "label": "Free Site Check", "href": "https://pixelholic-toolbox.com/?utm_source=pixelholic&utm_medium=site&utm_campaign=footer" }
       ] }
     ],
     "newsletterTag": "// NEWSLETTER",

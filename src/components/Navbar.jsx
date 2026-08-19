@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { withLang, langFromPathname, stripLangPrefix } from '../utils/langPath'
+import { toolboxUrl } from '../utils/toolbox'
 import Logo from './Logo'
 
 const links = [
@@ -96,13 +97,27 @@ export default function Navbar() {
         </ul>
 
         {/* Language switch + CTA */}
-        <div className="hidden md:flex items-center gap-6">
+        <div className="hidden md:flex items-center gap-4">
           <button
             onClick={switchLanguage}
             className="pixel-font text-[9px] text-slate-400 hover:text-indigo-600 transition-colors tracking-widest border border-indigo-100 hover:border-indigo-400 px-3 py-2"
           >
             {lang === 'en' ? '中文' : 'EN'}
           </button>
+          <a
+            href={toolboxUrl('navbar')}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="pixel-font text-[9px] transition-colors tracking-widest hidden lg:flex items-center gap-2 whitespace-nowrap relative group"
+            style={{ color: 'var(--cyan-ink)' }}
+          >
+            <span className="inline-block w-1.5 h-1.5 shrink-0 animate-blink" style={{ backgroundColor: 'var(--cyan)' }} aria-hidden />
+            {t('nav.tools')}
+            <span
+              className="absolute -bottom-1 left-0 w-0 h-0.5 group-hover:w-full transition-all duration-200"
+              style={{ backgroundColor: 'var(--cyan)' }}
+            />
+          </a>
           <a
             href={`${withLang('/', lang)}#contact`}
             onClick={(e) => handleAnchor(e, 'contact')}
@@ -164,6 +179,17 @@ export default function Navbar() {
           >
             {lang === 'en' ? '中文' : 'EN'}
           </button>
+          <a
+            href={toolboxUrl('navbar')}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setOpen(false)}
+            className="pixel-font text-[9px] py-3 border-b border-slate-100 transition-colors tracking-widest flex items-center gap-2"
+            style={{ color: 'var(--cyan-ink)' }}
+          >
+            <span className="inline-block w-1.5 h-1.5 shrink-0 animate-blink" style={{ backgroundColor: 'var(--cyan)' }} aria-hidden />
+            {t('nav.tools')}
+          </a>
           <a
             href={`${withLang('/', lang)}#contact`}
             onClick={(e) => handleAnchor(e, 'contact')}

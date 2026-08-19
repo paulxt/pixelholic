@@ -7,6 +7,7 @@ import Services from './components/Services'
 import Portfolio from './components/Portfolio'
 import MediaStrip from './components/MediaStrip'
 import About from './components/About'
+import ToolStrip from './components/ToolStrip'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import LanguageSuggestion from './components/LanguageSuggestion'
@@ -25,6 +26,7 @@ function HomePage() {
       <Portfolio />
       <MediaStrip />
       <About />
+      <ToolStrip />
       <Contact />
     </main>
   )

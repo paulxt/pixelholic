@@ -35,9 +35,12 @@ export default function Footer() {
   const location = useLocation()
   const lang = langFromPathname(location.pathname)
   const navGroups = t('footer.navGroups', { returnObjects: true })
-  // '/#services' → '/en#services', '/clients' → '/en/clients'
+  const isExternal = (href) => /^https?:\/\//.test(href)
+  // '/#services' → '/en#services', '/clients' → '/en/clients'; absolute URLs pass through
   const localize = (href) =>
-    lang === 'en' ? (href.startsWith('/#') ? `/en${href.slice(1)}` : `/en${href}`) : href
+    isExternal(href)
+      ? href
+      : lang === 'en' ? (href.startsWith('/#') ? `/en${href.slice(1)}` : `/en${href}`) : href
   const [email, setEmail] = useState('')
   const [subStatus, setSubStatus] = useState(null) // null | 'sending' | 'done' | 'error'
   const [errMsg, setErrMsg] = useState('')
@@ -101,6 +104,9 @@ export default function Footer() {
                   <li key={item.label}>
                     <a
                       href={localize(item.href)}
+                      {...(isExternal(item.href)
+                        ? { target: '_blank', rel: 'noopener noreferrer' }
+                        : {})}
                       className="text-sm text-slate-400 hover:text-indigo-400 transition-colors flex items-center gap-2 group"
                     >
                       <span className="inline-block w-1 h-1 bg-indigo-500 opacity-0 group-hover:opacity-100 transition-opacity shrink-0" />
