@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { langFromPathname } from '../utils/langPath'
+import LanguageSelect from './LanguageSelect'
 import Logo from './Logo'
 
 function subscribeMailchimp(email) {
@@ -117,6 +118,7 @@ export default function Footer() {
               </ul>
             </div>
           ))}
+
         </div>
 
         {/* Newsletter */}
@@ -167,16 +169,19 @@ export default function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-8 border-t border-slate-800">
-          <div className="pixel-font text-[9px] text-slate-600">
+        <div className="grid md:grid-cols-3 items-center gap-4 pt-8 border-t border-slate-800">
+          <div className="pixel-font text-[9px] text-slate-600 text-center md:text-left">
             {t('footer.copyright', { year: new Date().getFullYear() })}
           </div>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center justify-center gap-2">
             <span
               className="inline-block w-2 h-2 animate-pulse-glow"
               style={{ backgroundColor: 'var(--status-ok)' }}
             />
             <span className="pixel-font text-[9px] text-slate-600">{t('footer.statusOnline')}</span>
+          </div>
+          <div className="flex justify-center md:justify-end">
+            <LanguageSelect />
           </div>
         </div>
       </div>

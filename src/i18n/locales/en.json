@@ -147,6 +147,7 @@
         { "label": "Free Site Check", "href": "https://pixelholic-toolbox.com/?utm_source=pixelholic&utm_medium=site&utm_campaign=footer" }
       ] }
     ],
+    "languageTitle": "Language",
     "newsletterTag": "// NEWSLETTER",
     "newsletterText": "Subscribe to our newsletter for the latest digital marketing trends",
     "newsletterSuccess": "✓ Subscribed! Thanks for joining",
