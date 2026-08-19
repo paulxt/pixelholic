@@ -128,16 +128,18 @@
     "tagline": "We turn pixels into brands.",
     "subtagline": "",
     "navGroups": [
-      { "title": "Services", "items": [
-        { "label": "Brand Strategy", "href": "/#services" },
+      { "title": "Digital Services", "items": [
         { "label": "SEO & Organic Growth", "href": "/#services" },
         { "label": "Digital Ad Placement", "href": "/#services" },
         { "label": "Social Media Marketing", "href": "/#services" },
-        { "label": "Creator & Athlete Marketing", "href": "/#services" },
         { "label": "Content & Video Production", "href": "/#services" },
-        { "label": "Brand Partnerships & Collabs", "href": "/#services" },
-        { "label": "Events & Experiential", "href": "/#services" },
         { "label": "E-commerce & Data", "href": "/#services" }
+      ] },
+      { "title": "Brand & Network", "items": [
+        { "label": "Brand Strategy", "href": "/#services" },
+        { "label": "Creator & Athlete Marketing", "href": "/#services" },
+        { "label": "Brand Partnerships & Collabs", "href": "/#services" },
+        { "label": "Events & Experiential", "href": "/#services" }
       ] },
       { "title": "Quick Links", "items": [
         { "label": "Client Success Stories", "href": "/clients" },

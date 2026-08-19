@@ -128,16 +128,18 @@
     "tagline": "像素驅動，品牌進化。",
     "subtagline": "We turn pixels into brands.",
     "navGroups": [
-      { "title": "服務項目", "items": [
-        { "label": "品牌策略規劃", "href": "/#services" },
+      { "title": "數位服務", "items": [
         { "label": "SEO 搜尋成長", "href": "/#services" },
         { "label": "數位廣告投放", "href": "/#services" },
         { "label": "社群媒體行銷", "href": "/#services" },
-        { "label": "網紅・運動員行銷", "href": "/#services" },
         { "label": "內容與影音製作", "href": "/#services" },
-        { "label": "異業合作與品牌聯名", "href": "/#services" },
-        { "label": "線下活動與體驗行銷", "href": "/#services" },
         { "label": "電商成長與數據優化", "href": "/#services" }
+      ] },
+      { "title": "品牌與資源", "items": [
+        { "label": "品牌策略規劃", "href": "/#services" },
+        { "label": "網紅・運動員行銷", "href": "/#services" },
+        { "label": "異業合作與品牌聯名", "href": "/#services" },
+        { "label": "線下活動與體驗行銷", "href": "/#services" }
       ] },
       { "title": "快速連結", "items": [
         { "label": "客戶成功案例", "href": "/clients" },
