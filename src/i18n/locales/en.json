@@ -39,7 +39,8 @@
   "toolStrip": {
     "tag": "// FREE TOOL",
     "title": "Not ready to talk yet? Let the tool look first.",
-    "sub": "Enter a URL and see your SEO setup, mobile performance and tracking in 30 seconds — no signup.",
+    "sub": "Enter a URL, get results in 30 seconds. No signup, no dashboard access — public data only.",
+    "checks": ["SEO basics", "Mobile performance", "Tracking tags", "Content volume", "Social channels"],
     "cta": "Run a free check →"
   },
   "services": {

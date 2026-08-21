@@ -50,6 +50,19 @@ export default function ToolStrip() {
             <p className="text-slate-500 text-sm mt-1">
               {t('toolStrip.sub')}
             </p>
+
+            {/* What the report actually contains. Naming the five checks does
+                more for willingness than another sentence would: the hesitation
+                with an audit tool is not the 30 seconds, it is not knowing what
+                you get or what you have to hand over for it. */}
+            <ul className="mt-3 flex flex-wrap justify-center sm:justify-start gap-x-4 gap-y-1.5">
+              {t('toolStrip.checks', { returnObjects: true }).map((c) => (
+                <li key={c} className="flex items-center gap-1.5 text-[11px] text-slate-500">
+                  <span style={{ color: 'var(--cyan-ink)' }} aria-hidden>✓</span>
+                  {c}
+                </li>
+              ))}
+            </ul>
           </div>
 
           <a
